@@ -1,0 +1,39 @@
+<div class="splash" align="center" *ngIf="showsplash">
+  <div align="center">
+    <img class="animated pulse infinite" src="" /><br />
+    <ion-spinner mode="ios" style="margin-top: -30px" color="dark"></ion-spinner>
+  </div>
+</div>
+
+
+<ion-app>
+  <ngx-spinner bdColor="#16264cea" size="default" type="ball-clip-rotate">
+    <p style="font-size: 16px;margin-top: -10px" color="light">Loading...</p>
+  </ngx-spinner>
+  <ion-split-pane contentId="main">
+    <!--  the side menu  -->
+    <ion-menu contentId="main">
+      <ion-header class="ion-no-border">
+        <ion-toolbar color="white">
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list lines="none" details="false">
+          <ion-item routerLink="/">
+            <ion-icon name="apps" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Overview</h2>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar color="white">
+        </ion-toolbar>
+      </ion-footer>
+    </ion-menu>
+  
+    <!-- the main content -->
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

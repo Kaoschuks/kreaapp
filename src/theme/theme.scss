@@ -1,0 +1,269 @@
+
+body {
+    -webkit-user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+}
+* ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none !important;
+}
+
+.text-capitalize{
+    text-transform: capitalize !important;
+}
+.fs-12 {
+    font-size: 12px !important;
+}
+.fs-14 {
+    font-size: 14px !important;
+}
+.fs-16 {
+    font-size: 16px !important;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+.fs-20 {
+    font-size: 20px !important;
+}
+.fs-22 {
+    font-size: 22px !important;
+}
+.fs-50 {
+    font-size: 50px !important;
+}
+.fs-60 {
+    font-size: 60px !important;
+}
+
+.text-muted {
+    color: #aaa !important;
+}
+.text-success {
+    color: var(--ion-color-success) !important;
+    --color: var(--ion-color-success) !important;
+}
+.text-primary {
+    color: var(--ion-color-primary) !important;
+    --color: var(--ion-color-primary) !important;
+}
+.text-warning {
+    color: var(--ion-color-warning) !important;
+    --color: var(--ion-color-warning) !important;
+}
+.text-danger {
+    color: var(--ion-color-danger) !important;
+    --color: var(--ion-color-danger) !important;
+}
+.text-tertiary {
+    color: var(--ion-color-tertiary) !important;
+    --color: var(--ion-color-tertiary) !important;
+}
+.text-darkgray {
+    color:  var(--ion-color-dark) !important;
+    --color:  var(--ion-color-dark) !important;
+}
+.text-dark {
+    color: var(--ion-color-dark) !important;
+    --color: var(--ion-color-dark) !important;
+}
+.text-medium {
+    color: var(--ion-color-medium) !important;
+    --color: var(--ion-color-medium) !important;
+}
+.bold {
+    font-weight: 600 !important;
+}
+
+.bg-primary {
+    --background: var(--ion-color-primary) !important;
+    background: var(--ion-color-primary) !important;
+}
+.bg-secondary, .bg-secondary * {
+    --background: var(--ion-color-success) !important;
+    background: var(--ion-color-success) !important;
+}
+.bg-warning, .bg-warning * {
+    --background: var(--ion-color-warning) !important;
+    background: var(--ion-color-warning) !important;
+}
+.bg-danger, .bg-danger * {
+    --background: var(--ion-color-danger) !important;
+    background: var(--ion-color-danger) !important;
+}
+.bg-dark, .bg-dark * {
+    --background: var(--ion-color-dark) !important;
+    background: var(--ion-color-dark) !important;
+}
+.bg-light, .bg-light * {
+    --background: var(--ion-color-light) !important;
+    background: var(--ion-color-light) !important;
+}
+.bg-medium, .bg-medium * {
+    --background: var(--ion-color-medium) !important;
+    background: var(--ion-color-medium) !important;
+}
+
+.toast-success {
+    --background: var(--ion-color-success) !important;
+    --color: var(--ion-color-light) !important;
+}
+.toast-light {
+    --background: var(--ion-color-light) !important;
+    --color: var(--ion-color-primary) !important;
+}
+.toast-danger{
+    --background: var(--ion-color-danger) !important;
+    --color: var(--ion-color-light) !important;
+}
+
+.modal-70-percent {
+    --height: 70% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
+}
+.modal-90-percent {
+    --height: 90% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
+}
+.modal-95-percent {
+    --height: 95% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
+}
+.modal-60-percent {
+    --height: 60% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
+}
+.modal-50-percent {
+    --height: 50% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
+}
+.modal-40-percent {
+    --height: 40% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
+}
+ngx-intl-tel-input input, ion-select {
+	border-radius: 0px !important;
+	background-color: transparent !important;
+	--background-color: transparent !important;
+	// border-bottom: 0.2px solid var(--ion-color-light) !important;
+}
+.iti {
+	display: block !important;
+}
+
+.iti .dropdown-menu.country-dropdown {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-color: #c7cace;
+	margin-top: -1px;
+    min-width: calc(300px - 50px) !important;
+}
+.iti .iti__country-list {
+	box-shadow: none;
+	font-size: 14px;
+	margin-left: 0;
+	height: 170px;
+}
+
+.iti__flag-container.open + input {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.iti .search-container input {
+	// font-size: 14px;
+	border-color: #c7cace;
+	border-radius: 0;
+	padding: 5px 10px;
+}
+
+.iti .search-container input:focus {
+	outline: none;
+}
+ngx-intl-tel-input {
+    position: relative; 
+    bottom: 0px !important;
+    top: 0px !important;
+}
+
+ngx-intl-tel-input input {
+    width: 100% !important;
+	background-color: transparent;
+	color: var(--ion-color-dark) !important;
+	height: 35px;
+	padding: 7px;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 4px;
+    line-height: 17px !important;
+    font-weight: 500 !important;
+    padding-bottom: -5px !important;
+    // font-size: 13px !important;
+}
+
+ngx-intl-tel-input.ng-invalid.ng-touched input {
+	border: 1px solid var(--ion-color-danger) ;
+}
+
+ngx-intl-tel-input input:hover {
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.24);
+}
+
+ngx-intl-tel-input input:focus {
+	outline: none !important;
+	border-color: var(--ion-color-primary) ;
+	box-shadow: 0 0 0 0 #fff;
+}
+
+ngx-intl-tel-input input::-webkit-input-placeholder {
+	color: #bac2c7;
+}
+
+ngx-intl-tel-input input:-ms-input-placeholder {
+	color: #bac2c7;
+}
+
+ngx-intl-tel-input input::-ms-input-placeholder {
+	color: #bac2c7;
+}
+
+ngx-intl-tel-input input::placeholder {
+	color: #bac2c7;
+}
+
+ngx-intl-tel-input input[disabled] {
+	background-color: #e5eaf1;
+}
