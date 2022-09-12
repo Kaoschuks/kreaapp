@@ -9,6 +9,7 @@ import { CodeInputModule } from 'angular-code-input';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 export const component: Array<any> = [
+  
 ];
 
 @NgModule({
