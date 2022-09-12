@@ -1,0 +1,112 @@
+ion-slides {
+    background-color: #fff;
+}
+.header {
+    margin-top: 1rem;
+    .skip {
+        padding: 8px 16px;
+        height: 34px;
+        background: #F9F9FA;
+        border-radius: 8px;
+        float: right;
+        margin-right: 1rem;
+    }
+    .pagetitle {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 160%;
+        color: #A2A0A8;
+        float: left;
+        margin-left: 1rem;
+    }
+}
+ion-content {
+    // text-align: center;
+}
+.login-btn {
+    background: #4263EB !important;
+    border-radius: 16px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 56px;
+    display: block;
+    height: 56px;
+    width: 327px;
+    margin-bottom: 1rem;
+}
+.register-btn {
+    background: #F5F7FE !important;
+    border-radius: 16px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    height: 56px;
+    border-radius: 16px;
+    color: #4263EB;
+    display: block;
+    height: 56px;
+    width: 327px;
+}
+.swiper-slide {
+    display: block;
+}
+
+.swiper-slide h2 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    color: #15141F;
+    margin-top: 5rem;
+    margin-bottom: 1.5rem;
+    width: 311px;
+    margin-left: 1.5rem;
+}
+.swiper-slide img {
+ margin-bottom: 2rem;
+}
+.footer {
+    display: block;
+    bottom: 3rem;
+    position: absolute;
+}
+:host ::ng-deep .swiper-pagination{
+    // width: 40%;
+    // bottom: 1.5rem;
+    // text-align: left;
+    // margin-left: 1rem;
+    .swiper-pagination-bullet {
+        --bullet-background:  #D0D8F5;
+        width: 8px;
+        height: 8px ;
+    }
+    .swiper-pagination-bullet-active {
+        width: 32px;
+        height: 8px;
+        background: #4263EB;
+        border-radius: 100px;
+
+    } 
+}
+
+.container { 
+    height: 200px;
+    position: relative;
+  }
+  
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }

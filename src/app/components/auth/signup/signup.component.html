@@ -1,0 +1,44 @@
+<ion-content>
+  <div>
+    <img src="assets/icon/back_arrow.svg" alt="back" (click)="back()">
+    <div class="header">
+      <h1>Getting Started</h1>
+      <p>Create an account to continue!</p>
+    </div>
+    <div class="form">
+      <ion-item lines="none">
+        <!-- <ion-icon name="call-outline"></ion-icon> -->
+        <ion-input ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <!-- <ion-icon name="call-outline"></ion-icon> -->
+        <ion-input ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <!-- <ion-icon name="lock-closed-outline" slot="start"></ion-icon> -->
+        <ion-input></ion-input>
+        <!-- <ion-icon name="eye-outline" slot="end" align-self-center></ion-icon>
+        <ion-icon name="eye-off-outline" slot="end" align-self-center></ion-icon> -->
+      </ion-item>
+      <ion-item lines="none">
+        <button  class="login-btn">
+         Sign up
+        </button>
+      </ion-item>
+      <span class="quest">
+        Don’t have account? <strong (click)="signin()">Sign in</strong> 
+      </span>
+    </div>
+  </div>
+  <!-- Footer container section start -->
+  <div class="container">
+    <p class="or">or Login with</p>
+    <div class="center">
+        <button  class="google-btn">
+          <img src="assets/icon/google_icon.svg" alt="google icon">
+          Signup with Google
+        </button>
+    </div>
+  </div>
+   <!-- Footer container section ends -->
+</ion-content> 
