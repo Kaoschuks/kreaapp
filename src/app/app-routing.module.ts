@@ -8,18 +8,6 @@ const routes: Routes = [
   },
   {
     path: '',
-<<<<<<< Updated upstream
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'half-modal',
-    loadChildren: () => import('./pages/modals/half-modal/half-modal.module').then( m => m.HalfModalPageModule)
-  },
-  {
-    path: 'full-modal',
-    loadChildren: () => import('./pages/modals/full-modal/full-modal.module').then( m => m.FullModalPageModule)
-=======
     redirectTo: 'onboarding',
     pathMatch: 'full'
   },
@@ -29,17 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
->>>>>>> Stashed changes
-  },
+    loadChildren: () => import('./pages/authentication_pages/auth/auth.module').then( m => m.AuthPageModule)
+  }
 ];
 
-<<<<<<< Updated upstream
-=======
-
-];
-
->>>>>>> Stashed changes
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

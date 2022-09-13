@@ -13,9 +13,7 @@ body {
   justify-content: center;
 }
 .splash img {
-  /* width: 40px !important; */
   width: 150px !important;
-  /* height: 40px !important; */
   margin: 0px auto !important;
 }
 .splash .bottom {
@@ -24,10 +22,10 @@ body {
   bottom: 5px;
 }
 
-body.light .splash {
+body .splash {
   background-color: #ffffff;
 }
 
-body.dark .splash {
+/* body.dark .splash {
   background-color: #000000 !important;
-}
+} */

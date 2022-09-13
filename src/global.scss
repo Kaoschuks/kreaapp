@@ -16,8 +16,6 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @import './theme/theme';
-
-.split-pane-side {
-    width: 300px;
-    border: none;
-}
+@import './theme/font';
+@import './theme/sidebar';
+@import './theme/lineicon';

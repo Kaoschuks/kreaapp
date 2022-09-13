@@ -1,0 +1,27 @@
+<ion-content fullscreen>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let slide of slides">
+      <div class="header">
+        <span class="pagetitle" [innerHTML]="slide.pagetitle">
+        </span>
+        <span class="skip" (click)="skip()">
+            Skip
+        </span>
+      </div>
+      <h2 class="intro-header" [innerHTML]="slide.title"></h2>
+      <div class="slide-img-padding">
+        <img [src]="slide.img" class="slide-img">
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <div class="container">
+    <div class="center">
+      <button (click)="login()" class="login-btn">
+        Login
+      </button>
+      <button (click)="signup()" class="register-btn">
+        Create account
+      </button>
+    </div>
+  </div>
+</ion-content>

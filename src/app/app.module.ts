@@ -11,9 +11,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 import { ServicesModule } from './services/services.module';
+import { HalfModalPage } from './modals/half-modal/half-modal.page';
+import { FullModalPage } from './modals/full-modal/full-modal.page';
 
-import { HalfModalPage } from './pages/modals/half-modal/half-modal.page';
-import { FullModalPage } from './pages/modals/full-modal/full-modal.page';
 
 @NgModule({
   declarations: [

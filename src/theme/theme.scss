@@ -120,6 +120,13 @@ body {
     --color: var(--ion-color-light) !important;
 }
 
+.modal-center {
+    --height: 70% !important;
+    --width: 90% !important;
+    --margin: 1rem !important;
+    --border-radius: 10px;
+}
+
 .modal-70-percent {
     --height: 70% !important;
     --width: 100% !important;

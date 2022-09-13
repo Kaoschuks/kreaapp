@@ -1,0 +1,13 @@
+<ion-list details="false" lines="full">
+  <ion-radio-group value="{{lang}}">
+    <ion-item mode="ios" *ngFor="let _lang of languages  | search: filterText">
+      <ion-avatar slot="start">
+        <img [src]="_lang.image" width="40" />
+      </ion-avatar>
+      <ion-radio mode="ios" slot="end" [value]="_lang.code"></ion-radio>
+      <ion-label>
+        <h2 [ngClass]="(_lang.code == lang) ? 'bold' : ''" class="fs-14 "><span class="fs-12 bold mr-10">{{_lang?.code | uppercase}}</span> {{_lang?.name | titlecase}} </h2>
+      </ion-label>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>

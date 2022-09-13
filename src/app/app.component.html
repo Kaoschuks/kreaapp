@@ -1,39 +1,50 @@
-<div class="splash" align="center" *ngIf="showsplash">
-  <div align="center">
-    <img class="animated pulse infinite" src="" /><br />
-    <ion-spinner mode="ios" style="margin-top: -30px" color="dark"></ion-spinner>
-  </div>
-</div>
-
+<app-onloading *ngIf="doneLoading"></app-onloading>
 
 <ion-app>
-  <ngx-spinner bdColor="#16264cea" size="default" type="ball-clip-rotate">
-    <p style="font-size: 16px;margin-top: -10px" color="light">Loading...</p>
+  <ngx-spinner size="default">
+    <p class="fs-18 bold" align="center" style="margin-top: -90px">Processing</p>
+    <ion-progress-bar style="width: 150px;margin-top:-10px;" color="light" buffer="0.1"></ion-progress-bar>
   </ngx-spinner>
+
   <ion-split-pane contentId="main">
     <!--  the side menu  -->
-    <ion-menu contentId="main">
-      <ion-header class="ion-no-border">
-        <ion-toolbar color="white">
+    <ion-menu contentId="main" *ngIf="_globals.sidebar" class="sidebar" type="overlay">
+      <ion-header class="no-shadow ion-no-border">
+        <ion-toolbar lines="none" align="right">
+          <ion-item lines="none" color="white" detail="false">
+            <ion-label>
+              <h3 class="fs-25 bold" style="padding-top: 5px">Kreapp</h3>
+            </ion-label>
+          </ion-item>
         </ion-toolbar>
       </ion-header>
+      
       <ion-content>
-        <ion-list lines="none" details="false">
-          <ion-item routerLink="/">
-            <ion-icon name="apps" slot="start"></ion-icon>
+        <ion-list detail="false" lines="none">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item *ngFor="let page of pages" [routerLink]="page?.url" [routerDirection]="'root'" routerLinkActive="selected bg-light">
+              <i slot="start" [ngClass]="page?.icon"></i>
+              <ion-label>
+                <h2>{{page?.title}}</h2>
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+
+      <ion-footer class="ion-no-border">
+        <ion-list>
+          <ion-item id="no-icon" routerDirection="root" routerLinkActive="selected bg-light" detail="false" lines="none">
             <ion-label>
-              <h2>Overview</h2>
+              <h2>About US</h2>
             </ion-label>
           </ion-item>
         </ion-list>
-      </ion-content>
-      <ion-footer>
-        <ion-toolbar color="white">
-        </ion-toolbar>
       </ion-footer>
     </ion-menu>
   
     <!-- the main content -->
     <ion-router-outlet id="main"></ion-router-outlet>
+
   </ion-split-pane>
 </ion-app>

@@ -23,6 +23,7 @@ export class GlobalsServices
   statusbar: any = StatusBar;
   internet: boolean = false;
   interval: any
+  sidebar: boolean = true
 
   constructor(
     public platform: Platform,
@@ -90,7 +91,7 @@ export class GlobalsServices
     let modal: any = await this.modalCtrl.create({
       component: page,
       mode: 'ios',
-      swipeToClose: true,
+      canDismiss: true,
       cssClass: (!this.platform.is('mobile')) ? 'modal-sidebar' : `${css}`,
       componentProps: data
     })
@@ -112,6 +113,10 @@ export class GlobalsServices
       code += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return code;
+  }
+
+  toogleMenu() {
+    this.sidebar = (!this.sidebar) ? true : false ;
   }
 
 }

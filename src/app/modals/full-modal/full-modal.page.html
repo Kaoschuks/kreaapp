@@ -1,0 +1,20 @@
+<ion-header mode="md" class="ion-no-border">
+  <ion-toolbar>
+    <ion-item lines="none" details="false">
+      <ion-label>
+        <h2 class="fs-14 bold">Choose a Country</h2>
+        <p class="fs-12 text-dark" style="margin-top: -5px">Select the country your located</p>
+      </ion-label>
+    </ion-item>
+    <ion-button (click)="closeModal()" color="dark" mode="ios" fill="clear" slot="end">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchText" mode="ios" class="ion-no-border"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <country-list [lang]="'NG'" [filterText]="searchText"></country-list>
+</ion-content>
