@@ -16,8 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./pages/authentication_pages/auth/auth.module').then( m => m.AuthPageModule)
+    path: 'signin',
+    loadChildren: () => import('./pages/authentication_pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./pages/authentication_pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/authentication_pages/signup/signup.module').then( m => m.SignupPageModule)
   }
 ];
 

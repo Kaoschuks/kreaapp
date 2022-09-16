@@ -12,6 +12,6 @@ export class SignupPage implements OnInit {
 
   ngOnInit() {}
   signin() {
-    this.globalService.navigate('auth');
+    this.globalService.navigate('signing');
   }
 }

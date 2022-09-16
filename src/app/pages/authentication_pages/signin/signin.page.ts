@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { GlobalsServices } from 'src/app/services/core/globals';
 
@@ -19,7 +20,7 @@ export class SigninPage implements OnInit {
     this.location.back();
   }
   signup() {
-    this.globalService.navigate('auth/signup');
+    this.globalService.navigate('signup');
   }
 
 }

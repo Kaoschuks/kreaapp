@@ -43,9 +43,9 @@ export class SliderComponent implements OnInit {
       this.globalService.navigate('auth');
   }
   login() {
-    this.globalService.navigate('auth');
+    this.globalService.navigate('signin');
   }
   signup() {
-    this.globalService.navigate('auth/signup');
+    this.globalService.navigate('signup');
   }
 }
