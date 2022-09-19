@@ -19,3 +19,20 @@
 @import './theme/font';
 @import './theme/sidebar';
 @import './theme/lineicon';
+
+
+.btn-otp {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    --background: #4263EB !important;
+    --border-radius: 16px !important;
+    font-family: 'Manrope' !important;
+    font-style: normal !important;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 56px !important;
+    display: block !important;
+    margin-top: 1rem;
+}

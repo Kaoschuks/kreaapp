@@ -79,10 +79,6 @@ ion-content {
     position: absolute;
 }
 :host ::ng-deep .swiper-pagination{
-    // width: 40%;
-    // bottom: 1.5rem;
-    // text-align: left;
-    // margin-left: 1rem;
     .swiper-pagination-bullet {
         --bullet-background:  #D0D8F5;
         width: 8px;

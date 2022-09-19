@@ -15,6 +15,7 @@ import { HalfModalPage } from './modals/half-modal/half-modal.page';
 import { FullModalPage } from './modals/full-modal/full-modal.page';
 
 
+
 @NgModule({
   declarations: [
     AppComponent, HalfModalPage, FullModalPage

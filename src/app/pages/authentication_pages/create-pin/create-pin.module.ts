@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SigninPageRoutingModule } from './signin-routing.module';
+import { CreatePinPageRoutingModule } from './create-pin-routing.module';
 
-import { SigninPage } from './signin.page';
+import { CreatePinPage } from './create-pin.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SigninPageRoutingModule,
+    CreatePinPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [SigninPage]
+  declarations: [CreatePinPage]
 })
-export class SigninPageModule {}
+export class CreatePinPageModule {}
