@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./pages/authentication_pages/signup/signup.module').then( m => m.SignupPageModule)
-  },  {
+  },
+  {
     path: 'reset',
     loadChildren: () => import('./pages/authentication_pages/reset/reset.module').then( m => m.ResetPageModule)
   },
@@ -45,8 +46,11 @@ const routes: Routes = [
   {
     path: 'identity-verification',
     loadChildren: () => import('./pages/authentication_pages/identity-verification/identity-verification.module').then( m => m.IdentityVerificationPageModule)
+  },
+  {
+    path: 'verify',
+    loadChildren: () => import('./pages/authentication_pages/verify/verify.module').then( m => m.VerifyPageModule)
   }
-
 ];
 
 @NgModule({
