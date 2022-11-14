@@ -10,29 +10,18 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SearchPipe } from '../pipes/search';
 
 import { CountryListComponent } from './ui/country-list/country-list.component';
-import { SignupFormComponent } from './forms/signup-form/signup-form.component';
-import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { PinFormComponent } from './forms/pin-form/pin-form.component';
 import { OnloadingComponent } from './ui/onloading/onloading.component';
 import { OnerrorComponent } from './ui/onerror/onerror.component';
-import { ForgetComponent } from './forms/forget/forget.component';
-import { OtpFormComponent } from './forms/otp-form/otp-form.component';
-import { ResetFormComponent } from './forms/reset-form/reset-form.component';
-import { VerifyButtonComponent } from './buttons/verify-button/verify-button.component';
+import { SidebarNavComponent } from './ui/sidebar-nav/sidebar-nav.component';
+import { ProgressBarComponent } from './ui/progress-bar/progress-bar.component';
+import { FullLoadingComponent } from './ui/full-loading/full-loading.component';
 
 export const component: Array<any> = [
   SearchPipe,
-  OnloadingComponent,
-  OnerrorComponent,
   CountryListComponent,
-  SignupFormComponent,
-  SigninFormComponent,
   PinFormComponent,
-  ForgetComponent,
-  OtpFormComponent,
-  ForgetComponent,
-  ResetFormComponent,
-  VerifyButtonComponent
+  SidebarNavComponent, ProgressBarComponent, FullLoadingComponent, OnloadingComponent, OnerrorComponent,
 ];
 
 @NgModule({
@@ -44,7 +33,7 @@ export const component: Array<any> = [
     ReactiveFormsModule,
     FormsModule,
     CodeInputModule.forRoot({
-      codeLength: 6,
+      codeLength: 5,
       isCharsCode: false,
     }),
     RouterModule,

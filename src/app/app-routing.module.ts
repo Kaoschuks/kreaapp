@@ -15,37 +15,6 @@ const routes: Routes = [
     path: 'onboarding',
     loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
   },
-  {
-    path: 'signin',
-    loadChildren: () => import('./pages/authentication_pages/signin/signin.module').then( m => m.SigninPageModule)
-  },
-  {
-    path: 'signin',
-    loadChildren: () => import('./pages/authentication_pages/signin/signin.module').then( m => m.SigninPageModule)
-  },
-  {
-    path: 'signup',
-    loadChildren: () => import('./pages/authentication_pages/signup/signup.module').then( m => m.SignupPageModule)
-  },  {
-    path: 'reset',
-    loadChildren: () => import('./pages/authentication_pages/reset/reset.module').then( m => m.ResetPageModule)
-  },
-  {
-    path: 'create-pin',
-    loadChildren: () => import('./pages/authentication_pages/create-pin/create-pin.module').then( m => m.CreatePinPageModule)
-  },
-  {
-    path: 'forget',
-    loadChildren: () => import('./pages/authentication_pages/forget/forget.module').then( m => m.ForgetPageModule)
-  },
-  {
-    path: 'otp',
-    loadChildren: () => import('./pages/authentication_pages/otp/otp.module').then( m => m.OtpPageModule)
-  },
-  {
-    path: 'identity-verification',
-    loadChildren: () => import('./pages/authentication_pages/identity-verification/identity-verification.module').then( m => m.IdentityVerificationPageModule)
-  }
 
 ];
 

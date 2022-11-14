@@ -7,16 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { OnboardingPageRoutingModule } from './onboarding-routing.module';
 
 import { OnboardingPage } from './onboarding.page';
-import { SliderComponent } from 'src/app/components/onboarding/slider/slider.component';
-import { SplashComponent } from 'src/app/components/onboarding/splash/splash.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     OnboardingPageRoutingModule
   ],
-  declarations: [SliderComponent, SplashComponent]
+  declarations: [OnboardingPage]
 })
 export class OnboardingPageModule {}

@@ -10,26 +10,6 @@ export const environment = {
       url: '/overview',
       icon: 'ri-apps-2-line ri-xl'
     },
-    {
-      title: 'General Marketplace',
-      url: '/marketplace/general',
-      icon: 'ri-store-2-line ri-xl'
-    },
-    {
-      title: 'Cars Market Place',
-      url: '/marketplace/vehicles',
-      icon: 'ri-roadster-line ri-xl'
-    },
-    {
-      title: 'Bikes Market Place',
-      url: '/marketplace/bikes',
-      icon: 'ri-motorbike-line ri-xl'
-    },
-    {
-      title: 'Parts Market Place',
-      url: '/marketplace/parts',
-      icon: 'ri-settings-2-line ri-xl'
-    },
   ],
   languages: [
     {

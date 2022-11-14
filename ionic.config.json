@@ -1,5 +1,7 @@
 {
-  "name": "aideapp",
-  "integrations": {},
+  "name": "KreaX",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
