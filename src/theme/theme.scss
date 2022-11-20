@@ -32,8 +32,14 @@ body {
 .fs-22 {
     font-size: 22px !important;
 }
+.fs-24 {
+    font-size: 24px !important;
+}
 .fs-27 {
     font-size: 27px !important;
+}
+.fs-32 {
+    font-size: 32px !important;
 }
 .fs-50 {
     font-size: 50px !important;
@@ -108,6 +114,10 @@ body {
 .bg-light, .bg-light * {
     --background: var(--ion-color-light) !important;
     background: var(--ion-color-light) !important;
+}
+.bg-lighter, .bg-lighter * {
+    --background: #F9F9FA !important;
+    background: #F9F9FA !important;
 }
 .bg-medium, .bg-medium * {
     --background: var(--ion-color-medium) !important;
@@ -191,6 +201,43 @@ body {
     justify-content: flex-end;
     flex-direction: column;
     --border-radius: 10px 10px 0px 0px;
+}
+
+.btn-radius {
+    border-radius: 16px !important;
+}
+
+.ion-border {
+    border: 1px solid var(--ion-color-light) !important;
+    --border: 1px solid var(--ion-color-light) !important;
+}
+ion-card {
+    &.ion-no-margin {
+        width: 98% !important;
+        margin: 7px auto !important;
+    }
+}
+ion-item {
+  ion-fab-button {
+    &.round {
+      border-radius: 100% !important;
+    }
+    border-radius: 10px !important;
+    margin-left: 0px !important;
+    margin-right: 12px !important;
+  }
+}
+
+.ion-item-border-radius {
+    border-radius: 10px !important;
+    /* padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px; */
+}
+.no-shadow {
+    box-shadow: none !important;
+    --box-shadow: none !important;
 }
 ngx-intl-tel-input input, ion-select {
 	border-radius: 0px !important;

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 import { IonicModule } from '@ionic/angular';
 
-import { IntroPageRoutingModule } from './intro-routing.module';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { SigninPageRoutingModule } from './signin-routing.module';
 
-import { IntroPage } from './intro.page';
+import { SigninPage } from './signin.page';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { IntroPage } from './intro.page';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    IntroPageRoutingModule
+    SigninPageRoutingModule
   ],
-  declarations: [IntroPage]
+  declarations: [SigninPage]
 })
-export class IntroPageModule {}
+export class SigninPageModule {}

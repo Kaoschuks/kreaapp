@@ -1,0 +1,17 @@
+  <ion-item lines="none" detail="false" class="ion-no-padding">
+    <ion-label>
+      <p #textCont [innerHTML]="slideTexts[0]"></p>
+    </ion-label>
+  </ion-item>
+  <swiper #swiper [pagination]="true" class="myIntroSwiper" [spaceBetween]="50" [allowSlidePrev]="false" (slideChange)="onSlideChange($event)" [dir]="dir">
+    <ng-template swiperSlide>
+      <div class="image-cont">
+        <img [src]="slideImages[0]">
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="image-cont">
+        <img [src]="slideImages[1]">
+      </div>
+    </ng-template>
+  </swiper>  

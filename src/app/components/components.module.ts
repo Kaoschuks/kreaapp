@@ -6,22 +6,28 @@ import { IonicModule } from '@ionic/angular';
 
 //import { NgxSpinnerModule } from 'ngx-spinner';
 import { CodeInputModule } from 'angular-code-input';
+import { SwiperModule } from 'swiper/angular';
 //import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SearchPipe } from '../pipes/search';
 
 import { CountryListComponent } from './ui/country-list/country-list.component';
-import { PinFormComponent } from './forms/pin-form/pin-form.component';
 import { OnloadingComponent } from './ui/onloading/onloading.component';
 import { OnerrorComponent } from './ui/onerror/onerror.component';
 import { SidebarNavComponent } from './ui/sidebar-nav/sidebar-nav.component';
 import { ProgressBarComponent } from './ui/progress-bar/progress-bar.component';
 import { FullLoadingComponent } from './ui/full-loading/full-loading.component';
 
+import { OnboardingSwiperComponent } from './onboarding/onboarding-swiper/onboarding-swiper.component';
+
+import { SigninFormComponent } from './forms/signin/signin-form/signin-form.component';
+import { PinFormComponent } from './forms/pin-form/pin-form.component';
+
 export const component: Array<any> = [
   SearchPipe,
   CountryListComponent,
   PinFormComponent,
   SidebarNavComponent, ProgressBarComponent, FullLoadingComponent, OnloadingComponent, OnerrorComponent,
+  OnboardingSwiperComponent, SigninFormComponent
 ];
 
 @NgModule({
@@ -37,6 +43,7 @@ export const component: Array<any> = [
       isCharsCode: false,
     }),
     RouterModule,
+    SwiperModule,
     //NgxSpinnerModule,
   ],
   exports: component,
