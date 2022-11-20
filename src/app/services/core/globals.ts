@@ -24,6 +24,17 @@ export class GlobalsServices
   internet: boolean = false;
   interval: any
   sidebar: boolean = true
+  defaultModalConfig: any = {
+    component: null,
+    id: null,
+    backdropDismiss: true,
+    mode: 'md',
+    initialBreakpoint: 1.0,
+    breakpoints: [0, 1.0],
+    canDismiss: true,
+    cssClass: '',
+    componentProps: {}
+  }
 
   constructor(
     public platform: Platform,
@@ -86,15 +97,21 @@ export class GlobalsServices
     toast.present();
   }
 
-
-  async openModal(page: any, data: object, css: string = '') {
-    let modal: any = await this.modalCtrl.create({
-      component: page,
-      mode: 'ios',
-      canDismiss: true,
-      cssClass: (!this.platform.is('mobile')) ? 'modal-sidebar' : `${css}`,
-      componentProps: data
-    })
+  async openModal(page: any, data: object, height: number = 100, isCenter: boolean = false, cssClass: string = 'modal-center', id?: any, backdropDismiss?: boolean) {
+    let modalConfig = this.defaultModalConfig;
+    if(height == 100) {
+      delete modalConfig.initialBreakpoint;
+      delete modalConfig.breakpoints
+    } else {
+      modalConfig.breakpoints = [0, height / 100]
+      modalConfig.initialBreakpoint = height / 100
+    }
+    modalConfig.cssClass = (isCenter == false) ? `modal-bottom` : cssClass
+    modalConfig.componentProps = data
+    modalConfig.component = page
+    modalConfig.id = id
+    modalConfig.backdropDismiss = backdropDismiss
+    let modal: any = await this.modalCtrl.create(modalConfig)
     await modal.present();
     return modal;
   }

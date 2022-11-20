@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { NgxSpinnerModule } from 'ngx-spinner';
+//import { NgxSpinnerModule } from 'ngx-spinner';
 import { CodeInputModule } from 'angular-code-input';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+//import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SearchPipe } from '../pipes/search';
 
 import { CountryListComponent } from './ui/country-list/country-list.component';
@@ -29,7 +29,7 @@ export const component: Array<any> = [
   imports: [
     CommonModule,
     IonicModule,
-    NgxIntlTelInputModule,
+    //NgxIntlTelInputModule,
     ReactiveFormsModule,
     FormsModule,
     CodeInputModule.forRoot({
@@ -37,7 +37,7 @@ export const component: Array<any> = [
       isCharsCode: false,
     }),
     RouterModule,
-    NgxSpinnerModule,
+    //NgxSpinnerModule,
   ],
   exports: component,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

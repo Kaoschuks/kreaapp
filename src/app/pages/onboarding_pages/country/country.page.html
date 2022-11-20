@@ -1,0 +1,28 @@
+<ion-header class="bg-transparent ion-no-border" translucent="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="country-page-content ion-padding" fullscreen="true" scrollY="false">
+  <!-- <div > -->
+    <ion-item class="bg-transparent" mod="ios" lines="none" details="false">
+      <ion-label>
+        <h2 class="bold text-white fs-50">Welcome</h2>
+        <p class="ion-text-wrap text-white fs-22" style="margin-top: 12px;">Select your country first</p>
+      </ion-label>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="width: 80vw;">
+          <ion-item class="ion-no-margin" (click)="openmodal('country-list')" mode="ios" lines="none" details="false">
+            <ion-label>
+              <p class="bold">Choose your Country</p>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" size="small" slot="end"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- </div> -->
+</ion-content>

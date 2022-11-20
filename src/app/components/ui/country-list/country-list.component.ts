@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output  } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -7,11 +7,16 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./country-list.component.scss'],
 })
 export class CountryListComponent implements OnInit {
-  @Input() lang: string = 'NG';
+  @Input() country: string;
   @Input() filterText: string;
-  languages: Array<Object> = environment.languages;
+  @Output() public countrySelected = new EventEmitter<any>();
+  countries: Array<Object> = environment.countries;
   constructor() { }
 
   ngOnInit() {}
+
+  countryChange(event) {
+    this.countrySelected.emit(event.target.value);
+  }
 
 }

@@ -1,4 +1,3 @@
-
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
@@ -15,12 +14,15 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import './theme/components';
 @import './theme/theme';
 @import './theme/font';
 @import './theme/sidebar';
 @import './theme/lineicon';
 
-
+* {
+    font-family: 'OpenSans' !important;
+}
 .btn-otp {
     margin-left: 1.5rem;
     margin-right: 1.5rem;

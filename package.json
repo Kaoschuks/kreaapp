@@ -1,5 +1,5 @@
 {
-  "name": "aideapp",
+  "name": "kreaapp",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -30,12 +30,12 @@
     "@ionic/angular": "^6.2.5",
     "angular-code-input": "^1.6.0",
     "google-libphonenumber": "^3.2.30",
-    "intl-tel-input": "^17.0.18",
+    "intl-tel-input": "^17.0.19",
     "ngx-bootstrap": "^9.0.0",
-    "ngx-intl-tel-input": "^3.2.0",
     "ngx-spinner": "^14.0.0",
     "remixicon": "^2.5.0",
     "rxjs": "~7.5.6",
+    "swiper": "^8.4.4",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.8"
   },

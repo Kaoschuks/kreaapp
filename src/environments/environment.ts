@@ -11,7 +11,7 @@ export const environment = {
       icon: 'ri-apps-2-line ri-xl'
     },
   ],
-  languages: [
+  countries: [
     {
         "name": "Ascension Island",
         "code": "AC",

@@ -32,6 +32,9 @@ body {
 .fs-22 {
     font-size: 22px !important;
 }
+.fs-27 {
+    font-size: 27px !important;
+}
 .fs-50 {
     font-size: 50px !important;
 }
@@ -74,6 +77,10 @@ body {
     color: var(--ion-color-medium) !important;
     --color: var(--ion-color-medium) !important;
 }
+.text-white {
+    color: var(--ion-color-light) !important;
+    --color: var(--ion-color-light) !important;
+}
 .bold {
     font-weight: 600 !important;
 }
@@ -105,6 +112,10 @@ body {
 .bg-medium, .bg-medium * {
     --background: var(--ion-color-medium) !important;
     background: var(--ion-color-medium) !important;
+}
+.bg-transparent, .bg-transparent * {
+    --background: transparent !important;
+    background: transparent !important;
 }
 
 .toast-success {
