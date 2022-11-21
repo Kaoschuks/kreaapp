@@ -1,8 +1,18 @@
-
-<ion-content mode="md">
+<ion-header class="ion-no-border b-b">
+  <br />
   <ion-toolbar>
-    <ion-title mode="ios" align="center">
-      <ion-progress-bar color="dark" style="width: 50px;height: 6px;margin: 0px auto"></ion-progress-bar>
-    </ion-title>
+    <ion-item *ngIf="page == 'country-list'" lines="none" details="false">
+      <ion-label>
+        <h2>Choose a Country</h2>
+        <p class="fs-12 text-dark" style="margin-top: -5px">Select the country your located</p>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
+  <ion-toolbar *ngIf="page == 'country-list'">
+    <ion-searchbar [(ngModel)]="searchText" mode="md" class="ion-no-border bg-light"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-white">
+  <country-list (countrySelected)="countrySelected($event)" *ngIf="page == 'country-list'" [country]="'NG'" [filterText]="searchText"></country-list>
 </ion-content>

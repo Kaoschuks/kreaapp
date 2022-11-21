@@ -13,6 +13,9 @@ body {
 .text-capitalize{
     text-transform: capitalize !important;
 }
+.fs-10 {
+    font-size: 10px !important;
+}
 .fs-12 {
     font-size: 12px !important;
 }
@@ -22,7 +25,6 @@ body {
 .fs-16 {
     font-size: 16px !important;
 }
-
 .fs-18 {
     font-size: 18px !important;
 }
@@ -32,14 +34,11 @@ body {
 .fs-22 {
     font-size: 22px !important;
 }
-.fs-24 {
-    font-size: 24px !important;
+.fs-30 {
+    font-size: 30px !important;
 }
-.fs-27 {
-    font-size: 27px !important;
-}
-.fs-32 {
-    font-size: 32px !important;
+.fs-40 {
+    font-size: 40px !important;
 }
 .fs-50 {
     font-size: 50px !important;
@@ -48,12 +47,63 @@ body {
     font-size: 60px !important;
 }
 
+/* Theme Font Weight */
+.fw-4 {
+    font-weight: 400 !important;
+}
+.fw-5 {
+    font-weight: 500 !important;
+}
+.fw-6 {
+    font-weight: 600 !important;
+}
+.fw-7 {
+    font-weight: 700 !important;  
+}
+.fw-normal {
+    font-weight: normal !important;
+}
+
+/* Theme Font Style */
+.fst-normal {
+    font-style: normal !important;
+}
+.fst-italics {
+    font-style: italics !important;
+}
+
+/* Theme Line Height */
+.line-height-base {
+    line-height: 1.5 !important;
+}
+.line-height-sm {
+    line-height: 1.25 !important;
+}
+.line-height-lg {
+    line-height: 2 !important;
+}
+
+/* Them Text Align  */
+.text-start {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-end {
+    text-align: right !important;
+}
+
 .text-muted {
     color: #aaa !important;
 }
 .text-success {
     color: var(--ion-color-success) !important;
     --color: var(--ion-color-success) !important;
+}
+.text-secondary {
+    color: var(--ion-color-secondary) !important;
+    --color: var(--ion-color-secondary) !important;
 }
 .text-primary {
     color: var(--ion-color-primary) !important;
@@ -83,21 +133,80 @@ body {
     color: var(--ion-color-medium) !important;
     --color: var(--ion-color-medium) !important;
 }
-.text-white {
+.text-knight {
+    color: var(--ion-color-knight) !important;
+    --color: var(--ion-color-knight) !important;
+}
+.text-dimgray {
+    color: var(--ion-color-dimgray) !important;
+    --color: var(--ion-color-dimgray) !important;
+}
+.text-light {
     color: var(--ion-color-light) !important;
     --color: var(--ion-color-light) !important;
 }
+.text-white {
+    color: var(--ion-color-white) !important;
+    --color: var(--ion-color-white) !important;
+}
+
 .bold {
     font-weight: 600 !important;
 }
 
-.bg-primary {
+.bl-primary {
+    border-left: 3px solid var(--ion-color-primary) !important;
+}
+.bl-secondary {
+    border-left: 3px solid var(--ion-color-secondary) !important;
+}
+.bl-success {
+    border-left:  3px solid var(--ion-color-success) !important;
+}
+.bl-warning {
+    border-left: 3px solid var(--ion-color-warning) !important;
+}
+.bl-danger {
+    border-left: 3px solid var(--ion-color-danger) !important;
+}
+.bl-dark {
+    border-left: 3px solid var(--ion-color-dark) !important;
+}
+.br-primary {
+    border-right: 3px solid var(--ion-color-primary) !important;
+}
+.br-success {
+    border-right: 3px solid var(--ion-color-success) !important;
+}
+.br-danger {
+    border-right: 3px solid var(--ion-color-danger) !important;
+}
+.br-dark {
+    border-right: 3px solid var(--ion-color-dark) !important;
+}
+.br-medium {
+    border-right: 3px solid var(--ion-color-medium) !important;
+}
+
+.bg-transparent, .bg-transparent * {
+    background: transparent !important;
+	--background: transparent !important;
+}
+.bg-primary, .bg-primary * {
     --background: var(--ion-color-primary) !important;
     background: var(--ion-color-primary) !important;
 }
-.bg-secondary, .bg-secondary * {
+.bg-success, .bg-success * {
     --background: var(--ion-color-success) !important;
     background: var(--ion-color-success) !important;
+}
+.bg-secondary, .bg-secondary * {
+    --background: var(--ion-color-secondary) !important;
+    background: var(--ion-color-secondary) !important;
+}
+.bg-tertiary, .bg-tertiary * {
+    --background: var(--ion-color-tertiary) !important;
+    background: var(--ion-color-tertiary) !important;
 }
 .bg-warning, .bg-warning * {
     --background: var(--ion-color-warning) !important;
@@ -115,17 +224,51 @@ body {
     --background: var(--ion-color-light) !important;
     background: var(--ion-color-light) !important;
 }
-.bg-lighter, .bg-lighter * {
-    --background: #F9F9FA !important;
-    background: #F9F9FA !important;
-}
 .bg-medium, .bg-medium * {
     --background: var(--ion-color-medium) !important;
     background: var(--ion-color-medium) !important;
 }
-.bg-transparent, .bg-transparent * {
-    --background: transparent !important;
-    background: transparent !important;
+.bg-knight, .bg-knight * {
+    --background: var(--ion-color-knight) !important;
+    background: var(--ion-color-knight) !important;
+}
+.bg-dimgray, .bg-dimgray * {
+    --background: var(--ion-color-dimgray) !important;
+    background: var(--ion-color-dimgray) !important;
+}
+.bg-white {
+    --background: var(--ion-color-white) !important;
+    background: var(--ion-color-white) !important;
+}
+.bg-danger-overlay {
+    --background: #f7c1c1 !important;
+    background: #f7cdc1 !important;
+    // color: #d93025; 
+}
+.bg-primary-overlay, .bg-primary-overlay * {
+    --background: #9cd9fe !important;
+    background: #9cd9fe !important;
+    // color: #213e6c !important;
+}
+.bg-secondary-overlay, .bg-secondary-overlay * {
+    --background: #9ddbf8 !important;
+    background: #9ddbf8 !important;
+    // color: #213e6c !important;
+}
+.bg-tertiary-overlay, .bg-tertiary-overlay * {
+    --background: #aeb5ff !important;
+    background: #aeb5ff !important;
+    // color: #213e6c !important;
+}
+.bg-success-overlay, .bg-success-overlay * {
+    --background: #c7facd !important;
+    background: #c7facd !important;
+    // color: #186541 !important;
+}
+.bg-warning-overlay, .bg-warning-overlay * {
+    --background: #f5f0df !important;
+    background: #f5f0df !important;
+    // color: #186541 !important;
 }
 
 .toast-success {
@@ -141,11 +284,80 @@ body {
     --color: var(--ion-color-light) !important;
 }
 
+
+
+.b-b {
+    border-bottom: 1px solid var(--ion-color-light) !important;
+    --border-bottom: 1px solid var(--ion-color-light) !important;
+}
+.ion-border {
+    border: 1px solid var(--ion-color-light) !important;
+    --border: 1px solid var(--ion-color-light) !important;
+}
+ion-card {
+    &.ion-no-margin {
+        width: 98% !important;
+        margin: 7px auto !important;
+    }
+}
+ion-item {
+  ion-fab-button {
+    &.round {
+      border-radius: 100% !important;
+    }
+    border-radius: 10px !important;
+    margin-left: 0px !important;
+    margin-right: 12px !important;
+  }
+}
+
+.ion-item-border-radius {
+    border-radius: 10px !important;
+    /* padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px; */
+}
+
+.no-shadow {
+    box-shadow: none !important;
+    --box-shadow: none !important;
+}
+
 .modal-center {
-    --height: 70% !important;
+    --height: 67% !important;
     --width: 90% !important;
     --margin: 1rem !important;
     --border-radius: 10px;
+    --backdrop-opacity: 0.71;
+}
+
+.modal-center-30-percent {
+    --height: 30% !important;
+    --width: 90% !important;
+    --margin: 1rem !important;
+    --border-radius: 10px;
+    --backdrop-opacity: 0.71;
+}
+
+.modal-top {
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display:flex;
+    justify-content:flex-start;
+    flex-direction:column;
+    --border-radius: 0px 0px 10px 10px;
+}
+
+.modal-bottom {
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    // --border-radius: 10px 10px 0px 0px;
+    //--backdrop-opacity: 0.71;
+    --backdrop-opacity: rgba(0, 0, 0, 0.6);
 }
 
 .modal-70-percent {
@@ -202,43 +414,16 @@ body {
     flex-direction: column;
     --border-radius: 10px 10px 0px 0px;
 }
-
-.btn-radius {
-    border-radius: 16px !important;
+.modal-30-percent {
+    --height: 30% !important;
+    --width: 100% !important;
+    --margin: 1rem !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    --border-radius: 10px 10px 0px 0px;
 }
 
-.ion-border {
-    border: 1px solid var(--ion-color-light) !important;
-    --border: 1px solid var(--ion-color-light) !important;
-}
-ion-card {
-    &.ion-no-margin {
-        width: 98% !important;
-        margin: 7px auto !important;
-    }
-}
-ion-item {
-  ion-fab-button {
-    &.round {
-      border-radius: 100% !important;
-    }
-    border-radius: 10px !important;
-    margin-left: 0px !important;
-    margin-right: 12px !important;
-  }
-}
-
-.ion-item-border-radius {
-    border-radius: 10px !important;
-    /* padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 3px;
-    padding-top: 3px; */
-}
-.no-shadow {
-    box-shadow: none !important;
-    --box-shadow: none !important;
-}
 ngx-intl-tel-input input, ion-select {
 	border-radius: 0px !important;
 	background-color: transparent !important;
@@ -272,7 +457,7 @@ ngx-intl-tel-input input, ion-select {
 	// font-size: 14px;
 	border-color: #c7cace;
 	border-radius: 0;
-	padding: 5px 10px;
+	padding: 3px 10px;
 }
 
 .iti .search-container input:focus {
@@ -288,14 +473,14 @@ ngx-intl-tel-input input {
     width: 100% !important;
 	background-color: transparent;
 	color: var(--ion-color-dark) !important;
-	height: 35px;
+	height: 33px;
 	padding: 7px;
 	border-style: solid;
 	border-width: 0px;
 	border-radius: 4px;
     line-height: 17px !important;
     font-weight: 500 !important;
-    padding-bottom: -5px !important;
+    padding-bottom: -3px !important;
     // font-size: 13px !important;
 }
 

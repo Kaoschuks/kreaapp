@@ -4,30 +4,50 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-//import { NgxSpinnerModule } from 'ngx-spinner';
-import { CodeInputModule } from 'angular-code-input';
-import { SwiperModule } from 'swiper/angular';
-//import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { SearchPipe } from '../pipes/search';
+import { CodeInputModule } from 'angular-code-input';
+import { NumericKeyboardModule } from 'numeric-keyboard/dist/numeric_keyboard.angular';
 
-import { CountryListComponent } from './ui/country-list/country-list.component';
+
+import { CountryListComponent } from './popup-modals/country-list/country-list.component';
+
+import { SignupFormComponent } from './forms/signup/signup-form/signup-form.component';
+import { SigninFormComponent } from './forms/signin/signin-form/signin-form.component';
+import { OtpFormComponent } from './forms/otp-form/otp-form.component';
+
 import { OnloadingComponent } from './ui/onloading/onloading.component';
 import { OnerrorComponent } from './ui/onerror/onerror.component';
-import { SidebarNavComponent } from './ui/sidebar-nav/sidebar-nav.component';
 import { ProgressBarComponent } from './ui/progress-bar/progress-bar.component';
-import { FullLoadingComponent } from './ui/full-loading/full-loading.component';
+
+import { RegisterSuccessComponent } from './popup-modals/register-success/register-success.component';
+
+import { BiometricUiComponent } from './popup-modals/biometric-ui/biometric-ui.component';
+
+import { SwiperModule } from 'swiper/angular';
+import { DateAsAgoPipe } from '../pipes/dateAsAgo';
 
 import { OnboardingSwiperComponent } from './onboarding/onboarding-swiper/onboarding-swiper.component';
+import { BusyLoadingComponent } from './ui/busy-loading/busy-loading.component';
+import { PinComponent } from './forms/pin-pad/pin.component';
 
-import { SigninFormComponent } from './forms/signin/signin-form/signin-form.component';
-import { PinFormComponent } from './forms/pin-form/pin-form.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+
+import { MobileHeaderComponent } from './ui/mobile-header/mobile-header.component';
+import { DesktopViewComponent } from './layouts/desktop-view/desktop-view.component';
+import { CompleteSetupComponent } from './popup-modals/complete-setup/complete-setup.component';
+import { SubpageLayoutComponent } from './layouts/subpage-layout/subpage-layout.component';
+
+import { SetupComponent } from './onboarding/setup/setup.component';
+
 
 export const component: Array<any> = [
-  SearchPipe,
-  CountryListComponent,
-  PinFormComponent,
-  SidebarNavComponent, ProgressBarComponent, FullLoadingComponent, OnloadingComponent, OnerrorComponent,
-  OnboardingSwiperComponent, SigninFormComponent
+  SearchPipe, DateAsAgoPipe,
+  OnloadingComponent, OnerrorComponent, ProgressBarComponent, BusyLoadingComponent,
+  SetupComponent,
+  CountryListComponent, OnboardingSwiperComponent, MobileHeaderComponent, DesktopViewComponent, CompleteSetupComponent,
+  SignupFormComponent, SigninFormComponent, OtpFormComponent, PinComponent,  AuthLayoutComponent, 
+  RegisterSuccessComponent, BiometricUiComponent, SubpageLayoutComponent
 ];
 
 @NgModule({
@@ -35,18 +55,18 @@ export const component: Array<any> = [
   imports: [
     CommonModule,
     IonicModule,
-    //NgxIntlTelInputModule,
     ReactiveFormsModule,
     FormsModule,
     CodeInputModule.forRoot({
       codeLength: 5,
       isCharsCode: false,
     }),
-    RouterModule,
+    NumericKeyboardModule,
     SwiperModule,
-    //NgxSpinnerModule,
+    RouterModule,
+    NgxSpinnerModule
   ],
-  exports: component,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: component,
 })
 export class ComponentsModule {}

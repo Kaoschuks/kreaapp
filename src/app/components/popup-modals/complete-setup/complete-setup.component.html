@@ -1,0 +1,20 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img loading="lazy" src="assets/icon/profilepic_dribbble.gif" />
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col class="ion-text-center ion-padding">
+      <ion-text color="dark"><h5>Complete Profile Setup</h5></ion-text>
+      <h2 color="knight" class="fs-20 bold">You have not completed your account profile!</h2>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button  (click)="openmodal('onboarding-setup')" color="dark" size="large" class="no-shadow">
+        <span class="fs-16">Complete Profile</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

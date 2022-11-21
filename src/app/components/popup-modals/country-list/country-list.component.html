@@ -1,0 +1,16 @@
+
+
+<ion-radio-group (ionChange)="countryChange($event)" [(ngModel)]="selectedValue" value="{{country}}">
+  <ion-virtual-scroll [items]="countries | search: filterText">
+    <ion-item mode="ios" lines="full" *virtualItem="let _lang">
+      <!-- <ion-avatar slot="start"> -->
+        <img slot="start" loading="lazy" [src]="_lang.image" width="20px" height="20px">
+      <!-- </ion-avatar> -->
+      <ion-label>
+        <h2 class="fs-14" [ngClass]="(_lang.code == country) ? 'bold' : ''">{{_lang?.name | titlecase}} </h2>
+      </ion-label>
+      <span slot="end" class="fs-12 bold">{{_lang?.code | uppercase}}</span> 
+      <ion-radio slot="end" [value]="_lang.name"></ion-radio>
+    </ion-item>
+  </ion-virtual-scroll>
+</ion-radio-group>

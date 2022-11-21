@@ -1,0 +1,55 @@
+<ion-grid *ngIf="page == 'touch-id'">
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img loading="lazy" src="assets/svg/touch-id.svg" />
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center ion-padding">
+      <h2 color="knight" class="fw-7">Touch ID for faster payment</h2>
+      <p color="knight">Enable Touch ID to let you login & proceed your transactions faster.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-margin-top">
+    <ion-col class="ion-text-center">
+      <ion-button color="primary" shape="round">
+        <span>Enable Touch ID</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button fill="none">
+        <span>Skip, I’ll do this later</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid *ngIf="page == 'face-id'">
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img loading="lazy" src="assets/svg/face-id.svg" />
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center ion-padding">
+      <h2 color="knight" class="fw-7">Face ID for faster payment</h2>
+      <p color="knight">Enable Face ID to let you login & proceed your transactions faster.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-margin-top">
+    <ion-col class="ion-text-center">
+      <ion-button color="primary" shape="round">
+        <span>Enable Face ID</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button fill="none">
+        <span>Skip, I’ll do this later</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

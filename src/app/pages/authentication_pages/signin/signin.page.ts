@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SigninFormComponent } from 'src/app/components/forms/signin/signin-form/signin-form.component';
+import { GlobalsServices } from 'src/app/services/core/globals';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninPage implements OnInit {
 
-  constructor() { }
+  slideOpts = {
+  };
+
+  constructor(
+    private globalsServices: GlobalsServices
+    ) { }
 
   ngOnInit() {
+    this.globalsServices.sidebar  = false;
   }
 
 }

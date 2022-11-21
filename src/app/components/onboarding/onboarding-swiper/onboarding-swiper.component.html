@@ -1,17 +1,30 @@
-  <ion-item lines="none" detail="false" class="ion-no-padding">
-    <ion-label>
-      <p #textCont [innerHTML]="slideTexts[0]"></p>
-    </ion-label>
-  </ion-item>
+
+  <div class="image-cont">
+    <ion-img #bgImg [src]="slideImages[0]"></ion-img>
+  </div>
   <swiper #swiper [pagination]="true" class="myIntroSwiper" [spaceBetween]="50" [allowSlidePrev]="false" (slideChange)="onSlideChange($event)" [dir]="dir">
     <ng-template swiperSlide>
-      <div class="image-cont">
-        <img [src]="slideImages[0]">
+      <div>
+        <ion-text class="slide-text text-center">
+          <span class="title text-knight fs-22 fw-7 line-height-base">The fastest transaction Process only here</span>
+          <span class="body-text fs-14 text-dimgray fw-4 fst-normal line-height-sm">Get easy to pay all your bills with just a few steps. Paying your bills become fast and efficient.</span>
+        </ion-text>
       </div>
     </ng-template>
     <ng-template swiperSlide>
-      <div class="image-cont">
-        <img [src]="slideImages[1]">
+      <div>
+        <ion-text class="slide-text text-center">
+          <span class="title text-knight fs-22 fw-7 line-height-base">Finance app we keep your money safe</span>
+          <span class="body-text fs-14 text-dimgray fw-4 fst-normal line-height-sm">Your finance work starts here. Our here to help you track and deal with speeding up your transactions.</span>
+        </ion-text>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div>
+        <ion-text class="slide-text text-center">
+          <span class="title text-knight fs-22 fw-7 line-height-base">The fastest transaction Process only here</span>
+          <span class="body-text fs-14 text-dimgray fw-4 fst-normal line-height-sm">Get easy to pay all your bills with just a few steps. Paying your bills become fast and efficient.</span>
+        </ion-text>
       </div>
     </ng-template>
   </swiper>  

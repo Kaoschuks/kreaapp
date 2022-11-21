@@ -1,0 +1,40 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar class="hidden-md">
+    <ion-button style="margin-left: -5px" routerLink="/{{link}}" routerDirection="back" slot="start" color="dark" fill="clear" >
+      <ion-icon name="chevron-back-outline" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar class=" hidden-md">
+    <ion-item mod="ios" lines="none" details="false">
+      <ion-label>
+        <h2 class="fs-20 fw-6 text-knight">{{title}} <ion-icon slot="end" name="{{icon}}"></ion-icon></h2>
+        <p color="knight" class="ion-text-wrap" [innerHtml]="description"></p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+  <desktop-nav></desktop-nav>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col class="hidden-xs" size="0" size-md="8">
+        <div  class="bg-img"></div>
+      </ion-col>
+      <ion-col size="12" size-md="3">
+        <ion-item class="text-heading hidden-xs ion-no-padding animated fadeIn" lines="none" details="false">
+          <ion-label>
+            <h2 class="fs-22 fw-6 text-knight">{{title}}</h2>
+            <p color="knight" class="ion-text-wrap" [innerHtml]="description"></p>
+            <br />
+          </ion-label>
+        </ion-item>
+        <div id="content">
+          <ng-content></ng-content>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

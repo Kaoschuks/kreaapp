@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, ViewChild, ElementRef, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { IonImg } from '@ionic/angular';
 import { SwiperComponent } from 'swiper/angular';
 
 // import Swiper core and required modules
@@ -15,9 +16,11 @@ SwiperCore.use([Pagination]);
 export class OnboardingSwiperComponent implements OnInit {
 
   @ViewChild('swiper') swiper: SwiperComponent;
-  @ViewChild('textCont', { static: true }) textCont: ElementRef;
-  @Output() public toolbarText = new EventEmitter<any>();
+  @ViewChild('bgImg') bgImg: IonImg;
+
   public dir: string;
+
+  ngAfterViewInit() {}
 
   sliderConfig: SwiperOptions = {
     slidesPerView: 1,
@@ -28,23 +31,20 @@ export class OnboardingSwiperComponent implements OnInit {
 
   slideImages: any = [
     'assets/onboarding/intro-slider1.svg',
+    'assets/onboarding/intro-slider2.svg',
+    'assets/onboarding/intro-slider1.svg',
     'assets/onboarding/intro-slider2.svg'
   ];
 
-  slideTexts: any = [
-    '<h1 class="fs-32 ion-text-wrap line-height-base">Managing your<br> money is about to <br>get a lot better.</h1>',
-    '<h1 class="fs-32 ion-text-wrap line-height-base">Spend smarter<br> every day, all from <br> one app.</h1>'
-  ];
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.dir = document.dir;
   }
+  
 
   onSlideChange(swiper: any) {
-    this.toolbarText.emit(this.swiper.swiperRef.activeIndex);
-    this.textCont.nativeElement.innerHTML = this.slideTexts[this.swiper.swiperRef.activeIndex];
+    this.bgImg.src = this.slideImages[this.swiper.swiperRef.activeIndex];
     if (swiper[0].isBeginning) {
       this.swiper.swiperRef.allowSlidePrev = false;
       this.swiper.swiperRef.allowSlideNext = true;

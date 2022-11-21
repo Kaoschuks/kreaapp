@@ -1,21 +1,22 @@
 <div class="forms">
   <form [formGroup]='signinForm'>
-    <ion-item lines="none" details="false" class="ion-no-padding ion-margin-top">
+    <ion-item lines="full" class="ion-no-padding ion-margin-top">
+      <ion-label position="floating">Email Address</ion-label>
       <ion-input type="email" formControlName="email" placeholder="Email Address"></ion-input>
-      <ion-icon slot="start" name="call-outline" style="margin-right: 14px;"></ion-icon>
+      <ion-icon slot="end" name="mail-outline"></ion-icon>
     </ion-item>
-    <!-- <span *ngIf="f.email?.invalid && (f.email?.dirty || f.email?.touched)" class="ion-no-padding">
+    <span *ngIf="f.email?.invalid && (f.email?.dirty || f.email?.touched)" class="ion-no-padding">
       <span *ngIf="f.email?.errors?.['required']" class="text-danger fs-12" >Email address is required</span>
       <span *ngIf="f.email?.errors?.['email']" class="text-danger fs-12" >Email address is not valid</span>
-    </span> -->
-
-    <ion-item lines="none" details="false" class="ion-no-padding ion-margin-top">
+    </span>
+    
+    <ion-item lines="full" class="ion-no-padding ion-margin-top">
+      <ion-label position="floating">Password</ion-label>
       <ion-input [type]="(password_visible) ? 'text' : 'password'" formControlName="password" placeholder="Password"></ion-input>
       <ion-icon slot="end" [name]="(password_visible) ? 'eye-off-outline' : 'eye-outline'" (click)="toggleVisibility()"></ion-icon>
-      <ion-icon slot="start" name="lock-closed-outline" style="margin-right: 14px;"></ion-icon>
     </ion-item>
-    <!-- <span *ngIf="f.password?.invalid && (f.password?.dirty || f.password?.touched)" class="ion-no-padding">
+    <span *ngIf="f.password?.invalid && (f.password?.dirty || f.password?.touched)" class="ion-no-padding">
       <span *ngIf="f.password?.errors?.['required']" class="text-danger fs-12" >Password is required</span>
-    </span> -->
+    </span>
   </form>
 </div>

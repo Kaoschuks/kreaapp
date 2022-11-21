@@ -1,0 +1,31 @@
+:host {
+    ion-toolbar {
+        ion-item {
+            ion-avatar {
+                margin-left: -10px !important;
+                margin-right: 0px !important;
+                height: 20px !important;
+                img {
+                    height: 20px !important;
+                }
+            }
+        }
+        ion-fab-button {
+            margin-right: -2px !important;
+        }
+        &.subheader {
+            margin-top: -5px !important;
+            ion-segment {
+                padding-left: 10px !important;
+            }
+        }
+        &.ios {
+            margin-top: -2px !important;
+            ion-button {
+                ion-icon {
+                    font-size: 19px !important;
+                }
+            }
+        }
+    }
+}

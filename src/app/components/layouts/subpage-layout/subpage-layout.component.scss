@@ -1,0 +1,13 @@
+:host {
+    ion-content {
+        height: 93vh !important;
+    }
+    ion-header {
+        ion-toolbar {
+            ion-label {
+                position: relative;
+                left: -25px;
+            }
+        }
+    }
+}

@@ -1,33 +1,29 @@
-<ion-header mode="md" class="ion-no-border">
-  <ion-toolbar>
-    <ion-button routerLink="/intro" routerDirection="forward" color="dark" mode="ios" fill="clear" slot="start">
-      <ion-icon name="arrow-back-outline"></ion-icon>
+<auth-layout [link]="'intro'" [title]="'Welcome Back'" [description]="'Simply enter your phone number to login or create<br /> an account.'">
+
+  <signin-form></signin-form>
+  
+  <div class="hidden-xs">
+    <ion-button color="dark" fill="outline" routerLink="/verify" routerDirection="forward" size="large" expand="block">
+      <span class="fs-16 bold">Access your account</span>
     </ion-button>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-item mod="ios" lines="none" details="false">
-      <ion-label>
-        <h2 class="fs-24 fw-6 text-knight">Hi, Welcome Back!</h2>
-        <p class="ion-text-wrap text-muted fs-16">Sign in to your account.</p>
-      </ion-label>
-    </ion-item>
-  </ion-toolbar>
-</ion-header>
+    <br />
+    <ion-button routerLink="/forgot" routerDirection="forward" expand="block" fill="clear">
+      <span class="fs-14 bold text-dark">Lost access? <b>Recover your account</b></span>
+    </ion-button>
+  </div>
+  
+</auth-layout>
 
-<ion-content class="ion-padding">
-<signin-form></signin-form>
-<ion-item lines="none" details="false" class="ion-no-padding">
-  <ion-label color="primary" slot="end"  class="ion-no-padding">Forgot Password?</ion-label>
-</ion-item>
-
-<ion-button class="no-shadow ion-margin-top" size="large" expand="full" routerLink="/signin" routerDirection="forward" color="primary" shape="round">
-  <span class="fs-16 bold">Login</span>
-</ion-button>
-
-  <ion-item lines="none" details="false" class="ion-text-center">
-  <ion-label class="ion-no-padding">
-    <span class="text-muted">Don’t have account? </span> <span class="text-primary"> Sign Up</span>
-  </ion-label>
-</ion-item>
-
-</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col size="12" size-md="3" offset-md="8" offset="0" class="ion-margin">
+        <ion-button class=" hidden-md" routerLink="/verify" routerDirection="forward" size="large" expand="block">
+          <span class="fs-16 bold">Continue</span>
+        </ion-button>
+        <br />
+        <p class="fs-12 ion-text-center text-dark">By using our mobile app, you agree to our <a href="">Terms of Use</a> and <a href="">Privacy Policy</a></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

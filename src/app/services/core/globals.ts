@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Location } from '@angular/common';
 import { AlertController, 
   ModalController, 
   ToastController, 
@@ -13,17 +14,23 @@ import { LocalNotifications } from '@capacitor/local-notifications';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { BackButtonEvent } from '@ionic/core';
+import { App } from '@capacitor/app';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalsServices
 {
+  url: string = this.router.url;
   mode: any = false;
   statusbar: any = StatusBar;
   internet: boolean = false;
+  search: boolean = false;
   interval: any
   sidebar: boolean = true
+  logginIn: boolean = false
   defaultModalConfig: any = {
     component: null,
     id: null,
@@ -35,6 +42,9 @@ export class GlobalsServices
     cssClass: '',
     componentProps: {}
   }
+  spinnerText: string = 'Processing'
+  country: string = ''
+  language: string = ''
 
   constructor(
     public platform: Platform,
@@ -48,8 +58,11 @@ export class GlobalsServices
     public router: Router,
     private navController: NavController,
     public menuCtrl: MenuController,
-    public route: ActivatedRoute
+    public route: ActivatedRoute, public location: Location
   ){
+    this.location.onUrlChange(x => {
+      this.url = x;
+    });
   }
 
   changeThemeMode(): void {
@@ -97,6 +110,7 @@ export class GlobalsServices
     toast.present();
   }
 
+
   async openModal(page: any, data: object, height: number = 100, isCenter: boolean = false, cssClass: string = 'modal-center', id?: any, backdropDismiss?: boolean) {
     let modalConfig = this.defaultModalConfig;
     if(height == 100) {
@@ -106,7 +120,9 @@ export class GlobalsServices
       modalConfig.breakpoints = [0, height / 100]
       modalConfig.initialBreakpoint = height / 100
     }
+    //modalConfig.cssClass = (isCenter == false) ? cssClass : `modal-center`
     modalConfig.cssClass = (isCenter == false) ? `modal-bottom` : cssClass
+    // modalConfig.cssClass = (!this.platform.is('mobile')) ? 'modal-sidebar' : `${css}`
     modalConfig.componentProps = data
     modalConfig.component = page
     modalConfig.id = id
@@ -134,6 +150,32 @@ export class GlobalsServices
 
   toogleMenu() {
     this.sidebar = (!this.sidebar) ? true : false ;
+  }
+
+  toogleSearch() {
+    this.search = (!this.search) ? true : false ;
+  }
+
+  exitApp() {
+    const routerEl = document.querySelector('ion-router');
+    document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
+      ev.detail.register(-1, () => {
+        const path = window.location.pathname;
+        if (path === routerEl.root) {
+          const choice = window.confirm("Do you want to exit app?")
+          if(choice) App.exitApp();
+        }
+      });
+    });
+  }
+
+  getFirstLetters(str): any {
+    const firstLetters = str
+      .split(' ')
+      .map(word => word[0])
+      .join('');
+
+    return firstLetters;
   }
 
 }

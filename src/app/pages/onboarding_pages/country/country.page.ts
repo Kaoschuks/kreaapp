@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FullModalPage } from 'src/app/modals/full-modal/full-modal.page';
+import { HalfModalPage } from 'src/app/modals/half-modal/half-modal.page';
 import { GlobalsServices } from 'src/app/services/core/globals';
 
 @Component({
@@ -17,9 +17,9 @@ export class CountryPage implements OnInit {
   }
 
   openmodal(page = 'country-list') {
-    this.globals.openModal(FullModalPage, {
+    this.globals.openModal(HalfModalPage, {
       page: page,
-    }, 100, false)
+    }, 99, false)
   }
 
 }

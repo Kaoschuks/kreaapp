@@ -7,11 +7,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signin-form.component.scss'],
 })
 export class SigninFormComponent implements OnInit {
+
   public password_visible: boolean = false;
   submitted = false;
   formvalid = false;
-  
+
   @Output() public formEvent = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {}
@@ -23,7 +25,7 @@ export class SigninFormComponent implements OnInit {
     }
   );
 
-  // form field getter
+ // form field getter
   get f() { return this.signinForm.controls; } 
 
   signFunc() {

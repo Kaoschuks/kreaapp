@@ -1,3 +1,4 @@
+
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
@@ -22,27 +23,24 @@
 @import "swiper/css/free-mode";
 @import "swiper/css/scrollbar";
 
-@import './theme/components';
+// @import './theme/dark';
 @import './theme/theme';
-@import './theme/font';
+@import './theme/viewport';
+@import './theme/desktop';
 @import './theme/sidebar';
-@import './theme/lineicon';
 
-* {
-    font-family: 'OpenSans' !important;
+@import "theme/font";
+@import "theme/components";
+@import "theme/charts";
+@import 'theme/rtl';
+
+
+.md {
+    --ion-font-family: Moderat, sans-serif !important;
 }
-.btn-otp {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    --background: #4263EB !important;
-    --border-radius: 16px !important;
-    font-family: 'Manrope' !important;
-    font-style: normal !important;
-    font-weight: 700;
-    font-size: 16px;
-    text-align: center;
-    color: #FFFFFF;
-    height: 56px !important;
-    display: block !important;
-    margin-top: 1rem;
+
+ul, li {
+    list-style: none;
+    padding-left: 0px;
 }
+// P@ssw0rd123456

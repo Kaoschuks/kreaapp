@@ -1,0 +1,70 @@
+
+<div *ngIf="step == 1">
+
+  <ion-toolbar class="hidden-md">
+    <ion-item mod="ios" lines="none" details="false">
+      <ion-label>
+        <h2 class="fs-20 fw-6 text-knight">Personal info</h2>
+        <p color="knight" class="ion-text-wrap">We ask for your personal information to verify your application details.</p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+
+  <div class="ion-padding">
+    <user-info-form (userInfoEvent)="userInfoData($event)"></user-info-form>
+    <br />
+    <p class="fs-12 ion-text-center" color="dimgray">We use 128-bit encryption for security, and this is only used for identity verification purpose.</p>
+  </div>
+</div>
+
+<div *ngIf="step == 2">
+  <ion-toolbar class=" hidden-md" color="green">
+    <ion-item color="green" mod="ios" lines="none" details="false">
+      <ion-label align="center">
+        <h2 class="fs-20 fw-6 text-knight">Upload Profile Picture</h2>
+        <p color="knight" class="ion-text-wrap">We ask for your personal information to verify your application details.</p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+
+  <div class="ion-padding" align="center">
+    <div class="image" align="center">
+      <image-upload class="animated pulse infinite" [height]="200" [width]="200"></image-upload>
+    </div>
+    <br />
+    <br />
+    <p class="fs-12 ion-text-center" color="dimgray">We use 128-bit encryption for security, and this is only used for identity verification purpose.</p>
+  </div>
+</div>
+
+<div *ngIf="step == 3">
+  <ion-toolbar class=" hidden-md">
+    <ion-item mod="ios" lines="none" details="false">
+      <ion-label>
+        <h2 class="fs-20 fw-6 text-knight">Home Address</h2>
+        <p color="knight" class="ion-text-wrap">We ask for your personal information to verify your application details.</p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+
+  <div class="ion-padding">
+    <address-form></address-form>
+    <br />
+    <p class="fs-12 ion-text-center" color="dimgray">We use 128-bit encryption for security, and this is only used for identity verification purpose.</p>
+  </div>
+</div>
+
+<div *ngIf="step == 4">
+  <ion-toolbar class=" hidden-md">
+    <ion-item mod="ios" lines="none" details="false">
+      <ion-label>
+        <h2 class="fs-20 fw-6 text-knight">Almost Done!</h2>
+        <p color="knight" class="ion-text-wrap">Please take a moment to ensure all of the information you provide is correct.</p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+
+  <div class="ion-padding">
+    <user-info-preview></user-info-preview>
+  </div>
+</div>

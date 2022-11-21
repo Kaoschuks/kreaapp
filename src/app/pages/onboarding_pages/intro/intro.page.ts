@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
@@ -7,20 +7,11 @@ import { Component, OnInit, ViewEncapsulation, ElementRef, ViewChild } from '@an
   encapsulation: ViewEncapsulation.None,
 })
 export class IntroPage implements OnInit {
-  @ViewChild('toolbartext') toolbartext: ElementRef;
-  constructor() { }
 
-  toolbarText: any = [
-    'Welcome to FinPay',
-    'Budgeting'
-  ];
+  constructor() { }
 
   ngOnInit() {
     
-  }
-
-  async gettoolbartext(ev: any) {
-    return this.toolbartext.nativeElement.innerHTML = this.toolbarText[ev]
   }
 
 }

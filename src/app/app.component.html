@@ -2,11 +2,12 @@
 
 <ion-app>
   <app-full-loading></app-full-loading>
+  <fab-buttons *ngIf="_globals.sidebar"></fab-buttons>
   
   <ion-split-pane when="md" contentId="main">
 
     <!--  the side menu  -->
-    <ion-menu *ngIf="_globals.sidebar" contentId="main" class="sidebar" side="start" type="push">
+    <ion-menu *ngIf="_globals.sidebar" contentId="main" class="sidebar" side="start" type="overlay">
         <app-sidebar-nav></app-sidebar-nav>
     </ion-menu>
   

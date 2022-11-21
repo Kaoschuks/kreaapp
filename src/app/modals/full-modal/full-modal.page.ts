@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { NavParams } from '@ionic/angular';
 import { GlobalsServices } from 'src/app/services/core/globals';
+import { HalfModalPage } from 'src/app/modals/half-modal/half-modal.page';
 
 @Component({
   selector: 'app-full-modal',
   templateUrl: './full-modal.page.html',
   styleUrls: ['./full-modal.page.scss'],
 })
-export class FullModalPage implements OnInit {
+export class FullModalPage implements OnInit, AfterViewInit {
 
-  searchText: string = ''
+  page: string = this.params.get('page')
+  
   constructor(
-    private _globals: GlobalsServices
+    private _globals: GlobalsServices,
+    private params: NavParams
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  ngAfterViewInit() {}
 
   closeModal() {
     this._globals.modalCtrl.dismiss();
   }
 
-  async countrySelected(country: string) {
-    this.closeModal();
-    this._globals.navigate('/intro', false)
-  }
 }

@@ -1,47 +1,182 @@
-// ONBOADING PAGE
-.country-page-content {
-    --background: url('/assets/onboarding/country-list-bg.jpg') no-repeat 0% 0%;
-     background-size: auto;
-     height: 100vh !important;
 
-     ion-grid {
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       height: 70%;
+ion-slides {
+    ion-slide {
+        > div {
+            width: 100% !important;
+        }
+    }
+}
 
-       ion-item {
-           --border-radius: 10px;
-           --border-color: var(--ion-color-primary);
-           --border-style: solid;
-           --border-width: 2px;
-           --padding-top: 8px !important;
-           --padding-bottom: 5px !important;
-       }
-     }
-   }
- .country-page-content::after {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background: linear-gradient(to bottom, transparent 0%, white 80%);
-   }
+.bg-img {
+    background-image: url('/assets/svg/bg-login.svg') !important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    height: 100vh !important;
+    width: 65% !important;
+    position: fixed !important;
+    // transform: scaleX(-1);
+    left: -5vw !important;
+    top: 0 !important;
+}
 
-  .forms {
+.bg-kyc {
+  background-image: url('/assets/icon/gif_800.gif') !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: right !important;
+  position: absolute !important;
+  height: 100% !important;
+  width: 65% !important;
+  right: -70px !important;
+  top: 10px !important;
+}
+.bg-pin {
+    background-image: url('/assets/icon/img-3.gif') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: left !important;
+    position: absolute !important;
+    height: 100% !important;
+    width: 65% !important;
+    left: -70px !important;
+    top: 10px !important;
+}
+
+.forms {
     width: 100% !important;
     ion-item {
-        --padding-top: 8px;
-        --padding-bottom: 8px;
-        --padding-start: 10px;
-        --background: #F9F9FA !important;
-        margin-top: 20px;
-        --border-radius: 16px;
+        //--background: var(--ion-color-light) !important;
+        //--highlight-background: rgba(var(--ion-color-dark-rgb), .3);
+        --highlight-background: var(--ion-color-primary);
+        //--border-radius: 7px;
+        //--border-color: rgba(var(--ion-color-dark-rgb), .3);
+        --border-style: solid;
+        //--border-width: 1px;
+        // margin-bottom: -10px !important;
         ion-icon {
+            font-size: 18px;
+            padding-top: 13px;
             vertical-align: middle;
         }
-        
     }
+}
+
+input[type="date"]::-webkit-inner-spin-button, 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    opacity: 0
+}
+
+code-input {
+    --text-security-type: disc;
+    --item-border: solid 1px rgba(var(--ion-color-primary-rgb), .3) !important;
+    --item-border-focused: solid 1px var(--ion-color-primary) !important;
+    --item-shadow-focused: none;
+    --item-border-radius: 10px !important;
+    //--item-background: var(--ion-color-light) !important;
+    span input {
+        height: 50px !important;
+        width: 50px !important;
+    }
+  }
+
+.page-header{
+    padding-bottom: 110px !important;    
+    ion-item {
+        margin-bottom: -10px !important;
+        ion-avatar {
+            height: 60px !important;
+            width: 60px !important;
+            --border: 2px solid #fff !important;
+            border: 2px solid #fff !important;
+        }
+    } 
+}
+.page-content {
+    position: relative !important;
+    z-index: 99 !important;
+    top: -100px !important;
+    height: 105% !important;
+    ion-card {
+        --border-radius: 3px !important;
+    }
+
+    .pin-item {
+        ion-label {
+            margin-left: 40px;
+        }
+    }
+    .kyc-btn {
+        margin-top: -3px;
+    }
+}
+ion-item {
+    ion-fab-button {
+        align-self: flex-start !important;
+        margin-top: 10px;
+    }
+}
+
+ion-popover{
+    &::part(content){
+        box-shadow: 4.096px 4.096px 28.672px rgba(17, 54, 22, 0.08);
+        border: 2.048px solid rgba(var(--ion-color-primary-rgb), 0.2);
+        border-radius: 15px;
+    }
+}
+
+ion-button[size="default"] {
+    height: 45px;
+}
+
+ion-calendar {
+    background: var(--ion-color-primary) !important;
+    --background: var(--ion-color-primary) !important;
+    border: 0px !important;
+    .title {
+        ion-button {
+            --color: #F6F7F8 !important;
+            color: #F6F7F8 !important;
+        }
+    }
+    .month-packer-item > button, 
+    ion-calendar-week ul li,
+    ion-calendar-month .days-btn > p, 
+    ion-calendar-month .today > p, 
+    ion-calendar-month button.on-selected > p {
+        --color: #F6F7F8 !important;
+        color: #F6F7F8 !important;
+    }
+
+    ion-calendar-month button.last-month-day > p, 
+    ion-calendar-month .next-month-day > p {
+        --color: rgba(246, 247, 248, 0.32) !important;
+        color: rgba(246, 247, 248, 0.32) !important;
+    }
+
+    ion-calendar-month button.on-selected {
+        // --background: #F6F7F8 !important;
+        // background: #F6F7F8 !important;
+        // opacity: 0.16 !important;
+    }
+
+    ion-calendar-month button.today {
+        --background: #0BB8E4 !important;
+        background: #0BB8E4 !important;
+    }
+}
+
+.goal-category-bgColor1 {
+    --background: linear-gradient(135.69deg, #0BB8E4 0%, #023C4B 98.81%) !important;
+    background: linear-gradient(135.69deg, #0BB8E4 0%, #023C4B 98.81%) !important;
+}
+.goal-category-bgColor2 {
+    --background: linear-gradient(135.54deg, #2B88D8 -0.96%, #001F78 100%) !important;
+    background: linear-gradient(135.54deg, #2B88D8 -0.96%, #001F78 100%) !important;
+}
+.goal-category-bgColor3 {
+    --background: linear-gradient(135deg, #FFBE81 0%, #D25D3F 100%) !important;
+    background: linear-gradient(135deg, #FFBE81 0%, #D25D3F 100%) !important;
 }

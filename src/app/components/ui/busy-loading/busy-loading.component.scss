@@ -1,0 +1,11 @@
+:host {
+    .loader-bar-div{
+        display: none;
+        z-index: 300;
+        position: relative;
+    }
+    
+    .loader-bar{
+        height: 4px;
+    }
+}

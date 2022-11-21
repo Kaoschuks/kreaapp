@@ -1,0 +1,25 @@
+:host {
+    ion-content {
+        height: 40vh !important;
+    }
+@media(max-width: 600px) {
+    #content {
+        position: relative !important;
+        top: -20px !important;
+        height: 70vh !important;
+    }
+}
+@media(min-width: 600px) {
+    #content, .text-heading {
+        position: fixed !important;
+    }
+    .text-heading {
+        top: 25vh !important
+    }
+    #content {
+        top: 35vh !important;
+        width: 400px !important;
+        height: 400px !important;
+    }
+}
+}

@@ -1,0 +1,103 @@
+<ion-header *ngIf="title != 'more' && title != 'home'" [translucent]="true" class="hidden-md ion-no-border">
+  <ion-toolbar color="primary">
+    <!-- <ion-searchbar *ngIf="_globals.search" mode="md" class="ion-no-border bg-primary-overlay"></ion-searchbar> -->
+    <ion-fab-button routerLink="/profile" routerDirection="forward" size="small" class="bg-primary no-shadow" slot="end">
+      <i class="ri-user-line ri-xl fs-18"></i>
+    </ion-fab-button>
+    <ion-buttons slot="end">
+      <!-- <ion-button fill="clear" (click)="_globals.toogleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button> -->
+      <ion-button fill="clear" routerLink="/notifications" routerDirection="forward">
+        <ion-icon class="animated headShake infinite" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-item *ngIf="title" lines="none" detail="false">
+      <ion-avatar slot="start">
+        <img loading="lazy" src="assets/icon/logo.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2 class="text-white">{{ title | titlecase}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+
+
+  <ion-toolbar *ngIf="title != 'home'" mode="ios" class="subheader" color="primary">
+    <!-- <ion-segment *ngIf="title == 'home'" [scrollable]="true" value="all" mode="md">
+      <ion-segment-button value="all">
+        <ion-label class="fs-12">All Subscription</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="september">
+        <ion-label class="fs-12">September</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="october">
+        <ion-label class="fs-12">October</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="november">
+        <ion-label class="fs-12">November</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="december">
+        <ion-label class="fs-12">December</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="january">
+        <ion-label class="fs-12">January</ion-label>
+      </ion-segment-button>
+    </ion-segment> -->
+    <ion-item *ngIf="title == 'expenses'" lines="none" detail="false" mode="md">
+      <ion-select class="text-white" slot="start" interface="action-sheet" value="monthly">
+        <ion-select-option value="all">All</ion-select-option>
+        <ion-select-option value="monthly" selected>Monthly</ion-select-option>
+        <ion-select-option value="yearly">Yearly</ion-select-option>
+      </ion-select>
+      <ion-select class="text-white" slot="end" interface="action-sheet" value="september">
+          <ion-select-option value="january">January</ion-select-option>
+          <ion-select-option value="febuary">Febuary</ion-select-option>
+          <ion-select-option value="march">March</ion-select-option>
+          <ion-select-option value="april">April</ion-select-option>
+          <ion-select-option value="may">May</ion-select-option>
+          <ion-select-option value="june">June</ion-select-option>
+          <ion-select-option value="july">July</ion-select-option>
+          <ion-select-option value="august">August</ion-select-option>
+          <ion-select-option value="september">September</ion-select-option>
+          <ion-select-option value="october" selected>October</ion-select-option>
+          <ion-select-option value="november">November</ion-select-option>
+          <ion-select-option value="december">December</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-segment *ngIf="title == 'budgets'" [scrollable]="true" value="all" mode="md">
+      <ion-segment-button value="all">
+        <ion-label class="fs-12">All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="food">
+        <ion-label class="fs-12">Food & Drinks</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="transport">
+        <ion-label class="fs-12">Transportation</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="bills">
+        <ion-label class="fs-12">Bills</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-segment *ngIf="title == 'tips'" [scrollable]="true" value="all" mode="md">
+      <ion-segment-button value="all">
+        <ion-label class="fs-12">All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="business">
+        <ion-label class="fs-12">Business</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="loans">
+        <ion-label class="fs-12">Loans</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="savings">
+        <ion-label class="fs-12">Savings</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="investment">
+        <ion-label class="fs-12">Investments</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="crypto">
+        <ion-label class="fs-12">Crypto</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>

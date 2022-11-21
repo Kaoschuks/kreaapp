@@ -1,25 +1,19 @@
 <ion-header class="ion-no-border ion-padding">
   <ion-toolbar>
-   <ion-label slot="start">
-    <p #toolbartext class="text-muted" [innerHTML]="toolbarText[0]"></p>
-   </ion-label>
-    <ion-button fill="clear" size="small" class="no-shadow bg-lighter btn-radius" slot="end" color="medium" routerLink="/signup" routerDirection="forward">
-      <span class="fs-12 bold">skip</span>
-    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content scrollY="false" class="ion-padding" color="white">
-  <onboarding-swiper (toolbarText)="gettoolbartext($event)"></onboarding-swiper>
+  <onboarding-swiper></onboarding-swiper>
 </ion-content>
 
 <ion-footer color="white" class="ion-no-border">
   <div class="ion-padding">
-    <ion-button class="no-shadow" size="large" expand="full" routerLink="/signin" routerDirection="forward" color="primary" shape="round">
-      <span class="fs-16 bold">Login</span>
+    <ion-button size="large" expand="block" routerLink="/signup" color="primary">
+      <span class="fs-16 bold">Get Started</span>
     </ion-button>
-    <ion-button class="no-shadow" size="large" routerLink="/signup" routerDirection="forward" expand="full" shape="round" color="secondary" style="margin-top: 12px;">
-      <span class="fs-14 bold" color="primary">Create an Account</span>
+    <ion-button size="large" routerLink="/signin" routerDirection="forward" expand="block" fill="clear">
+      <span class="fs-14 bold text-dark">I already have an account</span>
     </ion-button>
     <br />
   </div>

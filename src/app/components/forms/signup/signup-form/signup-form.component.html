@@ -1,0 +1,39 @@
+
+
+<div class="forms">
+  <form [formGroup]='signupForm'>
+    <ion-item lines="full" class="ion-no-padding ion-margin-top">
+      <ion-label position="floating">Email Address</ion-label>
+      <ion-input type="email" formControlName="email" placeholder="Email Address"></ion-input>
+      <ion-icon slot="end" name="mail-outline"></ion-icon>
+    </ion-item>
+    <span *ngIf="f.email?.invalid && (f.email?.dirty || f.email?.touched)" class="ion-no-padding">
+      <span *ngIf="f.email?.errors?.['required']" class="text-danger fs-12">Email is required</span>
+      <span *ngIf="f.email?.errors?.['email']" class="text-danger fs-12">Email must be a valid email address</span>
+    </span>
+
+    <ion-item lines="full" class="ion-no-padding ion-margin-top">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [type]="(password_visible) ? 'text' : 'password'" placeholder="Password" formControlName="password"></ion-input>
+      <ion-icon slot="end" [name]="(password_visible) ? 'eye-off-outline' : 'eye-outline'" (click)="toggleVisibility()"></ion-icon>
+    </ion-item>
+    <span *ngIf="f.password?.invalid && (f.password?.dirty || f.password?.touched)" class="ion-no-padding">
+      <p *ngIf="f.password?.errors?.required" class="text-danger fs-12 ion-no-margin">Password is required </p>
+      <p *ngIf="f.password?.errors?.minlength" class="text-danger fs-12 ion-no-margin">Must have at least eight characters </p>
+      <p *ngIf="f.password?.errors?.requiresUppercase" class="text-danger fs-12 ion-no-margin">Must have an upper letter</p>
+      <p *ngIf="f.password?.errors?.requiresSpecialChars" class="text-danger fs-12 ion-no-margin">Must contain a special character/symbol </p>
+      <p *ngIf="f.password?.errors?.requiresDigit" class="text-danger fs-12 ion-no-margin">Has a number </p>      
+    </span>
+
+    <ion-item lines="full" class="ion-no-padding ion-margin-top">
+      <ion-label position="floating">Re-enter password</ion-label>
+      <ion-input [type]="(password_visible) ? 'text' : 'password'" placeholder="Re-enter password" formControlName="password2"></ion-input>
+      <ion-icon slot="end" [name]="(password_visible) ? 'eye-off-outline' : 'eye-outline'" (click)="toggleVisibility()"></ion-icon>
+    </ion-item>
+    <span *ngIf="f.password?.valid" class="ion-no-padding">
+      <span *ngIf="f.password2?.errors?.required" class="text-danger fs-12">Confirm your password</span>
+      <span *ngIf="f.password2?.errors?.minLength" class="text-danger fs-12">Password must be at least 8 characters long</span>
+      <span *ngIf="f.password2?.errors?.mismatch" class="text-danger fs-12">Passwords do not match</span>
+    </span>
+  </form>
+</div>

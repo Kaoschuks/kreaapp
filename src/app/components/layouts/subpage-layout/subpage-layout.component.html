@@ -1,0 +1,14 @@
+<ion-header class="ion-no-border hidden-md" [ngClass]="headerColor">
+  <ion-toolbar [ngClass]="headerColor" color="green">
+    <ion-button routerDirection="back" (click)="goBack()" slot="start" fill="clear" >
+      <ion-icon name="chevron-back-outline" [ngClass]="textColor"></ion-icon>
+    </ion-button>
+    <ion-label class="ion-no-padding">
+      <h2 class="ion-text-center" [ngClass]="textColor">{{ page | titlecase}}</h2>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ng-content></ng-content>
+</ion-content>
