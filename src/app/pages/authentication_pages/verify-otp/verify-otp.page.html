@@ -2,14 +2,6 @@
 
   <otp-form (pinEvent)="note=$event"></otp-form>
 
-  <div className="input">
-    <label>Amount: </label>
-    <div class="keyboard">
-      <numeric-keyboard layout="tel" (onPress)="press($event)"></numeric-keyboard>
-    </div>
-    <!-- <numeric-input type="number" placeholder="touch to input" [(ngModel)]="amount"></numeric-input> -->
-  </div>
-
   <div class="ion-padding hidden-xs">
     <p *ngIf='note'> {{note}} </p>
     <ion-text *ngIf='!note' slot="start">Resend code in 00:56</ion-text>
@@ -22,7 +14,7 @@
 </auth-layout>
 
 
-<ion-footer class="ion-no-border">
+<!-- <ion-footer class="ion-no-border">
   <ion-grid class="ion-padding">
     <ion-row>
       <ion-col size="12" size-md="3" offset-md="8" offset="0" class="ion-margin">
@@ -38,4 +30,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-footer>
+</ion-footer> -->

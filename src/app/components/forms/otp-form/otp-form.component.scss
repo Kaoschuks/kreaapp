@@ -1,10 +1,35 @@
 
 
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+// .center {
+//     margin: 0;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     -ms-transform: translate(-50%, -50%);
+//     transform: translate(-50%, -50%);
+//   } //--item-background: var(--ion-color-light) !important;
+ion-grid {
+  .keypad {
+    ion-col {
+      display: flex; justify-content:center;
+    }
   }
+}
+  .inputs {
+  background: var(--ion-color-light);
+  border-radius: 7px;
+  height: 56px;
+  width: 60px;
+
+  ion-input {
+    vertical-align: middle;
+    margin-left: -9px;
+    font-size: 38px;
+  }
+}
+
+ion-button {
+  border-radius: 7px;
+height: 56px;
+width: 60px;
+}

@@ -7,8 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SearchPipe } from '../pipes/search';
 import { CodeInputModule } from 'angular-code-input';
-import { NumericKeyboardModule } from 'numeric-keyboard/dist/numeric_keyboard.angular';
-
 
 import { CountryListComponent } from './popup-modals/country-list/country-list.component';
 
@@ -61,7 +59,6 @@ export const component: Array<any> = [
       codeLength: 5,
       isCharsCode: false,
     }),
-    NumericKeyboardModule,
     SwiperModule,
     RouterModule,
     NgxSpinnerModule
