@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { GlobalsServices } from 'src/app/services/core/globals';
-import {CodeInputComponent} from 'angular-code-input';
 
 @Component({
   selector: 'otp-form',
@@ -10,7 +9,6 @@ import {CodeInputComponent} from 'angular-code-input';
 export class OtpFormComponent implements OnInit {
   
   // adding to the page props
-  @ViewChild('codeInput') codeInput !: CodeInputComponent;
   @Output() pinEvent = new EventEmitter();
   @Input() type: string = 'pin';
   pin: string = "";
@@ -18,10 +16,6 @@ export class OtpFormComponent implements OnInit {
   constructor(
     private _globals: GlobalsServices
   ) { }
-
-  ngAfterViewInit() {
-    console.log(this.codeInput)
-  }
 
   handleInput(pin: string) {
     if (pin === "clear") {

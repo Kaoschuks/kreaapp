@@ -9,6 +9,7 @@
 //     transform: translate(-50%, -50%);
 //   } //--item-background: var(--ion-color-light) !important;
 ion-grid {
+  margin-top: 80px;
   .keypad {
     ion-col {
       display: flex; justify-content:center;
@@ -16,8 +17,10 @@ ion-grid {
   }
 }
   .inputs {
-  background: var(--ion-color-light);
+  //background: var(--ion-color-light);
   border-radius: 7px;
+  border-bottom: 2px solid var(--ion-color-light);
+  --item-border-focused: solid 1px var(--ion-color-primary) !important;
   height: 56px;
   width: 60px;
 
