@@ -27,7 +27,6 @@ import { DateAsAgoPipe } from '../pipes/dateAsAgo';
 
 import { OnboardingSwiperComponent } from './onboarding/onboarding-swiper/onboarding-swiper.component';
 import { BusyLoadingComponent } from './ui/busy-loading/busy-loading.component';
-import { PinComponent } from './forms/pin-pad/pin.component';
 
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
@@ -44,7 +43,7 @@ export const component: Array<any> = [
   OnloadingComponent, OnerrorComponent, ProgressBarComponent, BusyLoadingComponent,
   SetupComponent,
   CountryListComponent, OnboardingSwiperComponent, MobileHeaderComponent, DesktopViewComponent, CompleteSetupComponent,
-  SignupFormComponent, SigninFormComponent, OtpFormComponent, PinComponent,  AuthLayoutComponent, 
+  SignupFormComponent, SigninFormComponent, OtpFormComponent,  AuthLayoutComponent, 
   RegisterSuccessComponent, BiometricUiComponent, SubpageLayoutComponent
 ];
 

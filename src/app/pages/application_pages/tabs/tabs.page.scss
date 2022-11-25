@@ -1,0 +1,143 @@
+
+ion-tabs {
+    ion-tab-bar {
+        // width: 90%;
+        // margin: 0px auto !important;
+        // align-self: center;
+        // height: 60px;
+
+        ion-tab-button {
+            --background: var(--ion-color-dark);
+            --background: var(--ion-color-dark-fade);
+            --ripple-color: var(--transparent) !important;
+            ion-label {
+                margin-top: 3px !important;
+                color: var(--ion-color-dark);
+                font-size: .50rem;
+                font-weight: 400 !important;
+                margin-bottom: -5px !important;
+            }
+
+            ion-icon {
+                position: relative;
+                margin: 0 auto;
+                transition: all .3s;
+                color: var(--ion-color-dark);
+
+                &.before {
+                    margin-top: -3px !important;
+                    margin-bottom: -3px !important;
+                    font-size: 28px !important;
+                    transition: all .3s;
+                }
+
+                &.after {
+                    font-size: 0px;
+                    transition: all .3s;
+                }
+            }
+
+            i {
+                position: relative;
+                margin: 0 auto;
+                transition: all .3s;
+                margin-bottom: 2px;
+                color: var(--ion-color-medium);
+
+                &.before {
+                    font-size: 28px;
+                    transition: all .3s;
+                }
+
+                &.after {
+                    font-size: 0px;
+                    transition: all .3s;
+                }
+
+            }
+
+            &.tab-selected {
+
+                ion-label {
+                    // &.primary {
+                    //     color: var(--ion-color-primary);
+                    // }
+                    // &.success {
+                    //     color: var(--ion-color-success);
+                    // }
+                    // &.warning {
+                    //     color: var(--ion-color-warning);
+                    // }
+                    // &.danger {
+                    //     color: var(--ion-color-danger);
+                    // }
+                    // &.tertiary {
+                    //     color: var(--ion-color-tertiary);
+                    // }
+                    font-size: .50rem;
+                    font-weight: 700 !important;
+                    // margin-bottom: -2px;
+                    margin-top: 5px !important;
+                    color: var(--ion-color-primary);
+                }
+
+                ion-icon {
+                    position: relative;
+                    margin: 0 auto;
+                    transition: all .3s;
+                    color: var(--ion-color-primary);
+    
+                    &.before {
+                        font-size: 0px !important;
+                        transition: all .3s;
+                    }
+    
+                    &.after {
+                        font-size: 28px !important;
+                        transition: all .3s;
+                        margin-top: 0px !important;
+                        margin-bottom: -2px !important;
+                    }
+                }
+                i {
+                    color: var(--ion-color-primary);
+                    margin: 0 auto;
+                    transition: all .3s;
+                    margin-bottom: 2px;
+                    &.before {
+                        font-size: 0px;
+                        transition: all .3s;
+                    }
+
+                    &.after {
+                        font-size: 28px;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+    }
+    ion-button {
+        z-index: 9999 !important;
+        position: absolute !important;
+        // bottom: 12px !important;
+        height: 38px !important;
+        width: 38px !important;
+        margin-top: -15px !important;
+        margin-left: 0px;
+        // margin-top: -15px !important;
+        --border-radius: 10px !important;
+        i {
+            margin-top: 0px !important;
+            margin-right: -2px !important;
+        }
+    }
+}
+// ion-fab-button {
+//     position: fixed !important;
+//     bottom: 35px !important;
+//     // border: 7px solid #fff !important;
+//     border-radius: 100% !important;
+//     border-bottom-color: transparent !important;
+// }
+

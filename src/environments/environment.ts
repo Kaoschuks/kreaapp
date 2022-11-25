@@ -11,6 +11,7 @@ export const environment = {
       icon: 'ri-apps-2-line ri-xl'
     },
   ],
+  
   countries: [
     {
         "name": "Ascension Island",
@@ -1839,7 +1840,29 @@ export const environment = {
         "unicode": "U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F",
         "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/WALES.svg"
     }
-]
+],
+    currencies: [
+        {
+            name: 'Nigeria Naira',
+            code: 'NGN',
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NG.svg'
+        },
+        {
+            name: 'US Dollar',
+            code: 'USD',
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/US.svg'
+        },
+        {
+            name: 'Ghana Cedi',
+            code: 'GHS',
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GH.svg'
+        },
+        {
+            name: 'British Pound',
+            code: 'pound',
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ENGLAND.svg'
+        }
+    ]
 };
 
 /*

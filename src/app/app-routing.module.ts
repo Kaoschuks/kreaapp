@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/onboarding_pages/intro/intro.module').then( m => m.IntroPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./pages/application_pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: 'signin',
     loadChildren: () => import('./pages/authentication_pages/signin/signin.module').then( m => m.SigninPageModule)
   },
@@ -30,6 +26,10 @@ const routes: Routes = [
   {
     path: 'verify',
     loadChildren: () => import('./pages/authentication_pages/verify-otp/verify-otp.module').then( m => m.VerifyOtpPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/application_pages/tabs/tabs.module').then( m => m.TabsPageModule)
   }
 
 

@@ -1,0 +1,81 @@
+<ion-content color="light">
+  <div class="page-header bg-primary"></div>
+  <div class="page-content">
+    <ion-card class="ion-no-margin no-shadow bg-white" detail="false" lines="none">
+      <ion-item lines="none" detail="false" style="margin-bottom: -7px">
+        <ion-label>
+          <h2 class="text-primary">Expenses Details</h2>
+          <p class="fs-12 ion-text-wrap">View this month Expenses / Income</p>
+        </ion-label>
+      </ion-item>
+      <br />
+      <ion-item routerLink="/expenses/my-income" routerDirection="forward" detail="true">
+        <ion-fab-button size="small" class="bg-primary-overlay no-shadow" slot="start">
+          <ion-icon name="wallet" class="fs-18 text-white"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2>$100,000.00</h2>
+          <p class="fs-12">Total September Income</p>
+        </ion-label>
+      </ion-item>
+      <ion-item routerLink="/expenses/my-expenses" routerDirection="forward" lines="none" detail="true">
+        <ion-fab-button size="small" class="bg-danger-overlay no-shadow" slot="start">
+          <ion-icon name="pricetags" class="fs-18 text-white"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2>$75,670.00</h2>
+          <p class="fs-12">Total September expenses</p>
+        </ion-label>
+      </ion-item>
+      <br />
+      <!-- <div align="center" class="ion-margin-top">
+                <ion-button fill="clear">
+                    <span class="fs-12 bold text-dark">View Chart Analaysis</span>
+                </ion-button>
+            </div> -->
+    </ion-card>
+
+    <ion-card class="ion-no-margin ion-border no-shadow bg-white">
+      <ion-item lines="none" detail="false">
+        <ion-label>
+          <h2 class="text-primary">Expense Trends</h2>
+          <p class="fs-12">You've spent $289.23 more than last month</p>
+        </ion-label>
+      </ion-item>
+      <div class="ion-no-padding ion-margin-top" style="height: 200px;">
+        <bar-chart [chartTitle]="'NetFlix'" [chartLabels]="chartLabels" [chartData]="chartData"></bar-chart>
+        <!-- <stacked-bar-chart [chartTitle]="'September Expense'"  [chartLabels]="chartLabels" [chartData]="chartData"></stacked-bar-chart> -->
+      </div>
+      <ion-item detail="false" class="ion-margin-top">
+        <ion-fab-button slot="end" size="small" class="bg-primary-overlay text-white no-shadow">
+          <ion-icon name="fast-food" class="fs-18"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2> Highest Expense</h2>
+          <p class="fs-12">Apple Store California, USA</p>
+          <p>$1,699.48</p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none">
+        <ion-fab-button slot="end" size="small" class="bg-primary-overlay text-mute no-shadow">
+          <ion-icon name="fast-food" class="fs-18"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2> Most Frequent Expense</h2>
+          <p class="fs-12">Dominoes</p>
+          <p>$699.48</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card color="white" class="ion-no-margin ion-no-padding ion-border no-shadow bg-card">
+      <ion-item lines="none" detail="false">
+        <ion-label>
+          <h2 class="text-primary">Most Recent</h2>
+          <p class="fs-12">You most recent transactions this month</p>
+        </ion-label>
+      </ion-item>
+      <expenses-list></expenses-list>
+    </ion-card>
+  </div>
+</ion-content>
