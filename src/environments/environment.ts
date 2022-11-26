@@ -1845,22 +1845,30 @@ export const environment = {
         {
             name: 'Nigeria Naira',
             code: 'NGN',
-            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NG.svg'
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NG.svg',
+            balance: "1543,765.00",
+            cashflow: "down"
         },
         {
             name: 'US Dollar',
             code: 'USD',
-            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/US.svg'
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/US.svg',
+            balance: "1543,765.00",
+            cashflow: "rise"
         },
         {
             name: 'Ghana Cedi',
             code: 'GHS',
-            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GH.svg'
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GH.svg',
+            balance: "1543,765.00",
+            cashflow: "down"
         },
         {
             name: 'British Pound',
             code: 'pound',
-            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ENGLAND.svg'
+            icon: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ENGLAND.svg',
+            balance: "1543,765.00",
+            cashflow: "rise"
         }
     ]
 };

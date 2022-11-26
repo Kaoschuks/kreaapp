@@ -28,22 +28,22 @@ export class HomePage {
       {
         name: "Get a loan",
         note: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-        icon: "",
+        icon: "diamond-outline",
         bgcolor: "#222428",
         color: "#ffffff"
       },
       {
         name: "Make purchase",
         note: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-        icon: "",
+        icon: "flower-outline",
         bgcolor: "#4854e0",
         color: "#ffffff"
       },
       {
         name: "Offers",
         note: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-        icon: "",
-        bgcolor: "#f4f5f8",
+        icon: "infinite-outline",
+        bgcolor: "#BF40BF",
         color: "#ffffff"
       }
     ];

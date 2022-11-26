@@ -6,12 +6,13 @@
         <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU" />
       </ion-avatar>
       <ion-label slot="end">
-        <!-- <p>Currency: </p> -->
         <div>
-          <ion-select [interfaceOptions]="customPopoverOptions" #selector interface="popover" (ionChange)="changecurrency(selector.value)" value="NGN">
-            <ion-select-option value="NGN">NGN</ion-select-option>
-            <ion-select-option value="NGN">USD</ion-select-option>
-          </ion-select>
+          <ion-item lines="none" details="false">
+            <ion-select #selector interface="popover" placeholder="Currency:" (ionChange)="changecurrency(selector.value)">
+              <ion-select-option value="NGN">NGN</ion-select-option>
+              <ion-select-option value="USD">USD</ion-select-option>
+            </ion-select>
+          </ion-item>
         </div>
       </ion-label>
     </ion-item>
@@ -34,7 +35,7 @@
         <h2 class="ion-no-padding">Currency</h2>
       </ion-label>
     </ion-item>
-    <ion-item lines="none" detail="true" routerDirection="forward" routerLink="/goals" *ngFor="let currency of currencies">
+    <ion-item lines="none" detail="false" routerDirection="forward" routerLink="/goals" *ngFor="let currency of currencies">
       <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
         <ion-img [src]="currency?.icon"></ion-img>
       </ion-fab-button>
@@ -42,14 +43,9 @@
         <h2>{{currency?.name}}</h2>
         <p class="text-muted">{{currency?.code}}</p>
       </ion-label>
-    </ion-item>
-    <ion-item lines="none" detail="true" routerDirection="forward" routerLink="/goals" *ngFor="let currency of currencies">
-      <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-        <ion-img [src]="currency?.icon"></ion-img>
-      </ion-fab-button>
-      <ion-label>
-        <h2>{{currency?.name}}</h2>
-        <p class="text-muted">{{currency?.code}}</p>
+      <ion-label slot="end">
+        <h2><strong>{{currency?.balance}}</strong></h2>
+        <p [ngClass]="(currency?.cashflow == 'rise')? 'text-success' : 'text-muted'">{{currency?.balance}}</p>
       </ion-label>
     </ion-item>
 
@@ -73,7 +69,7 @@
        <ion-card class="ion-no-border no-shadow" [ngStyle]="{'background-color': source.bgcolor}">
         <div align="center">
           <ion-fab-button size="small" class="no-shadow">
-            <img [src]="source?.icon"/>
+            <ion-icon [name]="source?.icon"></ion-icon>
           </ion-fab-button>
           <ion-label class="ion-text-center" [ngStyle]="{'color': source.color}">
             <h2 class="fs-18">{{source?.name}}</h2>
