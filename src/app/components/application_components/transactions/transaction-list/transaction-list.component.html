@@ -1,0 +1,19 @@
+
+  <ion-item (click)="openmodal(transaction)" lines="none" details="true" *ngFor="let expense of expenses | slice:0:limit">
+    <ion-fab-button size="small" class="bg-light no-shadow" [ngClass]="(expense?.expense_type == 'debit') ? 'bg-primary-overlay' : 'bg-danger-overlay' " slot="start">
+      <img width="20px" [src]="expense?.source.image">
+      <!-- <ion-icon [name]="expense?.icon" class="fs-18 text-dark bg-transparent"></ion-icon> -->
+    </ion-fab-button>
+    <ion-label class="ion-text-wrap">
+      <h2 class="fs-14">{{ expense?.category_name | titlecase }}</h2>
+      <p class="fs-12">{{ expense?.date_added }}</p>
+    </ion-label>
+    <ion-label slot="end" align="right">
+      <h2 class="fs-14 text-dark">
+        <span  *ngIf="expense?.expense_type == 'debit'" class="bold fs-16 text-primary">+</span>
+        <span  *ngIf="expense?.expense_type == 'credit'" class="bold fs-16 text-danger">-</span> 
+        {{ expense?.amount }}
+      </h2>
+      <p style="margin-top: -5px" class="fs-12">{{ expense?.source_name | titlecase }}</p>
+    </ion-label>
+  </ion-item>

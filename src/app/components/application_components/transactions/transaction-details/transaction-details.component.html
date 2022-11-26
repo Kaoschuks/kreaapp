@@ -1,0 +1,76 @@
+<ion-list *ngFor="let transaction of transactions" lines="none" detail="false" class="ion-margin-top">
+  <ion-item>
+    <ion-fab-button size="large" class="text-dark no-shadow" fill="clear" [ngClass]="transaction?.iconBgColor">
+      <ion-icon [name]="transaction?.icon"></ion-icon>
+    </ion-fab-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <h1>{{ transaction?.spent }}</h1>
+      <h3 class="text-muted">{{ transaction?.description }}</h3>
+      <h2 class="text-dark">{{ transaction?.title }}</h2>
+    </ion-label>
+  </ion-item>
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label slot="start">
+        <h2 class="fs-14">Transaction type</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 class="ion-text-capitalize">{{transaction?.type}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label slot="start">
+        <h2 class="fs-14">Transaction Date</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 class="ion-text-capitalize">{{transaction?.time}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label slot="start">
+        <h2 class="fs-14">Statement</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 class="ion-text-capitalize" class="text-primary">
+        View</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label slot="start">
+        <h2 class="fs-14">Status</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 color="success" class="ion-text-uppercase">{{ transaction?.status}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label slot="start">
+        <h2 class="fs-14">Fee</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 class="ion-text-uppercase">-0</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label slot="start">
+        <h2 class="fs-14">Amount</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 class="ion-text-uppercase">{{ transaction?.spent }}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label slot="start">
+        <h2 class="fs-14">Reference</h2>
+      </ion-label>
+      <ion-label slot="end">
+        <h2 class="ion-text-uppercase ion-text-wrap">wuehdffd</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-list>

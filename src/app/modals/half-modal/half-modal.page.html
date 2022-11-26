@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border b-b">
+<ion-header *ngIf="page !== 'transactiondetails'" class="ion-no-border b-b">
   <br />
   <ion-toolbar>
     <ion-item *ngIf="page == 'country-list'" lines="none" details="false">
@@ -15,4 +15,5 @@
 
 <ion-content class="bg-white">
   <country-list (countrySelected)="countrySelected($event)" *ngIf="page == 'country-list'" [country]="'NG'" [filterText]="searchText"></country-list>
+  <transaction-details *ngIf="page == 'transactiondetails'"></transaction-details>
 </ion-content>
