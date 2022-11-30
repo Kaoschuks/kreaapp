@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CodeInputModule } from 'angular-code-input';
 import { SwiperModule } from 'swiper/angular';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { SearchPipe } from '../pipes/search';
 import { DateAsAgoPipe } from '../pipes/dateAsAgo';
@@ -26,6 +27,8 @@ import { ProgressBarComponent } from './ui/progress-bar/progress-bar.component';
 import { BusyLoadingComponent } from './ui/busy-loading/busy-loading.component';
 import { MobileHeaderComponent } from './ui/mobile-header/mobile-header.component';
 
+import { LinechartComponent } from './ui/charts/linechart/linechart.component';
+
 import { OnboardingSwiperComponent } from './onboarding/onboarding-swiper/onboarding-swiper.component';
 import { SetupComponent } from './onboarding/setup/setup.component';
 
@@ -36,6 +39,8 @@ import { SubpageLayoutComponent } from './layouts/subpage-layout/subpage-layout.
 import { TransactionListComponent } from './application_components/transactions/transaction-list/transaction-list.component';
 import { TransactionDetailsComponent } from './application_components/transactions/transaction-details/transaction-details.component';
 
+import { RoleComponent } from './category/role/role.component';
+
 export const component: Array<any> = [
   SearchPipe, DateAsAgoPipe,
   OnloadingComponent, OnerrorComponent, ProgressBarComponent, BusyLoadingComponent,
@@ -43,7 +48,7 @@ export const component: Array<any> = [
   CountryListComponent, OnboardingSwiperComponent, MobileHeaderComponent, DesktopViewComponent, CompleteSetupComponent,
   SignupFormComponent, SigninFormComponent, OtpFormComponent,  AuthLayoutComponent, 
   RegisterSuccessComponent, BiometricUiComponent, SubpageLayoutComponent, TransactionListComponent,
-  TransactionDetailsComponent
+  TransactionDetailsComponent, RoleComponent, LinechartComponent
 ];
 
 @NgModule({
@@ -59,7 +64,8 @@ export const component: Array<any> = [
     }),
     SwiperModule,
     RouterModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgApexchartsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: component,

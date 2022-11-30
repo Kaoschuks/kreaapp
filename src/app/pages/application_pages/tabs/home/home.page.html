@@ -1,6 +1,6 @@
 
 <ion-content>
-  <ion-toolbar slot="fixed">
+  <ion-toolbar slot="fixed" class="ion-margin-bottom">
     <ion-item  lines="none" detail="false">
       <ion-avatar routerLink="/profile" routerDirection="forward" slot="start">
         <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU" />
@@ -19,14 +19,20 @@
   </ion-toolbar>
 
   <div class="page-header">
-    <ion-item lines="none" details="false">
-      <ion-label >
-        <p class="text-muted">Balance</p>
-        <h1>$842.90</h1>
-        <p class="text-success">12% cash inflow</p>
-      </ion-label>
-    </ion-item>
-    <br />
+    <ion-row>
+      <ion-col size="6">
+        <ion-item lines="none" details="false">
+          <ion-label >
+            <p class="text-muted">Balance</p>
+            <h1>$842.90</h1>
+            <p class="text-success">12% cash inflow</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <linechart [chartTitle]="'NetFlix'" [chartLabels]="chartLabels" [chartData]="chartData" [chartHeight]="chartHeight" [chartWidth]="chartWidth"></linechart>
+      </ion-col>
+    </ion-row>
   </div>
 
   <div class="page-content">

@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { NavParams } from '@ionic/angular';
 import { GlobalsServices } from 'src/app/services/core/globals';
-import { HalfModalPage } from 'src/app/modals/half-modal/half-modal.page';
 
 @Component({
   selector: 'app-full-modal',

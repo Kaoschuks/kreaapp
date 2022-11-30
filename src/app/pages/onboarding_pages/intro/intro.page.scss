@@ -45,9 +45,13 @@
   }
 }
 
-.outer{
-  display: block;
-  /* padding: 15px 0; */
+.btn-cont{
+  ion-button{
+    height: 35px;
+    width: 50px;
+    font-size: 14px;
+    --border-radius: 10px;
+  }
 }
 
 

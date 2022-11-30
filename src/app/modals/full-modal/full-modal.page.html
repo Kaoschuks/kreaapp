@@ -1,14 +1,14 @@
 <ion-header mode="md" class="ion-no-border">
-  <ion-toolbar >
+  <ion-toolbar>
+    <ion-button (click)="closeModal()" color="dark" mode="ios" fill="clear" slot="start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="page == 'country-list'" class="ion-margin-vertical">
+    <ion-searchbar placeholder="Search" search-icon="search-circle" show-clear-button="always" [(ngModel)]="searchText" mode="md"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
+  <role *ngIf="page == 'role'"></role>
 </ion-content>
-
-
-<ion-footer>
-  <ion-toolbar>
-  </ion-toolbar>
-</ion-footer>

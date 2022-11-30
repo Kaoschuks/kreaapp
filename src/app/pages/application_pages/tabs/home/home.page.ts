@@ -11,19 +11,6 @@ import { SwiperOptions } from 'swiper'
 })
 export class HomePage {
 
-  chartLabels: any;
-
-  chartData = [
-      {
-        "name": "Balance",
-        "value": 2000
-      },
-      {
-        "name": "Expenses",
-        "value": 1200
-      }
-    ];
-
     investment: any = [
       {
         name: "Get a loan",
@@ -56,10 +43,14 @@ export class HomePage {
     pagination: false,
   }
   
+  chartLabels = ["Jan", "Feb",  "Mar"]
+  chartData = [10, 80, 35]
+  chartWidth = 80
+  chartHeight = 80
+  
   constructor(private globals: GlobalsServices) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   changecurrency(curr){
     console.log(curr)

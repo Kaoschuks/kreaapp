@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { IonImg } from '@ionic/angular';
 import { SwiperComponent } from 'swiper/angular';
 
@@ -17,6 +17,7 @@ export class OnboardingSwiperComponent implements OnInit {
 
   @ViewChild('swiper') swiper: SwiperComponent;
   @ViewChild('bgImg') bgImg: IonImg;
+  @Output() public footerContent = new EventEmitter<string>();
 
   public dir: string;
 
@@ -48,9 +49,12 @@ export class OnboardingSwiperComponent implements OnInit {
     if (swiper[0].isBeginning) {
       this.swiper.swiperRef.allowSlidePrev = false;
       this.swiper.swiperRef.allowSlideNext = true;
+      this.footerContent.emit('beginning');
     } else if (swiper[0].isEnd) {
+      this.footerContent.emit('end');
       this.swiper.swiperRef.allowSlidePrev = true;
     } else {
+      this.footerContent.emit('between');
       this.swiper.swiperRef.allowSlideNext = true;
       this.swiper.swiperRef.allowSlidePrev = true;
     }
