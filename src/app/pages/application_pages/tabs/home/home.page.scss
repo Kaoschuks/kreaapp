@@ -14,9 +14,23 @@
     }
 }
   .page-content {
+    ion-item {
+      ion-label {
+          margin-right: 0 !important;
+      }
+    }
+    // ion-fab-button {
+    //   margin: 0px auto !important;
+    //   --border-radius: 10px !important;
+    //   border-radius: 10px !important;
+    //   margin-bottom: 3px !important;
+    // }
+    .buy-icon{
+      transform:rotate(180deg);
+    }
     ion-card {
       width: 100%;
-      padding: 14px;
+      padding: 10px;
       border-radius: 12px !important;
       ion-slide {
         margin-top: 8px !important;

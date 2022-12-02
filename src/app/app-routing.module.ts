@@ -8,10 +8,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'country',
-    loadChildren: () => import('./pages/onboarding_pages/country/country.module').then( m => m.CountryPageModule)
-  },
-  {
     path: 'intro',
     loadChildren: () => import('./pages/onboarding_pages/intro/intro.module').then( m => m.IntroPageModule)
   },

@@ -1,5 +1,5 @@
 
-  <ion-item class="text-heading ion-padding animated fadeIn" lines="none" details="false">
+  <ion-item class="text-heading animated fadeIn" lines="none" details="false">
     <ion-label>
       <h2 class="fs-22 fw-6">Choose your role</h2>
       <p class="ion-text-wrap">Simply enter your email address to <br />create an account.</p>
@@ -7,8 +7,8 @@
     </ion-label>
   </ion-item>
 
-<div align="center">
-  <ion-card class="ion-padding ion-text-center no-shadow" style="width: 80%;" routerLink="/tabs" routerDirection="forward">
+<div align="center" style="margin-top: 7px;">
+  <ion-card class="ion-padding ion-text-center no-shadow" style="width: 80%;" (click)="selectedrole()">
     <ion-label class="ion-padding">
       <h1 class="bold">Merchant</h1>
     </ion-label>
@@ -21,7 +21,7 @@
     </ion-label>
   </ion-card>
 
-  <ion-card class="ion-padding ion-text-center no-shadow" style="width: 80%;" routerLink="/tabs" routerDirection="forward">
+  <ion-card class="ion-padding ion-text-center no-shadow" style="width: 80%;" (click)="selectedrole()">
     <ion-label class="ion-padding">
       <h1 class="bold">Merchant</h1>
     </ion-label>

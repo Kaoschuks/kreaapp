@@ -168,15 +168,8 @@ ion-calendar {
     }
 }
 
-.goal-category-bgColor1 {
-    --background: linear-gradient(135.69deg, #0BB8E4 0%, #023C4B 98.81%) !important;
-    background: linear-gradient(135.69deg, #0BB8E4 0%, #023C4B 98.81%) !important;
-}
-.goal-category-bgColor2 {
-    --background: linear-gradient(135.54deg, #2B88D8 -0.96%, #001F78 100%) !important;
-    background: linear-gradient(135.54deg, #2B88D8 -0.96%, #001F78 100%) !important;
-}
-.goal-category-bgColor3 {
-    --background: linear-gradient(135deg, #FFBE81 0%, #D25D3F 100%) !important;
-    background: linear-gradient(135deg, #FFBE81 0%, #D25D3F 100%) !important;
+ion-buttons {
+    ion-button {
+        --border-radius: 10px !important;
+      }
 }

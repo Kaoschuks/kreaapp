@@ -12,7 +12,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { SearchPipe } from '../pipes/search';
 import { DateAsAgoPipe } from '../pipes/dateAsAgo';
 
-import { CountryListComponent } from './popup-modals/country-list/country-list.component';
+//import { CountryListComponent } from './popup-modals/country-list/country-list.component';
 import { RegisterSuccessComponent } from './popup-modals/register-success/register-success.component';
 import { BiometricUiComponent } from './popup-modals/biometric-ui/biometric-ui.component';
 import { CompleteSetupComponent } from './popup-modals/complete-setup/complete-setup.component';
@@ -44,8 +44,7 @@ import { RoleComponent } from './category/role/role.component';
 export const component: Array<any> = [
   SearchPipe, DateAsAgoPipe,
   OnloadingComponent, OnerrorComponent, ProgressBarComponent, BusyLoadingComponent,
-  SetupComponent,
-  CountryListComponent, OnboardingSwiperComponent, MobileHeaderComponent, DesktopViewComponent, CompleteSetupComponent,
+  SetupComponent, OnboardingSwiperComponent, MobileHeaderComponent, DesktopViewComponent, CompleteSetupComponent,
   SignupFormComponent, SigninFormComponent, OtpFormComponent,  AuthLayoutComponent, 
   RegisterSuccessComponent, BiometricUiComponent, SubpageLayoutComponent, TransactionListComponent,
   TransactionDetailsComponent, RoleComponent, LinechartComponent

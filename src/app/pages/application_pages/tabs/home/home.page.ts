@@ -39,7 +39,7 @@ export class HomePage {
   curr_currency: any = 'NGN'
   type: any = 'text'
   slideOpts: SwiperOptions = {
-    slidesPerView: 1.5,
+    slidesPerView: 1.8,
     pagination: false,
   }
   

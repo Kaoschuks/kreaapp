@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalsServices } from 'src/app/services/core/globals';
 
 @Component({
   selector: 'role',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoleComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _globals: GlobalsServices
+  ) { }
 
   ngOnInit() {}
+
+  closeModal() {
+    this._globals.modalCtrl.dismiss();
+  }
+
+  async selectedrole(country: string) {
+    this.closeModal();
+    this._globals.navigate('/signup', false)
+  }
 
 }
