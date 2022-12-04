@@ -1,8 +1,15 @@
 :host {
     ion-toolbar {
         padding-top: 7px !important;
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: transperent;
+        }
     }
     .page-header {
-        padding-top: 120px !important;
+        padding-top: 80px !important;
     }
 }

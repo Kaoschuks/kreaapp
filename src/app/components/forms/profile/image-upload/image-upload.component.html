@@ -1,0 +1,13 @@
+<h3 *ngIf="images == ''" class="ion-padding ion-text-center">Please Select Image!</h3>
+<div>
+  <img (click)="presentActionSheet()" [height]="height" [width]="width" [src]="images" />
+  <div *ngIf="isEdit">
+    <br />
+    <ion-button (click)="presentActionSheet()" color="dark" fill="clear">
+      <span class="fs-14 bold">Change Avatar</span>
+    </ion-button>
+  </div>
+</div>
+
+<input class="hidden" capture="camera" (change)="onFile($event)" id="photo-capture" accept="image/*" type="file" />
+<input class="hidden" (change)="onFile($event)" id="photo-upload" accept="image/*" type="file" />

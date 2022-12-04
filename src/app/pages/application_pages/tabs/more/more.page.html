@@ -1,144 +1,88 @@
 <ion-content color="light">
-  <ion-toolbar slot="fixed" color="primary">
-    <!-- <br />
-    <br /> -->
-    <ion-item  lines="none" detail="false">
-      <ion-avatar routerLink="/profile" routerDirection="forward" slot="start">
-        <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU" />
-      </ion-avatar>
-      <ion-button (click)="chooseLanguages()" slot="end" color="white" fill="clear" >
-        <ion-icon src="assets/svg/af-language.svg"></ion-icon> Nigeria
-      </ion-button>
-    </ion-item>
-    <ion-item  lines="none" detail="false">
-      <ion-label routerLink="/profile" routerDirection="forward">
-        <h2 class="text-white bold">Dylan Robbinson</h2>
-        <p class="text-white">dylanrobinson</p>
-      </ion-label>
-      <ion-label (click)="openmodal('onboarding-setup')" slot="end" color="warning" class="fs-12 animated pulse infinite">Complete your Profile</ion-label>
-    </ion-item>
-  </ion-toolbar>
-  <div class="page-header bg-primary"></div>
+  <ion-toolbar slot="fixed" class="ion-no-border"> </ion-toolbar>
+  <div class="page-header bg-white">
+    <div align="center">
+        <ion-avatar routerLink="/profile" routerDirection="forward">
+          <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU" />
+        </ion-avatar>
+        <ion-label>
+          <h2 style="margin-top: 13px !important;">Danilo Tanic</h2>
+          <p class="text-muted">danilo@uscreen.tv</p>
+        </ion-label>
+        <ion-button size="small" color="primary" fill="solid" class="ion-text-capitalize ion-margin-top" routerLink="/profile-page" routerDirection="forward">
+          Edit Profile<ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+    </div>
+  </div>
+    
 
   <div class="page-content">
-
-    <ion-card class="ion-no-margin ion-border no-shadow bg-danger-overlay" (click)="openmodal('pin')">
-      <div class="bg-pin"></div>
-      <ion-item lines="none" details="false" class="pin-item">
-        <ion-label>
-          <h2 class="fs-16 text-dark ion-text-wrap">Get your security pin setup to secure your account</h2>
-          <p class="ion-text-wrap fs-12 text-prmary">Complete your setup by finihing your kyc setup and verification to access the full application power</p>
-        </ion-label>
-        <ion-thumbnail slot="start">
-        </ion-thumbnail>
-      </ion-item>
-    </ion-card>
-
-    <ion-card (click)="openmodal('verifyidentity')" class="ion-no-margin ion-border no-shadow bg-white">
-      <div class="bg-kyc"></div>
-      <ion-item lines="none" details="false">
-        <ion-thumbnail slot="end"></ion-thumbnail>
-        <ion-label>
-          <h2 class="fs-16 text-dark ion-text-wrap">Verify your Identity <br />via KYC information</h2>
-          <p class="ion-text-wrap fs-12 text-dark">Take a government ID & selfie photo to<br /> get verified nformaton about you</p>
-        </ion-label>
-      </ion-item>
-      <ion-button color="dark" class="ion-margin no-shadow kyc-btn">
-        <span class="fs-12">Complete KYC Process</span>
-      </ion-button>
-    </ion-card>
-
-    <linked-card></linked-card>
-    
     <ion-card color="white" class="ion-no-margin ion-no-padding no-shadow">
-      <ion-item lines="none" detail="false">
-        <ion-label>
-          <h2>More Features</h2>
+      <ion-item lines="none" detail="false" color="light">
+        <ion-label class="ion-text-uppercase">
+          <p class="fs-12 text-muted">Content</p>
         </ion-label>
       </ion-item>
-      <ion-item lines="full" detail="false" routerDirection="forward" (click)="openmodal('sendmoney')">
+      <ion-item lines="none" detail="true" routerDirection="forward" (click)="openmodal('sendmoney')">
         <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <i class="ri-send-plane-line ri-xl fs-18 text-primary"></i>
-        </ion-fab-button>
-        <!-- <ion-item lines="none" detail="false" class="ion-no-margin">
-          <ion-label class="ion-no-padding ion-no-margin">
-            <h2>Send Money</h2>
-          </ion-label>
-        </ion-item> -->
-        <ion-label>
-          <h2>Send Money</h2>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="full" detail="false" routerDirection="forward" routerLink="/goals">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <i class="ri-focus-3-line ri-xl fs-18 text-primary"></i>
-        </ion-fab-button>
-        <ion-label>
-          <h2>Savings Goals</h2>
-        </ion-label>
-        <ion-label slot="end" color="dark" class="fs-12 animated pulse infinite">Create a Goal</ion-label>
-      </ion-item>
-      <ion-item lines="full" detail="false" routerDirection="forward" routerLink="/tabs/budgets">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <i class="ri-medal-line ri-xl fs-18 text-primary"></i>
-        </ion-fab-button>
-        <ion-label>
-          <h2>Budgets</h2>
-        </ion-label>
-        <ion-label slot="end" color="dark" class="fs-12 animated pulse infinite">Start a Budget</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="true" routerDirection="forward" routerLink="/subscriptions">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <ion-icon name="albums-outline" class=" fs-18 text-primary"></ion-icon>
-        </ion-fab-button>
-        <ion-label>
-          <h2>Subscriptions & Bills</h2>
-        </ion-label>
-      </ion-item>
-    </ion-card>
-
-    <ion-card color="white" class="ion-no-margin ion-no-border no-shadow">
-      <ion-item lines="full" detail="true" (click)="openmodal('aide')">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <i class="ri-customer-service-line ri-xl fs-18 text-primary"></i>
-        </ion-fab-button>
-        <ion-label>
-          <h2>Aide Finance Manager</h2>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="full" detail="true" routerDirection="forward" routerLink="/tabs/tips">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <i class="ri-newspaper-line ri-xl fs-18 text-primary"></i>
-        </ion-fab-button>
-        <ion-label>
-          <h2>Suggestions & Tips</h2>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="full" detail="true" routerDirection="forward" routerLink="/loans">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <ion-icon name="cash-outline" class=" fs-18 text-primary"></ion-icon>
-        </ion-fab-button>
-        <ion-label>
-          <h2>Loans</h2>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="full" detail="true" routerDirection="forward" routerLink="/settings">
-        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <ion-icon name="settings-outline" class=" fs-18 text-primary"></ion-icon>
+          <ion-icon name="settings-outline" class="fs-24 text-dark"></ion-icon>
         </ion-fab-button>
         <ion-label>
           <h2>Settings</h2>
         </ion-label>
       </ion-item>
-      <ion-item lines="full" detail="true" (click)="openmodal('invite')">
+      <ion-item lines="none" detail="true" routerDirection="forward" routerLink="/goals">
         <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
-          <ion-icon name="gift-outline" class=" fs-18 text-primary"></ion-icon>
+          <ion-icon name="list-circle-outline" class="fs-24 text-dark"></ion-icon>
         </ion-fab-button>
         <ion-label>
-          <h2>Invite friends</h2>
-          <p class="fs-12">Your refferal code is <b class="text-dark">tu673</b></p>
+          <h2>Trade History</h2>
         </ion-label>
-        <ion-label slot="end" color="primary" class="fs-12">Earn $250</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card color="white" class="ion-no-margin ion-no-border no-shadow">
+      <ion-item lines="none" detail="false" color="light">
+        <ion-label class="ion-text-uppercase">
+          <p class="fs-12 text-muted">Preference</p>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" detail="true" (click)="openmodal('aide')">
+        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
+          <ion-icon name="globe-outline" class="fs-24 text-dark"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2>Language</h2>
+        </ion-label>
+        <ion-label slot="end">
+          <h2 style="margin-right: 12px;">English</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" detail="false" routerDirection="forward" routerLink="/tabs/tips">
+        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
+          <ion-icon name="moon-outline" class="fs-24 text-dark"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2>Dark Mode</h2>
+        </ion-label>
+        <ion-toggle slot="end" mode="ios"></ion-toggle>
+      </ion-item>
+      <ion-item lines="none" detail="true" routerDirection="forward" routerLink="/settings">
+        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
+          <ion-icon name="settings-outline" class="fs-24 text-dark"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2>Settings</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" detail="false" (click)="openmodal('invite')">
+        <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
+          <ion-icon name="copy-outline" class="fs-24 text-dark"></ion-icon>
+        </ion-fab-button>
+        <ion-label>
+          <h2>Play in Background</h2>
+        </ion-label>
+        <ion-toggle slot="end" mode="ios" class="fs-12"></ion-toggle>
       </ion-item>
     </ion-card>
   </div>

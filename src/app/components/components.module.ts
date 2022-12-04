@@ -20,6 +20,8 @@ import { CompleteSetupComponent } from './popup-modals/complete-setup/complete-s
 import { SignupFormComponent } from './forms/signup/signup-form/signup-form.component';
 import { SigninFormComponent } from './forms/signin/signin-form/signin-form.component';
 import { OtpFormComponent } from './forms/otp-form/otp-form.component';
+import { UserFormComponent } from './forms/profile/user-form/user-form.component';
+import { ImageUploadComponent } from './forms/profile/image-upload/image-upload.component';
 
 import { OnloadingComponent } from './ui/onloading/onloading.component';
 import { OnerrorComponent } from './ui/onerror/onerror.component';
@@ -47,7 +49,7 @@ export const component: Array<any> = [
   SetupComponent, OnboardingSwiperComponent, MobileHeaderComponent, DesktopViewComponent, CompleteSetupComponent,
   SignupFormComponent, SigninFormComponent, OtpFormComponent,  AuthLayoutComponent, 
   RegisterSuccessComponent, BiometricUiComponent, SubpageLayoutComponent, TransactionListComponent,
-  TransactionDetailsComponent, RoleComponent, LinechartComponent
+  TransactionDetailsComponent, RoleComponent, LinechartComponent, UserFormComponent, ImageUploadComponent
 ];
 
 @NgModule({

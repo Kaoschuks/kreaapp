@@ -71,7 +71,7 @@
           <ion-fab-button size="medium" class="no-shadow" color="light">
             <ion-buttons>
               <ion-button fill="clear">
-                <ion-icon name="open-outline" class="buy-icon" color="primary" class="fs-30"></ion-icon>
+                <ion-icon name="open-outline" class="buy-icon fs-30" color="primary"></ion-icon>
               </ion-button>
             </ion-buttons>
           </ion-fab-button>
@@ -87,7 +87,7 @@
         <h2 class="ion-no-padding fs-16">Stock Trends</h2>
       </ion-label>
       <ion-button routerDirection="forward" routerLink="/subscriptions" style="margin-top: 16px;">
-        <p class="fs-12 text-white">See all</p>
+        <p class="fs-12 text-primary">See all</p>
       </ion-button>
     </ion-list-header>
 
@@ -118,7 +118,7 @@
         <h2 class="ion-no-padding fs-16">Top Movers</h2>
       </ion-label>
       <ion-button routerDirection="forward" routerLink="/subscriptions" style="margin-top: 16px;">
-        <p class="fs-12 text-white">See all</p>
+        <p class="fs-12 text-primary">See all</p>
       </ion-button>
     </ion-list-header>
 
@@ -132,7 +132,7 @@
       <ion-slide *ngFor="let source of investment">
        <ion-card class="ion-no-border no-shadow">
         <ion-item lines="none" detail="false" style="margin-left: -29px;">
-          <ion-fab-button size="small" class="bg-light no-shadow text-white" slot="start">
+          <ion-fab-button size="small" class="bg-light no-shadow text-dark" slot="start">
             <ion-icon [name]="source?.icon"></ion-icon>
           </ion-fab-button>
           <ion-label>
