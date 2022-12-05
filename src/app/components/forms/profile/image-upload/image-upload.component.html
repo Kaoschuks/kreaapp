@@ -1,6 +1,11 @@
 <h3 *ngIf="images == ''" class="ion-padding ion-text-center">Please Select Image!</h3>
 <div>
-  <img (click)="presentActionSheet()" [height]="height" [width]="width" [src]="images" />
+  <img  [height]="height" [width]="width" [src]="images" />
+  <div *ngIf="!isEdit" class="uploadimage">
+    <ion-button (click)="presentActionSheet()" size="small" color="white" fill="clear">
+      <ion-icon class="fs-24 text-white" name="camera"></ion-icon>
+    </ion-button>
+  </div>
   <div *ngIf="isEdit">
     <br />
     <ion-button (click)="presentActionSheet()" color="dark" fill="clear">

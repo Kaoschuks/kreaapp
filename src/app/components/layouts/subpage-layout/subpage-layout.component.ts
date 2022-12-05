@@ -13,6 +13,8 @@ export class SubpageLayoutComponent implements OnInit {
   @Input() back: string;
   @Input() headerColor: string = 'bg-primary';
   @Input() textColor: string = 'text-white';
+  @Input() contentbgColor: string = 'light';
+
   constructor(
     public _globals:  GlobalsServices) { }
 

@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border hidden-md" [ngClass]="headerColor">
-  <ion-toolbar [ngClass]="headerColor" color="green">
+  <ion-toolbar [ngClass]="headerColor">
     <ion-button routerDirection="back" (click)="goBack()" slot="start" fill="clear" >
       <ion-icon name="chevron-back-outline" [ngClass]="textColor"></ion-icon>
     </ion-button>
@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="light">
+<ion-content [color]="contentbgColor">
   <ng-content></ng-content>
 </ion-content>
+

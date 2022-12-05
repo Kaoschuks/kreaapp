@@ -40,7 +40,7 @@
     <ion-row class="ion-margin-vertical" style="margin-left: -34px;">
       <ion-col size="4">
         <div align="center">
-          <ion-fab-button size="medium" class="no-shadow" color="light">
+          <ion-fab-button size="medium" class="no-shadow" color="lighter">
             <ion-buttons>
               <ion-button fill="clear">
                 <ion-icon name="open-outline" color="primary" class="fs-30"></ion-icon>
@@ -54,7 +54,7 @@
       </ion-col>
       <ion-col size="4">
         <div align="center">
-          <ion-fab-button size="medium" class="no-shadow" color="light">
+          <ion-fab-button size="medium" class="no-shadow" color="lighter">
             <ion-buttons>
               <ion-button fill="clear">
                 <ion-icon name="swap-vertical-outline" color="primary" class="fs-30"></ion-icon>
@@ -68,7 +68,7 @@
       </ion-col>
       <ion-col size="4">
         <div align="center">
-          <ion-fab-button size="medium" class="no-shadow" color="light">
+          <ion-fab-button size="medium" class="no-shadow" color="lighter">
             <ion-buttons>
               <ion-button fill="clear">
                 <ion-icon name="open-outline" class="buy-icon fs-30" color="primary"></ion-icon>
@@ -91,8 +91,8 @@
       </ion-button>
     </ion-list-header>
 
-    <ion-item lines="none" detail="false" routerDirection="forward" routerLink="/goals" *ngFor="let currency of currencies | slice : 0:1" style="--border-radius: 0px 0px 20px 20px ; --background: var(--ion-color-light);">
-      <ion-fab-button size="small" class="bg-light no-shadow" slot="start">
+    <ion-item lines="none" detail="false" routerDirection="forward" routerLink="/goals" *ngFor="let currency of currencies | slice : 0:1" style="--border-radius: 0px 0px 20px 20px ; --background: var(--ion-color-lighter);">
+      <ion-fab-button size="small" class="bg-lighter no-shadow" slot="start">
         <ion-img [src]="currency?.icon"></ion-img>
       </ion-fab-button>
       <ion-label>
@@ -132,7 +132,7 @@
       <ion-slide *ngFor="let source of investment">
        <ion-card class="ion-no-border no-shadow">
         <ion-item lines="none" detail="false" style="margin-left: -29px;">
-          <ion-fab-button size="small" class="bg-light no-shadow text-dark" slot="start">
+          <ion-fab-button size="small" class="bg-lighter no-shadow text-dark" slot="start">
             <ion-icon [name]="source?.icon"></ion-icon>
           </ion-fab-button>
           <ion-label>

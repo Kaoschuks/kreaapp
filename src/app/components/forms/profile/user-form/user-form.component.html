@@ -1,3 +1,85 @@
-<p>
-  user-form works!
-</p>
+
+      <div class="forms" style="margin-top: -10px">
+        <form [formGroup]='userInfoForm' (ngSubmit)="userInfoSubmit()">
+          <ion-item lines="inset" class="ion-no-padding ion-margin-top">
+            <ion-label position="floating">First Name</ion-label>
+            <ion-input type="text" formControlName='first_name'
+                  placeholder="First Name" >
+            </ion-input>
+            <ion-icon slot="end" name="person-outline" color="primary"></ion-icon>
+          </ion-item>
+          <span *ngIf="f.first_name?.invalid && (f.first_name?.dirty || f.first_name?.touched)" class="ion-no-padding">
+            <span *ngIf="f.first_name?.errors?.['required']" class="text-danger fs-12">First name is required</span>
+          </span>
+
+          <ion-item lines="inset" class="ion-no-padding ion-margin-top">
+            <ion-label position="floating">Last Name</ion-label>
+            <ion-input type="text" formControlName='last_name'
+                  placeholder="Last Name">
+            </ion-input>
+            <ion-icon slot="end" name="person-outline" color="primary"></ion-icon>
+          </ion-item>
+          <span *ngIf="f.last_name?.invalid && (f.last_name?.dirty || f.last_name?.touched)" class="ion-no-padding">
+            <span *ngIf="f.last_name?.errors?.['required']" class="text-danger fs-12">Last name is required</span>
+          </span>
+          
+          <ion-item lines="full" class="ion-no-padding ion-margin-top">
+            <ion-label position="floating">Date of Birth</ion-label>
+            <ion-input type="date" formControlName='DOB' placeholder="Date of birth ( MM / DD / YYYY )"></ion-input>
+            <ion-icon slot="end" name="calendar-outline" color="primary"></ion-icon>
+          </ion-item>
+          <span *ngIf="f.DOB?.invalid && (f.DOB?.dirty || f.DOB?.touched)" class="ion-no-padding">
+            <span *ngIf="f.DOB?.errors?.['required']" class="text-danger fs-12">Date of birth is required</span>
+          </span>
+
+          <ion-item lines="full" class="ion-no-padding ion-margin-top">
+            <ion-label style="margin-bottom: 7px" position="stacked">Phone Number</ion-label>
+            <ngx-intl-tel-input
+              [cssClass]="'custom'"
+              [preferredCountries]="preferredCountries"
+              [enableAutoCountrySelect]="true"
+              [enablePlaceholder]="true"
+              [searchCountryFlag]="true"
+              [searchCountryField]="[
+                SearchCountryField.Iso2,
+                SearchCountryField.Name
+              ]"
+              [selectFirstCountry]="false"
+              [selectedCountryISO]="CountryISO.Nigeria"
+              [maxLength]="15"
+              [phoneValidation]="true"
+              [separateDialCode]="separateDialCode"
+              [numberFormat]="PhoneNumberFormat.National"
+              name="phone"
+              formControlName="phone"
+            >
+            </ngx-intl-tel-input>
+            <ion-icon slot="end" name="call" color="primary"></ion-icon>
+          </ion-item>
+          <span *ngIf="f.SSN?.invalid && (f.SSN?.dirty || f.SSN?.touched)" class="ion-no-padding">
+            <span *ngIf="f.SSN.errors?.['required']" class="text-danger fs-12">Social security number is required</span>
+          </span>
+
+          <div style="margin-top: 20px">
+            <ion-radio-group value="male" mode="md" formControlName='gender'>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item>
+                    <ion-label>Male</ion-label>
+                    <ion-radio slot="start" value="male"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              <ion-col size="6">
+                <ion-item>
+                  <ion-label>Female</ion-label>
+                  <ion-radio slot="start" value="female"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </div>
+        <span *ngIf="f.gender?.invalid && (f.gender?.dirty || f.gender?.touched)" class="ion-no-padding">
+          <span *ngIf="f.gender?.errors?.['required']" class="text-danger fs-12">Gender is required</span>
+        </span>
+      </form>
+    </div>

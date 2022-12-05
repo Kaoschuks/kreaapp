@@ -9,28 +9,28 @@
 
 <ion-footer color="white" class="ion-no-border">
   <div class="ion-padding">
-    <div #btnCont class="btn-cont">
+    <!-- <div #btnCont class="btn-cont">
       <ion-item lines="none" detail="false">
         <ion-button slot="start" color="dark" (click)="getStarted('role')" fill="clear">skip</ion-button>
           <ion-button mode="ios" slot="end" (click)="nextSlide()">
             <ion-icon name="arrow-forward-outline"></ion-icon>
           </ion-button>
       </ion-item>
-    </div>
-    <div #getStarteddiv>
+    </div> -->
+    <!-- <div #getStarteddiv>
       <ion-button size="large" expand="block" (click)="getStarted('role')" color="primary">
         <span class="fs-16 bold">Get Started</span>
       </ion-button>
       <ion-button size="large" routerLink="/signin" routerDirection="forward" expand="block" fill="clear">
         <span class="fs-16 bold text-dark">I already have an account</span>
       </ion-button>
-    </div>
-    <!-- <ion-button size="large" expand="block" routerLink="/signup" color="primary">
+    </div> -->
+    <ion-button size="large" expand="block" (click)="getStarted('role')" color="primary">
       <span class="fs-16 bold">Get Started</span>
     </ion-button>
     <ion-button size="large" routerLink="/signin" routerDirection="forward" expand="block" fill="clear">
       <span class="fs-14 bold text-dark">I already have an account</span>
-    </ion-button> -->
+    </ion-button>
     <br />
   </div>
 </ion-footer>

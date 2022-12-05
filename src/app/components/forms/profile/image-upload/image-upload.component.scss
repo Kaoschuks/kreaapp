@@ -1,6 +1,14 @@
 :host {
 	img {
     border: 2px solid var(--ion-color-light);
-    border-radius: 100%;
+    border-radius: 15%;
   }
+  .uploadimage {
+    //margin-bottom: -25px !important;
+    // margin-left: 15px !important;
+    ion-button {
+        margin-top: -45px !important;
+        margin-left: 64px !important;
+    }
+}
 }

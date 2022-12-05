@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile-page</ion-title>
+<subpage-layout [back]="'/tab/more'" [headerColor]="'bg-white'" [page]="'Personal Data'" [textColor]="'text-dark'" [contentbgColor]="'light'">
+  <ion-toolbar class="profile-header" color="white">
+    <div class="uploadimage" align="center">
+        <image-upload [height]="80" [width]="80" [isEdit]="false"></image-upload>
+      
+    </div>
   </ion-toolbar>
-</ion-header>
 
-<ion-content>
+  <div class="profile-content">
 
-</ion-content>
+    <ion-card class="ion-no-margin ion-no-border no-shadow bg-white">
+      <div class="ion-padding-horizontal" style="margin-top: -10px">
+        <user-form [userData]="userData[0]?.profile"></user-form>
+      </div>
+      <!-- <div align="center" class="ion-margin-top">
+          <ion-button routerLink="/profile/address" routerDirection="forward" fill="clear">
+            <span class="fs-12 bold text-primary">Edit Personal Information</span>
+          </ion-button>
+      </div> -->
+      <ion-footer class="ion-no-border ion-margin-vertical">
+        <ion-toolbar>
+          <ion-button class="ion-no-border" mode="md" size="large" expand="block">
+            <span class="fs-14 bold">Save Personal Information</span>
+          </ion-button>
+          <br />
+        </ion-toolbar>
+      </ion-footer>
+      
+    </ion-card>
+
+  </div>
+</subpage-layout>

@@ -13,9 +13,9 @@ import { OnboardingSwiperComponent } from 'src/app/components/onboarding/onboard
 })
 export class IntroPage implements OnInit {
 
-  @ViewChild('getStarteddiv') getStarteddiv: ElementRef;
-  @ViewChild('btnCont') btnCont: ElementRef;
-  @ViewChild(OnboardingSwiperComponent) swiper !: OnboardingSwiperComponent;
+  // @ViewChild('getStarteddiv') getStarteddiv: ElementRef;
+  // @ViewChild('btnCont') btnCont: ElementRef;
+  // @ViewChild(OnboardingSwiperComponent) swiper !: OnboardingSwiperComponent;
   
   constructor(
     private globals: GlobalsServices
@@ -24,26 +24,25 @@ export class IntroPage implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    this.getStarteddiv.nativeElement.style.display = 'none';
-    this.btnCont.nativeElement.style.display = 'block';
-    this.nextSlide();
+    // this.getStarteddiv.nativeElement.style.display = 'none';
+    // this.btnCont.nativeElement.style.display = 'block';
     }
 
-  nextSlide() {
-    this.swiper.nextSlide();
-  }
+  // nextSlide() {
+  //   this.swiper.nextSlide();
+  // }
 
   changefooterContent(swiper: any) {
-    if(swiper == 'beginning'){
-      this.getStarteddiv.nativeElement.style.display = 'none';
-      this.btnCont.nativeElement.style.display = 'block';
-    }else if (swiper == 'end'){
-      this.getStarteddiv.nativeElement.style.display = 'block';
-      this.btnCont.nativeElement.style.display = 'none';
-    }else if (swiper == 'between'){
-      this.getStarteddiv.nativeElement.style.display = 'none';
-      this.btnCont.nativeElement.style.display = 'block';
-    }
+    // if(swiper == 'beginning'){
+    //   this.getStarteddiv.nativeElement.style.display = 'none';
+    //   this.btnCont.nativeElement.style.display = 'block';
+    // }else if (swiper == 'end'){
+    //   this.getStarteddiv.nativeElement.style.display = 'block';
+    //   this.btnCont.nativeElement.style.display = 'none';
+    // }else if (swiper == 'between'){
+    //   this.getStarteddiv.nativeElement.style.display = 'none';
+    //   this.btnCont.nativeElement.style.display = 'block';
+    // }
   }
 
   /* Opens modal for user role,*/

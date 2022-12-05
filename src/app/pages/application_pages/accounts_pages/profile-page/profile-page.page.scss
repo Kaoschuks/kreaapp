@@ -1,0 +1,26 @@
+:host {
+    .profile-header {
+        padding-top: 20px !important;
+        padding-bottom: 110px !important;
+        ion-item {
+            margin-bottom: -10px !important;
+        }
+        .uploadimage {
+            margin-bottom: -25px !important;
+            // margin-left: 15px !important;
+            ion-button {
+                margin-top: -45px !important;
+                margin-left: 64px !important;
+            }
+        }
+    }
+    .profile-content {
+        position: relative !important;
+        z-index: 999999 !important;
+        margin-top: -90px !important;
+        padding-bottom: 20px !important;
+        ion-card {
+            --border-radius: 3px !important;
+        }
+    }
+}

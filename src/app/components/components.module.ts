@@ -8,6 +8,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { CodeInputModule } from 'angular-code-input';
 import { SwiperModule } from 'swiper/angular';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 import { SearchPipe } from '../pipes/search';
 import { DateAsAgoPipe } from '../pipes/dateAsAgo';
@@ -59,6 +60,7 @@ export const component: Array<any> = [
     IonicModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxIntlTelInputModule,
     CodeInputModule.forRoot({
       codeLength: 5,
       isCharsCode: false,

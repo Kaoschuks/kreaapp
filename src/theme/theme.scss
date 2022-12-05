@@ -230,17 +230,9 @@ body {
     --background: var(--ion-color-light) !important;
     background: var(--ion-color-light) !important;
 }
-.bg-medium, .bg-medium * {
-    --background: var(--ion-color-medium) !important;
-    background: var(--ion-color-medium) !important;
-}
-.bg-knight, .bg-knight * {
-    --background: var(--ion-color-knight) !important;
-    background: var(--ion-color-knight) !important;
-}
-.bg-dimgray, .bg-dimgray * {
-    --background: var(--ion-color-dimgray) !important;
-    background: var(--ion-color-dimgray) !important;
+.bg-lighter{
+    --background: var(--ion-color-lighter) !important;
+    background: var(--ion-color-lighter) !important;
 }
 .bg-white {
     --background: var(--ion-color-white) !important;
