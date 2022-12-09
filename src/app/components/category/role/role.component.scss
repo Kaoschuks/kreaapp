@@ -1,6 +1,9 @@
 :host {
-    ion-card {
-        --border-radius: 3px !important;
-        border: 1px solid var(--ion-color-light) !important;
+    .ion-card {
+        border-radius: 20px !important;
+        border: 2px solid var(--ion-color-light) !important;
+        width: 80%; 
+        margin-top: 100px;
+        padding: 20px 0;
     }
 }
