@@ -1,9 +1,39 @@
 :host {
     .ion-card {
         border-radius: 20px !important;
-        border: 2px solid var(--ion-color-light) !important;
+        border: 3px solid var(--ion-color-light) !important;
         width: 80%; 
         margin-top: 100px;
         padding: 20px 0;
+
+        .image-select-box-checkbox {
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin: 16px auto 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border: 1px solid #dbdbde;
+            border-radius: 50%;
+            background: var(--ion-color-white);
+        }
+        .image-select-box-checkbox:hover {
+            border-color: #6e6d7a;
+        }
+        .active {
+            border-color: var(--ion-color-primary);
+            background: var(--ion-color-primary);
+        }
+    }
+    .selected {
+        background: #fff;
+        border: 3px solid var(--ion-color-primary) !important;
     }
 }
