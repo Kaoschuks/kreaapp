@@ -8,32 +8,32 @@
   </ion-item>
 
 <div align="center" style="position: relative;">
-  <div #roleCard class="ion-padding ion-text-center no-shadow ion-card">
+  <div #roleCard1 class="ion-padding ion-text-center no-shadow ion-card">
     <img src="assets/onboarding/designer.png" style="margin-top: -100px;">
     <ion-label class="ion-padding">
       <h2 class="bold fs-20">Merchant</h2>
       <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
     </ion-label>
-    <div class="image-select-box-checkbox" (click)="selectbox($event)">
-      <svg #checkboxIcon width="12" height="11" viewBox="0 0 12 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="fill-current icon-12 text-white" style="display: none;"><path d="M11.568.284a1.184 1.184 0 00-1.69.157l-5.31 6.501-2.703-1.838a1.185 1.185 0 00-1.664.34A1.24 1.24 0 00.534 7.14l4.497 3.06 6.691-8.193a1.242 1.242 0 00-.154-1.724z"></path></svg>
+    <div class="image-select-box-checkbox" (click)="selectbox($event, 1)">
+      <svg #checkboxIcon1 width="12" height="11" viewBox="0 0 12 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="fill-current icon-12 text-white" style="display: none;"><path d="M11.568.284a1.184 1.184 0 00-1.69.157l-5.31 6.501-2.703-1.838a1.185 1.185 0 00-1.664.34A1.24 1.24 0 00.534 7.14l4.497 3.06 6.691-8.193a1.242 1.242 0 00-.154-1.724z"></path></svg>
     </div>
   </div>
 
-  <div #roleCard class="ion-padding ion-text-center no-shadow ion-card">
+  <div #roleCard2 class="ion-padding ion-text-center no-shadow ion-card">
     <img src="assets/onboarding/inspiration.png" style="margin-top: -100px;">
     <ion-label class="ion-padding">
       <h2 class="bold fs-20">Merchant</h2>
       <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
     </ion-label>
-    <div class="image-select-box-checkbox" (click)="selectbox($event)">
-      <svg #checkboxIcon width="12" height="11" viewBox="0 0 12 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="fill-current icon-12 text-white" style="display: none;"><path d="M11.568.284a1.184 1.184 0 00-1.69.157l-5.31 6.501-2.703-1.838a1.185 1.185 0 00-1.664.34A1.24 1.24 0 00.534 7.14l4.497 3.06 6.691-8.193a1.242 1.242 0 00-.154-1.724z"></path></svg>
+    <div class="image-select-box-checkbox" (click)="selectbox($event, 2)">
+      <svg #checkboxIcon2 width="12" height="11" viewBox="0 0 12 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="fill-current icon-12 text-white" style="display: none;"><path d="M11.568.284a1.184 1.184 0 00-1.69.157l-5.31 6.501-2.703-1.838a1.185 1.185 0 00-1.664.34A1.24 1.24 0 00.534 7.14l4.497 3.06 6.691-8.193a1.242 1.242 0 00-.154-1.724z"></path></svg>
     </div>
   </div>
 </div>
 
 <ion-footer color="white" class="ion-no-border">
   <div class="ion-padding">
-    <ion-button size="large" expand="block" (click)="selectedrole()" color="primary">
+    <ion-button size="large" expand="block" (click)="selectedrole()" color="primary" [disabled]="(role == '')?'true': 'false'">
       <span class="fs-16 bold">Next</span>
     </ion-button>
     <br />
