@@ -1,0 +1,15 @@
+<div class="scroll-horizontal ion-padding-start ion-margin-bottom ion-margin-top">
+    <div class="scroll-item ion-text-center" *ngFor="let match of matches;let i = index">
+        <ion-avatar class="avatar-md">
+            <ion-img [src]="'https://ui-avatars.com/api/?background=f5f6f9&color=000000&bold=false&format=svg&name='+match.username || match.fullname || match.email"></ion-img>
+        </ion-avatar>
+        <ion-label class="ion-margin-top">
+            <h2 class="fs-12">{{ match.username || match.fullname || 'not set' | titlecase }}</h2>
+        </ion-label>
+    </div>
+</div>
+<!-- <div class="scroll-horizontal ion-padding-start" *ngIf="loader">
+    <div class="scroll-item no-shadow ion-no-padding" *ngFor="let match of matches;let i = index">
+        <ion-skeleton-text style="height: 100%;width: 100%;"></ion-skeleton-text>
+    </div>
+</div> -->

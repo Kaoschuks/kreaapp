@@ -1,0 +1,28 @@
+
+<ng-container>
+  <ion-item-sliding mode="ios">
+    <ion-item-options side="start">
+      <ion-item-option color="success">Archive</ion-item-option>
+    </ion-item-options>
+
+    <ion-item mode="ios" detail="false">
+      <ion-avatar slot="start" class="avatar-sm">
+        <ion-img [src]="'https://ui-avatars.com/api/?background=f5f6f9&color=000000&bold=false&format=svg&name='+chat.username || chat.fullname || chat.email"></ion-img>
+      </ion-avatar>
+
+      <ion-label>
+        <h2 class="fs-14">{{ chat.fullname || 'not set' | titlecase }}</h2>
+        <p class="text-medium fs-12">{{ chat.current_country | titlecase }}</p>
+      </ion-label>
+      <ion-label slot="end" align="right">
+        <h2 style="margin-top: 0px;" class="fs-12 text-medium">{{ chat.date_updated | date }}</h2>
+        <ion-badge mode="ios" class="fs-10 bg-primary">2</ion-badge>
+      </ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option color="primary" class="fs-14">Favorite</ion-item-option>
+      <ion-item-option color="danger" class="fs-14">Delete</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ng-container>

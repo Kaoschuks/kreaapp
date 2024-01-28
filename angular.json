@@ -16,14 +16,17 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "www",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "browser": "src/main.ts",
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [
+              "crypto-js", "apexcharts", "boxicons"
+            ],
             "assets": [
               {
                 "glob": "**/*",
@@ -31,20 +34,29 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "styles": [
+              "./node_modules/@flaticon/flaticon-uicons/css/regular/rounded.css",
+              "./node_modules/@flaticon/flaticon-uicons/css/solid/rounded.css",
+              "./node_modules/@flaticon/flaticon-uicons/css/brands/all.css",
+              "node_modules/boxicons/css/boxicons.min.css",
+              "src/theme/variables.scss", 
+              "src/global.scss"
+            ],
+            "scripts": [
+              "src/assets/js/syncro.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
+                  "maximumWarning": "3mb",
                   "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "3kb",
                   "maximumError": "4kb"
                 }
               ],
@@ -57,9 +69,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true

@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="refresh" type="indeterminate"></ion-progress-bar>
+  <ion-toolbar [color]="color">
+    <ion-title mode="ios">
+      {{title || 'not set' | titlecase}}
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onclick.emit('profilemodal')">
+        <ion-icon name="person-circle-outline" class="fs-20" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="white" (click)="onclick.emit('notificationmodal')">
+        <ion-icon name="notifications-outline" class="fs-20" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="white">
+        <ion-icon name="search-outline" class="fs-20" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
