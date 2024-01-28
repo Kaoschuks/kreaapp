@@ -102,10 +102,13 @@
         </ion-label>
       </ion-item>
     </ion-list>
+
+    <swipe-button></swipe-button>
   </ion-card>
 
-  <ion-card class="no-shadow bg-light ion-no-padding animated fadeIn">
+  <ion-card class="no-shadow bg-white ion-no-padding animated fadeIn">
     <otp-input></otp-input>
+    <circle-chart [current]="30" [max]="100"></circle-chart>
   </ion-card>
 
   <ion-card>

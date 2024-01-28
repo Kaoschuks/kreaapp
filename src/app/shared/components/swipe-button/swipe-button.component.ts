@@ -1,5 +1,7 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { chevronForwardOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'swipe-button',
@@ -12,11 +14,17 @@ export class SwipeButtonComponent {
 
   @ViewChild('swipeButton', { read: ElementRef }) swipeButton!: ElementRef;
   @Input() color = 'primary';
-  @Input() text = 'Swipe';
+  @Input() text = 'SLide to Proceed';
 
   swipeInProgress = false;
   colWidth!: number;
   translateX!: number;
+
+  constructor() {
+    addIcons({ 
+      "chevron-forward-outline": chevronForwardOutline
+    });
+  }
 
   @HostListener('touchstart', ['$event'])
   onTouchStart(event: TouchEvent) {
@@ -27,20 +35,15 @@ export class SwipeButtonComponent {
   onTouchMove(event: TouchEvent) {
     if (this.swipeInProgress) {
       const deltaX = event.touches[0].clientX;
-      console.log('deltax: ', deltaX);
       this.colWidth = this.swipeButton.nativeElement.parentElement.clientWidth;
-      console.log('colWidth: ', this.colWidth);
       this.translateX = Math.min(deltaX, this.colWidth);
-      console.log('translatex: ', this.translateX);
       this.swipeButton.nativeElement.style.transform = `translateX(${this.translateX}px)`;
     }
   }
 
   @HostListener('touchend', ['$event'])
   async onTouchEnd(event: TouchEvent) {
-    console.log(event);
     if(this.translateX == this.colWidth) {
-      console.log('swiped');
       this.text = 'Swiped';
       this.color = 'success';
       await this.delay(800);

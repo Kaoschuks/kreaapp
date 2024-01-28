@@ -6,7 +6,7 @@ import { IonicModule, Platform } from '@ionic/angular';
 import { GlobalsServices } from 'src/app/core';
 import { expense } from 'src/environments/environment';
 import { OtpInputComponent } from 'src/app/shared/components/otp-input/otp-input.component';
-import { LineChartComponent, PieChartComponent, VerticalBarChartComponent } from 'src/app/shared/components';
+import { CircleChartComponent, LineChartComponent, PieChartComponent, SwipeButtonComponent, VerticalBarChartComponent } from 'src/app/shared/components';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ import { LineChartComponent, PieChartComponent, VerticalBarChartComponent } from
   styleUrls: ['./home.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, OtpInputComponent, PieChartComponent, VerticalBarChartComponent, LineChartComponent]
+  imports: [IonicModule, CommonModule, FormsModule, OtpInputComponent, CircleChartComponent, PieChartComponent, VerticalBarChartComponent, LineChartComponent, SwipeButtonComponent]
 })
 export class HomePage implements OnInit {
   private platform: Platform = inject(Platform)

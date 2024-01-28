@@ -14,10 +14,6 @@ import { catchError, map } from 'rxjs/operators';
 @Injectable()
 export class RequestInterceptorService implements HttpInterceptor {
 
-    constructor(
-    ) {
-    }
-
     public intercept(request: HttpRequest<any>, handler: HttpHandler): Observable<HttpEvent<any>> {
         let headers: any = {
             'content-type': 'application/json',

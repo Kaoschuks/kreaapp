@@ -1,9 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-// import { OfflineManagerService } from './offline';
-import { GlobalsServices } from './globals';
 import { Network } from '@capacitor/network';
-import { ConnectionStatus } from 'src/app/core';
+import { ConnectionStatus, GlobalsServices } from 'src/app/core';
 
 
 @Injectable({

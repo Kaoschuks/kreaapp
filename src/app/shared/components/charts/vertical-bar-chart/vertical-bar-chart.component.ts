@@ -11,13 +11,13 @@ import { NgxChartsModule, LegendPosition } from '@swimlane/ngx-charts';
 export class VerticalBarChartComponent  implements OnInit {
 
   // options
-  showXAxis = true;
+  showXAxis = false;
   showYAxis = true;
   gradient = false;
-  showLegend = true;
+  showLegend = false;
   showXAxisLabel = true;
   xAxisLabel = 'Country';
-  showYAxisLabel = true;
+  showYAxisLabel = false;
   yAxisLabel = 'Population';
   @Input() view: any;
   @Input() legendPosition = LegendPosition.Below;
@@ -32,15 +32,15 @@ export class VerticalBarChartComponent  implements OnInit {
     this.single = [
       {
         "name": "Germany",
-        "value": 8940000
+        "value": 890
       },
       {
         "name": "USA",
-        "value": 5000000
+        "value": 500
       },
       {
         "name": "France",
-        "value": 7200000
+        "value": 720
       }
     ];
   }
