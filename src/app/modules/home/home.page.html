@@ -102,13 +102,17 @@
         </ion-label>
       </ion-item>
     </ion-list>
+    <ion-row>
+      <ion-col size="12">
+        <swipe-button [isRounded]="true"></swipe-button>
+      </ion-col>
+    </ion-row>
 
-    <swipe-button></swipe-button>
   </ion-card>
 
   <ion-card class="no-shadow bg-white ion-no-padding animated fadeIn">
     <otp-input></otp-input>
-    <circle-chart [current]="30" [max]="100"></circle-chart>
+    <!-- <circle-chart [current]="30"></circle-chart> -->
   </ion-card>
 
   <ion-card>

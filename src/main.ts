@@ -9,7 +9,7 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-import { GlobalErrorHandlerService , CachingInterceptor, GlobalsServices, RequestInterceptorService, NetworkProvider } from './app/core';
+import { GlobalErrorHandlerService , CachingInterceptor, GlobalsServices, RequestInterceptorService, NetworkInterceptor, RequestService, StorageService } from './app/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 
 
@@ -20,20 +20,13 @@ if (environment.production) {
 
 export function initializeApp(
   globals: GlobalsServices, 
-  network: NetworkProvider
 ) {
   return async () => { 
     try {
       globals.setUrlTitle();
-      network.checkNetwork()
-      await globals.changeStatusBarColor('#ffffff', false, false);
-      if(globals.platform.is('capacitor')) await SplashScreen.hide({fadeOutDuration: 400});
 
+      if(globals.platform.is('capacitor')) await SplashScreen.hide({fadeOutDuration: 400});
       globals.openModal('walkthroughmodal');
-      setTimeout(async () => {
-        globals.appLoading = false;
-        await globals.menuCtrl.enable(false)
-      }, 1000)
     } catch (error) {
       console.log(error)
     }
@@ -42,6 +35,7 @@ export function initializeApp(
 
 bootstrapApplication(AppComponent, {
   providers: [
+    RequestService, StorageService, GlobalsServices,
     { 
       provide: RouteReuseStrategy, 
       useClass: IonicRouteStrategy 
@@ -51,7 +45,7 @@ bootstrapApplication(AppComponent, {
       animated: true,
       navAnimation: iosTransitionAnimation,
       sanitizerEnabled: true,
-      // mode: 'md',
+      // mode: 'ios',
       swipeBackEnabled: true,
     }),
     provideRouter(
@@ -63,12 +57,13 @@ bootstrapApplication(AppComponent, {
     { 
       provide: APP_INITIALIZER, 
       useFactory: initializeApp,
-      deps: [ GlobalsServices, NetworkProvider ], 
+      deps: [ GlobalsServices ], 
       multi: true
     },
-    {
-      provide: ErrorHandler,
-      useClass: GlobalErrorHandlerService,
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: NetworkInterceptor, 
+      multi: true 
     },
     {
       provide: HTTP_INTERCEPTORS,
@@ -79,6 +74,10 @@ bootstrapApplication(AppComponent, {
       provide: HTTP_INTERCEPTORS,
       useClass: CachingInterceptor,
       multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandlerService,
     },
   ],
 });

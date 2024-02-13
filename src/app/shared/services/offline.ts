@@ -35,11 +35,10 @@ export class OfflineManagerService {
     )
   }
  
-  sendRequests(operations: StoredRequest[]) {
+  private sendRequests(operations: StoredRequest[]) {
     let obs = [];
  
     for (let op of operations) {
-      console.log('Make one request: ', op);
       let oneObs = (op.type == "POST") ? this._api.post(op.url, op.data) : 
         (op.type == "DELETE") ? this._api.delete(op.url) : 
           (op.type == "PUT") ? this._api.update(op.url, op.data) : this._api.get(op.url);

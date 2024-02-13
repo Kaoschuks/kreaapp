@@ -4,7 +4,20 @@
     }
     ion-toolbar, ion-tab-bar {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        // margin-bottom: -10px !important;
+        // position: absolute;
+        // bottom: 0;
+        // width: 95%;
+        // --background: var(--ion-color-white);
+        // background: var(--ion-color-white);
+        // align-self: center;
+
+        // margin: 6px auto; 
+        // border-radius: 20px;
+        // box-shadow: 
+        //     0px 3px 6px 0px rgba(0, 0, 0, 0.04), 
+        //     0px 1px 3px 0px rgba(0, 0, 0, 0.02);
+        // height: 45px;
+
         ion-tab-button {
             --webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);

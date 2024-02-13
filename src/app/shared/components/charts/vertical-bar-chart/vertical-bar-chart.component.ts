@@ -14,7 +14,7 @@ export class VerticalBarChartComponent  implements OnInit {
   showXAxis = false;
   showYAxis = true;
   gradient = false;
-  showLegend = false;
+  showLegend = true;
   showXAxisLabel = true;
   xAxisLabel = 'Country';
   showYAxisLabel = false;
@@ -32,15 +32,45 @@ export class VerticalBarChartComponent  implements OnInit {
     this.single = [
       {
         "name": "Germany",
-        "value": 890
+        "value": 40632,
+        "extra": {
+          "code": "de"
+        }
       },
       {
-        "name": "USA",
-        "value": 500
+        "name": "United States",
+        "value": 50000,
+        "extra": {
+          "code": "us"
+        }
       },
       {
         "name": "France",
-        "value": 720
+        "value": 36745,
+        "extra": {
+          "code": "fr"
+        }
+      },
+      {
+        "name": "United Kingdom",
+        "value": 36240,
+        "extra": {
+          "code": "uk"
+        }
+      },
+      {
+        "name": "Spain",
+        "value": 33000,
+        "extra": {
+          "code": "es"
+        }
+      },
+      {
+        "name": "Italy",
+        "value": 35800,
+        "extra": {
+          "code": "it"
+        }
       }
     ];
   }

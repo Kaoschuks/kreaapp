@@ -1,15 +1,6 @@
-<round-progress
-    [current]="current"
-    [max]="max"
-    [color]="'#45ccce'"
-    [background]="'#eaeaea'"
-    [radius]="radius"
-    [stroke]="10"
-    [semicircle]="true"
-    [rounded]="true"
-    [clockwise]="true"
-    [responsive]="true"
-    [duration]="800"
-    [animation]="'easeInOutQuart'"
-    [animationDelay]="0"
-    (onRender)="doSomethingWithCurrentValue($event)"/>
+
+<circle-progress slot="end" [percent]="current" [radius]="radius" [startFromZero]="true" [showSubtitle]="false"
+[space]="-3" [outerStrokeWidth]="3" titleFontSize="12" [innerStrokeWidth]="3" [outerStrokeColor]="'#1D70A2'"
+[outerStrokeGradientStopColor]="'#1D70A2'" [innerStrokeColor]="'#f4f5f8'">
+  <ng-content></ng-content>
+</circle-progress>

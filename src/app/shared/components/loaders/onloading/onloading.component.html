@@ -1,12 +1,9 @@
 <div [ngClass]="bgColor" class="splash" align="center">
   <div align="center">
+    <img *ngIf="useImage == true" src="assets/icons/logo_blue.png" />
     <loading></loading>
-    <!-- <ion-spinner color="primary"></ion-spinner> -->
-    <!-- <img height="80s0" loading="lazy" src="assets/icons/logo_blue.png" slot="start" style="margin-right: 0px" /> -->
   </div>
   <br />
-  <h3 class="fs-12 bottom animated fadeIn ion-padding">
-    <!-- <ion-spinner color="primary"></ion-spinner> -->
-    <p class="text-dark fs-12">By continuing, you agree to Yelp’s Terms of Service and acknowledge our Privacy.</p>
-  </h3>
+  <h3 class="bottom fs-12 text-dark">Powered by <br /> <span color="success" class="fs-18">Kreador Technologies</span></h3>
+  <br />
 </div>

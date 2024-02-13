@@ -15,6 +15,8 @@ import { ActivatedRoute, ActivationStart, Router } from "@angular/router";
 import { LocalNotifications } from "@capacitor/local-notifications";
 import { StorageService } from "./storage";
 import { configModel } from "src/app/core";
+import { App } from "@capacitor/app";
+import { NavigationBar, NavigationBarPluginEvents } from '@hugotomazi/capacitor-navigation-bar';
 
 const LOGTAG = '[GlobalErrorHandlerService]';
 
@@ -151,6 +153,13 @@ export class GlobalsServices {
     this.navigate("/auth/login", false);
   }
 
+  async changeNavigatorbarColor(color: string, isDark: boolean = true) {
+    if(this.platform.is('capacitor')) await NavigationBar.setColor({
+      color: color,
+      darkButtons: isDark
+    });NavigationBar.show()
+  }
+
   async changeStatusBarColor(color: string = '', isLight: boolean = true, noStatus: boolean = true) {
     if(this.platform.is('capacitor')) {
       setTimeout(async () => {
@@ -160,6 +169,12 @@ export class GlobalsServices {
         await StatusBar.setBackgroundColor({ color: color });
       }, 100);
     }
+  }
+
+  exitApp() {
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+      if (this.router.url === '/home') App.exitApp();
+    });
   }
 }
 

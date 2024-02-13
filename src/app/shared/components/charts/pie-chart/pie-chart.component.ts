@@ -28,19 +28,45 @@ export class PieChartComponent  implements OnInit {
     this.single = [
       {
         "name": "Germany",
-        "value": 8940000
+        "value": 40632,
+        "extra": {
+          "code": "de"
+        }
       },
       {
-        "name": "USA",
-        "value": 5000000
+        "name": "United States",
+        "value": 50000,
+        "extra": {
+          "code": "us"
+        }
       },
       {
         "name": "France",
-        "value": 7200000
+        "value": 36745,
+        "extra": {
+          "code": "fr"
+        }
       },
-        {
-        "name": "UK",
-        "value": 6200000
+      {
+        "name": "United Kingdom",
+        "value": 36240,
+        "extra": {
+          "code": "uk"
+        }
+      },
+      {
+        "name": "Spain",
+        "value": 33000,
+        "extra": {
+          "code": "es"
+        }
+      },
+      {
+        "name": "Italy",
+        "value": 35800,
+        "extra": {
+          "code": "it"
+        }
       }
     ];
   }

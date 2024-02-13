@@ -1,5 +1,5 @@
 import { TitleCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IonLabel, IonSpinner } from '@ionic/angular/standalone';
 
 @Component({
@@ -10,11 +10,7 @@ import { IonLabel, IonSpinner } from '@ionic/angular/standalone';
   standalone: true,
   imports: [IonSpinner, IonLabel, TitleCasePipe]
 })
-export class LoadingComponent implements OnInit {
+export class LoadingComponent {
   @Input() text: string = '';
   @Input() color: string = 'dark';
-  
-  constructor() {}
-
-  ngOnInit() {}
 }

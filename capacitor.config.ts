@@ -22,7 +22,7 @@ const config: CapacitorConfig = {
   },
 	android: {
 		minWebViewVersion: 55,
-		allowMixedContent: true
+		allowMixedContent: false
 	},
 	server: {
 		cleartext: true,

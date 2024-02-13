@@ -1,5 +1,5 @@
-<ion-header class="ion-no-border bg-light">
-  <ion-toolbar color="light" mode="ios">
+
+  <ion-toolbar color="white" mode="ios">
     <ion-segment color="primary" value="discover" mode="ios">
       <ion-segment-button value="discover">
         <ion-label class="fs-14">Discover</ion-label>
@@ -12,30 +12,25 @@
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
-</ion-header>
 
-<ion-content color="light">
+<ion-content color="white">
   <!-- <ion-list-header>
     <ion-label>
       <h2>Status</h2>
     </ion-label>
-  </ion-list-header>
-  <ion-card class="no-shadow ion-no-padding animated fadeIn">
-    <br />
-    <recent-chats [matches]="chats"></recent-chats>
-  </ion-card> -->
+  </ion-list-header> -->
+  <br />
+  <recent-chats [matches]="chats"></recent-chats>
 
-  <ion-list-header>
-    <ion-label>
-      <h2 class="fs-14">Recent Messages</h2>
-    </ion-label>
-    <ion-button color="primary">
-      <span class="fs-12">See All</span>
-    </ion-button>
-  </ion-list-header>
-  <ion-card class="no-shadow ion-no-padding animated fadeIn">
-    <ion-list>
-      <chat-items (click)="openChat()" [chat]="chat" *ngFor="let chat of chats"></chat-items>
-    </ion-list>
-  </ion-card>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h2 class="fs-14 fw-5">Recent Messages</h2>
+      </ion-label>
+      <ion-button color="primary">
+        <span class="fs-12">See All</span>
+      </ion-button>
+    </ion-list-header>
+    <chat-items (chatEvent)="processChat($event, chat)" [chat]="chat" *ngFor="let chat of chats"></chat-items>
+  </ion-list>
 </ion-content>

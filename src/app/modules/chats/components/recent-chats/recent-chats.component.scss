@@ -6,5 +6,16 @@
             top: 0px !important;
         }
         margin-right:15px !important;
+        // width: 50px !important;
+        ion-label {
+            h2 {
+                overflow-wrap: break-word !important;
+                word-wrap: break-word !important;
+            }
+        }
+        // ion-avatar {
+        //     width: 50px !important;
+        //     height: 60px !important;
+        // }
     }
 }

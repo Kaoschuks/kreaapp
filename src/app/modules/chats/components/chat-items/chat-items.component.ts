@@ -1,5 +1,5 @@
 import { TitleCasePipe, NgFor, DatePipe, SlicePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonAvatar, IonLabel, IonImg, IonItem, IonListHeader, IonItemSliding, IonItemOption, IonItemOptions, IonBadge, IonNote, IonText } from '@ionic/angular/standalone';
 
 @Component({
@@ -13,6 +13,7 @@ import { IonAvatar, IonLabel, IonImg, IonItem, IonListHeader, IonItemSliding, Io
 })
 export class ChatItemsComponent{
 
+  @Output() chatEvent = new EventEmitter<any>();
   @Input() chat: any
   constructor() { }
 

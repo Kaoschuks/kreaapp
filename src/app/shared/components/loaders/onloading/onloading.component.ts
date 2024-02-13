@@ -1,5 +1,5 @@
-import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IonItem, IonLabel, IonSpinner } from '@ionic/angular/standalone';
 import { LoadingComponent } from '../loading/loading.component';
 
@@ -9,14 +9,10 @@ import { LoadingComponent } from '../loading/loading.component';
   styleUrls: ['./onloading.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IonItem, IonSpinner, IonLabel, NgClass, LoadingComponent]
+  imports: [NgIf, IonItem, IonSpinner, IonLabel, NgClass, LoadingComponent]
 })
-export class OnloadingComponent implements OnInit {
+export class OnloadingComponent {
 
   @Input() useImage: boolean = true
   @Input() bgColor: string = 'bg-white'
-  constructor() { }
-
-  ngOnInit() {}
-
 }

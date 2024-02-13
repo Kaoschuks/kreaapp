@@ -2,7 +2,10 @@
 
   :host {
     ion-col {
-        border-radius: 50px;
+        &.rounded {
+            border-radius: 50px !important;
+        }
+        border-radius: 5px;
         display: flex;
         align-items: center;
         height: 50px !important;
@@ -12,11 +15,15 @@
           width: 100%;
         } 
       
+        ion-button {
+            height: 42px !important;
+        } 
+      
         ion-fab-button {
           position: relative;
           transition: transform 0.3s ease;
-          height: 45px !important;
-          width: 45px !important;
+          height: 40px !important;
+          width: 40px !important;
           // transform: translateX(0);
           ion-icon {
             position: absolute;

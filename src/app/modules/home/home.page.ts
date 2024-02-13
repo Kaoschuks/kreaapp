@@ -14,7 +14,7 @@ import { CircleChartComponent, LineChartComponent, PieChartComponent, SwipeButto
   styleUrls: ['./home.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, OtpInputComponent, CircleChartComponent, PieChartComponent, VerticalBarChartComponent, LineChartComponent, SwipeButtonComponent]
+  imports: [IonicModule, CommonModule, FormsModule, OtpInputComponent, PieChartComponent, VerticalBarChartComponent, LineChartComponent, SwipeButtonComponent]
 })
 export class HomePage implements OnInit {
   private platform: Platform = inject(Platform)
