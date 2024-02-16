@@ -11,6 +11,7 @@ import { environment } from './environments/environment';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { GlobalErrorHandlerService , CachingInterceptor, GlobalsServices, RequestInterceptorService, NetworkInterceptor, RequestService, StorageService } from './app/core';
 import { SplashScreen } from '@capacitor/splash-screen';
+import { InactivityInterceptor } from './app/core/interceptors/inactivity-interceptor';
 
 
 if (environment.production) {
@@ -74,6 +75,11 @@ bootstrapApplication(AppComponent, {
       provide: HTTP_INTERCEPTORS,
       useClass: CachingInterceptor,
       multi: true,
+    },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: InactivityInterceptor, 
+      multi: true 
     },
     {
       provide: ErrorHandler,
