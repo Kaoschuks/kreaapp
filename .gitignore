@@ -63,7 +63,7 @@ yarn-error.log
 testem.log
 /typings
 /android
-
+package-lock.json
 # System files
 .DS_Store
 Thumbs.db
