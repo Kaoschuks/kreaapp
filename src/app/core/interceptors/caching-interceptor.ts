@@ -47,12 +47,12 @@ export class CachingService {
 export class CachingInterceptor implements HttpInterceptor {
   cache: CachingService = inject(CachingService);
 
-  intercept(req: HttpRequest<any>, next: any): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const cached = this.cache.get(req.url);
     const isCacheHit = cached !== undefined;
     if (isCacheHit) return of(cached);
 
-    return next(req).pipe(tap((response: any) => this.cache.set(req.url, response)));
+    return next.handle(req).pipe(tap((response: any) => this.cache.set(req.url, response)));
   }
 }

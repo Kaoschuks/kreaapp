@@ -7,21 +7,21 @@ import { GlobalsServices } from '..';
 @Injectable()
 export class InactivityInterceptor implements HttpInterceptor {
 
-    private lastActivityTimestamp: number = 0;
-    private inactivityThreshold = 60000; // 1 minute in milliseconds
-    private inactivitySubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    private globals: GlobalsServices = inject(GlobalsServices);
-  
-    constructor() {
-      this.resetTimer();
-      this.setupActivityTracking();
-    }
+  private lastActivityTimestamp: number = 0;
+  private inactivityThreshold = 60000; // 1 minute in milliseconds
+  private inactivitySubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private globals: GlobalsServices = inject(GlobalsServices);
+
+  constructor() {
+    this.resetTimer();
+    this.setupActivityTracking();
+  }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.userActivityDetected(); 
     return next.handle(request).pipe(
-      tap(() => {
-            this.globals.toastAlert("inactivity detected")
+      tap(async () => {
+          await this.globals.toastAlert("inactivity detected")
         }, (err: any) => {   
             console.log(err)
         })

@@ -1,5 +1,5 @@
-import { AfterRenderPhase, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild, afterRender, inject } from '@angular/core';
-import { IonAvatar, IonButton, IonContent, IonFooter, IonIcon, IonImg, IonItem, IonLabel, IonToolbar } from '@ionic/angular/standalone';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, inject } from '@angular/core';
+import { IonAvatar, IonButton, IonFooter, IonIcon, IonImg, IonItem, IonLabel, IonToolbar, IonHeader, IonContent } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
 import { FullModalComponent } from 'src/app/shared/components';
 import { AddChatComponent, ChatBubbleComponent } from '../../chats/components';
@@ -13,17 +13,15 @@ import { chevronBackOutline } from 'ionicons/icons';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    FullModalComponent, IonToolbar, IonButton, IonItem, IonIcon, IonAvatar, IonImg, IonLabel, IonContent, IonFooter,
+    FullModalComponent, IonToolbar, IonButton, IonItem, IonIcon, IonAvatar, IonImg, IonLabel, IonFooter, IonHeader, IonContent,
     ChatBubbleComponent, AddChatComponent
   ]
 })
-export class ChatModalComponent implements OnChanges, AfterViewInit {
+export class ChatModalComponent implements OnChanges{
 
   @Input() isOpen: boolean = false
   globals: GlobalsServices = inject(GlobalsServices);
   @Input() messages: any
-
-  @ViewChild('content') contentRef: ElementRef | undefined;
 
   constructor() {
     addIcons({ 
@@ -31,16 +29,7 @@ export class ChatModalComponent implements OnChanges, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    const chat:any = document.getElementById('chat');
-    // chat.scrollTop = chat.scrollHeight;
-    console.log(chat.scrollHeight)
-    // afterRender(() => {
-    //   if(this.contentRef)  console.log('content height: ' + this.contentRef.nativeElement.scrollHeight);
-    // }, {phase: AfterRenderPhase.Read});
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
+  async ngOnChanges(changes: SimpleChanges) {
     this.scrollToBottom()
   }
 
@@ -49,8 +38,8 @@ export class ChatModalComponent implements OnChanges, AfterViewInit {
 
   scrollToBottom() {
     setTimeout(() => {
-      const chat:any = document.getElementById('chat');
-      chat.scrollTop = chat.scrollHeight;
-    }, 100);
+      let targetDiv: any = document.getElementById('targetDiv');
+      if(targetDiv) targetDiv.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }, 50);
   }
 }

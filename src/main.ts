@@ -46,7 +46,7 @@ bootstrapApplication(AppComponent, {
       animated: true,
       navAnimation: iosTransitionAnimation,
       sanitizerEnabled: true,
-      // mode: 'ios',
+      mode: 'md',
       swipeBackEnabled: true,
     }),
     provideRouter(

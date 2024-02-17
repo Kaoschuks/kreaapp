@@ -39,7 +39,6 @@ export class GlobalsServices {
   public location: Location = inject(Location)
 
 
-
   config!: configModel
   modalData: any = {
     buttons: null,
@@ -157,7 +156,7 @@ export class GlobalsServices {
     if(this.platform.is('capacitor')) await NavigationBar.setColor({
       color: color,
       darkButtons: isDark
-    });NavigationBar.show()
+    });await NavigationBar.show()
   }
 
   async changeStatusBarColor(color: string = '', isLight: boolean = true, noStatus: boolean = true) {
