@@ -24,8 +24,8 @@ export class NetworkInterceptor implements HttpInterceptor {
             catchError(error => {
                 this.internet = false
                 // Handle errors
-                console.error('Error:', error);
-                return throwError(error);
+                // console.error('Error:', error);
+                return throwError(error || 'Network error');
             })
         );
     }

@@ -25,10 +25,10 @@
   <ion-list>
     <ion-list-header>
       <ion-label>
-        <h2 class="fs-14 fw-5">Recent Messages</h2>
+        <h2>Recent Messages</h2>
       </ion-label>
       <ion-button color="primary">
-        <span class="fs-12">See All</span>
+        <span>See All</span>
       </ion-button>
     </ion-list-header>
     <chat-items (chatEvent)="processChat($event, chat)" [chat]="chat" *ngFor="let chat of chats"></chat-items>

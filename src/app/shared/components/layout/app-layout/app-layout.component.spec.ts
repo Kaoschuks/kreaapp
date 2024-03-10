@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MobileLayoutComponent } from './mobile-layout.component';
+import { AppLayoutComponent } from './app-layout.component';
 
-describe('MobileLayoutComponent', () => {
-  let component: MobileLayoutComponent;
-  let fixture: ComponentFixture<MobileLayoutComponent>;
+describe('AppLayoutComponent', () => {
+  let component: AppLayoutComponent;
+  let fixture: ComponentFixture<AppLayoutComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MobileLayoutComponent ],
+      declarations: [ AppLayoutComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MobileLayoutComponent);
+    fixture = TestBed.createComponent(AppLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

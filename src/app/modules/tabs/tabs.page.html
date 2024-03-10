@@ -1,5 +1,5 @@
 
-<mobile-layout (onHeaderButtonClicked)="globals.openModal($event)" [refresh]="globals.pageRefresh" [title]="globals.pageData?.title || 'Home'"></mobile-layout>
+<app-layout (onHeaderButtonClicked)="globals.openModal($event)" [refresh]="globals.pageRefresh" [title]="globals.pageData?.title || 'Home'"></app-layout>
 
 <filter-modal [type]="''" [isOpen]="globals.modalData?.filtermodal || false"></filter-modal>
 <onboarding-modal [isOpen]="globals.modalData?.walkthroughmodal || false"></onboarding-modal>

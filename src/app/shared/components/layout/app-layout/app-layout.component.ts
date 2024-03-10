@@ -1,16 +1,15 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MobileHeaderComponent } from '../mobile-header/mobile-header.component';
-import { MobileFooterComponent } from '../mobile-footer/mobile-footer.component';
+import { MobileHeaderComponent, MobileFooterComponent } from '../mobile';
 
 @Component({
-  selector: 'mobile-layout',
-  templateUrl: './mobile-layout.component.html',
-  styleUrls: ['./mobile-layout.component.scss'],
+  selector: 'app-layout',
+  templateUrl: './app-layout.component.html',
+  styleUrls: ['./app-layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [MobileHeaderComponent, MobileFooterComponent]
 })
-export class MobileLayoutComponent {
+export class AppLayoutComponent  {
   @Input() title!: string
   @Input() refresh: boolean = false
   @Input() color: string = 'white';
