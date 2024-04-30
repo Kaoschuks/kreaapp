@@ -43,6 +43,8 @@
               "src/global.scss"
             ],
             "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js",
               "src/assets/js/syncro.min.js"
             ]
           },
@@ -56,8 +58,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "3kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5kb",
+                  "maximumError": "6kb"
                 }
               ],
               "fileReplacements": [
@@ -104,10 +106,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
               {

@@ -1,9 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppLayoutComponent, SuccessModalComponent } from 'src/app/shared/components';
-import { GlobalsServices } from 'src/app/shared/services';
 import { NgIf } from '@angular/common';
-import { FilterModalComponent, LanguageModalComponent, OnboardingModalComponent, NotificationModalComponent, ProfileModalComponent, ChatModalComponent } from '../modals';
-import { messages } from 'src/environments/environment';
+import { FilterModalComponent, LanguageModalComponent, OnboardingModalComponent, NotificationModalComponent, ProfileModalComponent, ChatModalComponent } from '../../shared/modals';
+import { TabsService } from './services/tabs.service';
 
 @Component({
   selector: 'app-tabs',
@@ -17,12 +16,8 @@ import { messages } from 'src/environments/environment';
   ],
 })
 
-export class TabsPage {
-  globals: GlobalsServices = inject(GlobalsServices);
-  canOnboard: boolean = false;
-  messages: any[] = messages
-  
-  onModalClosed(event: any) {
-
+export class TabsPage extends TabsService {
+  constructor() {
+    super()
   }
 }

@@ -9,8 +9,7 @@ describe('LineChartComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LineChartComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ LineChartComponent ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LineChartComponent);

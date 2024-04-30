@@ -9,8 +9,7 @@ describe('MobileHeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MobileHeaderComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ MobileHeaderComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MobileHeaderComponent);

@@ -9,8 +9,7 @@ describe('OtpInputComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ OtpInputComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ OtpInputComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OtpInputComponent);

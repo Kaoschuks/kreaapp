@@ -9,8 +9,7 @@ describe('NewsCardComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsCardComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ NewsCardComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NewsCardComponent);

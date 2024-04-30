@@ -1,8 +1,5 @@
 import { ChangeDetectionStrategy, Component, EnvironmentInjector, inject } from '@angular/core';
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { triangle, ellipse, square } from 'ionicons/icons';
-import { icons } from 'src/app/core/utils/assets';
+import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'mobile-footer',
@@ -10,19 +7,11 @@ import { icons } from 'src/app/core/utils/assets';
   styleUrls: ['./mobile-footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
+  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge],
 })
 export class MobileFooterComponent {
-  homeActiveIcon: string = icons.homeBlue
-  homeIcon: string = '../assets/icons/home.png';
-  public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {
-    addIcons({ 
-      triangle, ellipse, square,
-      homeactive: icons.homeBlue,
-      home: icons.homeOutline
-    });
   }
 
 }

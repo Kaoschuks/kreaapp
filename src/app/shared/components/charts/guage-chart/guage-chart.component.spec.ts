@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { GuageChartComponent } from './guage-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 describe('GuageChartComponent', () => {
   let component: GuageChartComponent;
@@ -9,8 +10,7 @@ describe('GuageChartComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuageChartComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ GuageChartComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(GuageChartComponent);

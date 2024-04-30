@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-progress-bar *ngIf="refresh" type="indeterminate"></ion-progress-bar>
   <ion-toolbar [color]="color">
     <ion-title mode="ios">
@@ -6,15 +6,22 @@
     </ion-title>
     <ion-buttons slot="start">
       <ion-button (click)="onclick.emit('profilemodal')">
-        <ion-icon name="person-circle-outline" class="fs-20"></ion-icon>
+        <i class="fi fi-rr-circle-user fs-18"></i>
+      </ion-button>
+      <ion-button>
+        <i class="fi fi-rr-calendar-lines fs-18"></i>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button fill="clear" color="white" (click)="onclick.emit('notificationmodal')">
-        <ion-icon name="notifications-outline" class="fs-20"></ion-icon>
+      <ion-button (click)="onclick.emit('notificationmodal')" class="hasBadge">
+        <i class="fi fi-rr-envelope-dot fs-18"></i>
+        <ion-badge mode="md" color="primary">2</ion-badge>
       </ion-button>
-      <ion-button fill="clear" color="white">
-        <ion-icon name="search-outline" class="fs-20"></ion-icon>
+      <ion-button class="no-shadow" (click)="onclick.emit('feedbackmodal')">
+        <i class="fi fi-rr-interrogation fs-18"></i>
+      </ion-button>
+      <ion-button id="click-trigger" class="no-shadow" (click)="onclick.emit('feedbackmodal')">
+        <i class="fi fi-rr-menu-dots fs-18"></i>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

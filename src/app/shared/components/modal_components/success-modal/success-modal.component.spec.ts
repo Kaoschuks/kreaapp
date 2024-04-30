@@ -9,8 +9,7 @@ describe('SuccessModalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SuccessModalComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ SuccessModalComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SuccessModalComponent);

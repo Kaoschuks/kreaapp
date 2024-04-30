@@ -1,17 +1,16 @@
-import { APP_INITIALIZER, ErrorHandler, enableProdMode, importProvidersFrom } from '@angular/core';
+import { ErrorHandler, enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter, withComponentInputBinding } from '@angular/router';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { IonicRouteStrategy, iosTransitionAnimation, provideIonicAngular } from '@ionic/angular/standalone';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-import { GlobalErrorHandlerService , CachingInterceptor, GlobalsServices, RequestInterceptorService, NetworkInterceptor, RequestService, StorageService } from './app/core';
-import { SplashScreen } from '@capacitor/splash-screen';
-import { InactivityInterceptor } from './app/core/interceptors/inactivity-interceptor';
+import { GlobalErrorHandlerService, CachingInterceptor, GlobalsServices, RequestInterceptorService, NetworkInterceptor, InactivityInterceptor, RequestService, StorageService, NetworkProvider, OfflineManagerService } from './app/core';
+import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 
 
 if (environment.production) {
@@ -19,24 +18,10 @@ if (environment.production) {
   defineCustomElements(window);
 }
 
-export function initializeApp(
-  globals: GlobalsServices, 
-) {
-  return async () => { 
-    try {
-      globals.setUrlTitle();
-
-      if(globals.platform.is('capacitor')) await SplashScreen.hide({fadeOutDuration: 400});
-      globals.openModal('walkthroughmodal');
-    } catch (error) {
-      console.log(error)
-    }
-  }
-}
-
 bootstrapApplication(AppComponent, {
   providers: [
-    RequestService, StorageService, GlobalsServices,
+    StatusBar,
+    RequestService, StorageService, GlobalsServices, NetworkProvider, OfflineManagerService,
     { 
       provide: RouteReuseStrategy, 
       useClass: IonicRouteStrategy 
@@ -44,7 +29,6 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(BrowserAnimationsModule),
     provideIonicAngular({
       animated: true,
-      navAnimation: iosTransitionAnimation,
       sanitizerEnabled: true,
       mode: 'md',
       swipeBackEnabled: true,
@@ -55,12 +39,6 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(
       withInterceptorsFromDi(),
     ),
-    { 
-      provide: APP_INITIALIZER, 
-      useFactory: initializeApp,
-      deps: [ GlobalsServices ], 
-      multi: true
-    },
     { 
       provide: HTTP_INTERCEPTORS, 
       useClass: NetworkInterceptor, 

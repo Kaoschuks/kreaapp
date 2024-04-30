@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IonApp, IonMenu, IonRouterOutlet, IonSplitPane } from '@ionic/angular/standalone';
-import { SplashScreen } from '@capacitor/splash-screen';
 import { GlobalsServices } from './shared/services';
 import { register } from 'swiper/element/bundle';
 import { OnloadingComponent } from './shared/components';
@@ -13,22 +12,15 @@ register();
   standalone: true,
   imports: [IonApp, IonRouterOutlet, OnloadingComponent, IonSplitPane, IonMenu, NgIf],
 })
-export class AppComponent implements AfterViewInit {
-  globals: GlobalsServices = inject(GlobalsServices)
+export class AppComponent {
+  globals: GlobalsServices = inject(GlobalsServices);
 
   constructor() {
-  }
-
-  async ngAfterViewInit() {
     try {
-      await this.globals.platform.ready();
-      await this.globals.changeStatusBarColor('#f5f6f9', true, false);
-      await this.globals.changeNavigatorbarColor('#f5f6f9', true);
-      await this.globals.menuCtrl.enable(false)
-      this.globals.appLoading = false;
+      this.globals.initializeApp();
+      // this.globals.openModal('walkthroughmodal');
     } catch (error) {
       console.log(error)
-      this.globals.appLoading = false; 
     }
   }
 }

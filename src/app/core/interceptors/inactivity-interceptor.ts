@@ -21,7 +21,9 @@ export class InactivityInterceptor implements HttpInterceptor {
     this.userActivityDetected(); 
     return next.handle(request).pipe(
       tap(async () => {
-          await this.globals.toastAlert("inactivity detected")
+        this.getInactivityStatus().subscribe(async (status: any) => {
+          // if(status == true) await this.globals.toastAlert("inactivity detected");alert()
+        })
         }, (err: any) => {   
             console.log(err)
         })

@@ -1,7 +1,7 @@
 :host {
-    ion-tab-button {
-        height: 55px !important;
-    }
+    // ion-tab-button {
+    //     height: 50px !important;
+    // }
     ion-toolbar, ion-tab-bar {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         // position: absolute;
@@ -19,42 +19,55 @@
         // height: 45px;
 
         ion-tab-button {
+            --ripple-color: var(--transparent) !important;
             --webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             // border-top: 2px solid var(--ion-color-white);
+            &.center {
+                i {
+                    margin-top: -1px !important;
+                    margin-bottom: -4px !important;
+                }
+            }
             ion-label {
               letter-spacing: 0.5px;
             }
-            i {
+            i, img {
                 margin-top: 2px !important;
-                margin-bottom: 0px !important;
+                margin-bottom: 2px !important;
             }
             span {
                 font-size: 10px !important;
             }
-            ion-icon, i {
+            ion-icon, i, img {
+                transition: all .3s;
                 &.after {
                     display: none !important;
                 }
                 &.before {
                     display: block !important;
+                    color: var(--ion-color-medium-tint) !important;
+                    --color: var(--ion-color-medium-tint) !important;
                 }
             }
-            ion-icon, i, span {
+            span {
                 color: var(--ion-color-medium-tint) !important;
                 --color: var(--ion-color-medium-tint) !important
             }
             &.tab-selected, &.active {
                 // border-top: 2px solid var(--ion-color-primary);
-                ion-icon, i {
+                ion-icon, i, img {
+                    transition: all .3s;
                     &.before {
                         display: none !important;
                     }
                     &.after {
                         display: block !important;
+                        color: var(--ion-color-primary) !important;
+                        --color: var(--ion-color-primary) !important;
                     }
                 }
-                ion-icon, i, span {
+                span {
                     color: var(--ion-color-primary) !important;
                     --color: var(--ion-color-primary) !important
                 }

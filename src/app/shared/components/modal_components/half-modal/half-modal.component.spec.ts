@@ -9,8 +9,7 @@ describe('HalfModalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HalfModalComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ HalfModalComponent ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HalfModalComponent);

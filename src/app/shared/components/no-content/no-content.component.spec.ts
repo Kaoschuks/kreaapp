@@ -9,8 +9,7 @@ describe('NoContentComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoContentComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ NoContentComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NoContentComponent);

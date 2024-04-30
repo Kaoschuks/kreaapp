@@ -1,17 +1,17 @@
 
-  <ion-toolbar color="white" mode="ios">
-    <ion-segment color="primary" value="discover" mode="ios">
-      <ion-segment-button value="discover">
-        <ion-label class="fs-14">Discover</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="groups">
-        <ion-label class="fs-14">Accounts</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="data">
-        <ion-label class="fs-14">Groups</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+<ion-toolbar color="white" mode="ios">
+  <ion-segment color="primary" value="discover" mode="ios">
+    <ion-segment-button value="discover">
+      <ion-label class="fs-14">Discover</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="groups">
+      <ion-label class="fs-14">Accounts</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="data">
+      <ion-label class="fs-14">Groups</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
 
 <ion-content color="white">
   <!-- <ion-list-header>
@@ -31,6 +31,6 @@
         <span>See All</span>
       </ion-button>
     </ion-list-header>
-    <chat-items (chatEvent)="processChat($event, chat)" [chat]="chat" *ngFor="let chat of chats"></chat-items>
+    <chat-items (chatEvent)="processChat($event, chat)" [id]="i" [chat]="chat" *ngFor="let chat of chats;let i = index"></chat-items>
   </ion-list>
 </ion-content>

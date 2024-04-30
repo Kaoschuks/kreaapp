@@ -9,8 +9,7 @@ describe('ChatBubbleComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatBubbleComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ ChatBubbleComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChatBubbleComponent);

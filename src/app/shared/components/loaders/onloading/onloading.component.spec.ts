@@ -9,8 +9,7 @@ describe('OnloadingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ OnloadingComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ OnloadingComponent ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OnloadingComponent);

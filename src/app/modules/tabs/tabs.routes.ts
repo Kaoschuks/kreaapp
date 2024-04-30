@@ -31,6 +31,13 @@ export const routes: Routes = [
           import('../chats/chats.page').then((m) => m.ChatsPage),
       },
       {
+        path: 'chats/:id',
+        data: {
+          title: 'detail'
+        },
+        loadComponent: () => import('../chatdetail/chatdetail.page').then( m => m.ChatdetailPage)
+      },
+      {
         path: 'settings',
         data: {
           title: 'My Account'

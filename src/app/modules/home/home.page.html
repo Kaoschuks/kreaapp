@@ -111,50 +111,9 @@
   </ion-card>
 
   <ion-card class="no-shadow bg-white ion-no-padding animated fadeIn">
-    <otp-input></otp-input>
-    <!-- <circle-chart [current]="30"></circle-chart> -->
+    <circleprogress [percent]="90"></circleprogress>
+    <guage-chart [percentage]="90" [label]="'test gauge'"></guage-chart>
+    <bar-chart [chartType]="'bar'"></bar-chart>
+    <donut-chart [chartType]="'donut'"></donut-chart>
   </ion-card>
-
-  <ion-card>
-    <ion-card-title class="ion-padding-start">Pie Chart</ion-card-title>
-    <ion-card-content class="ion-margin-top" [ngClass]="{'cardContent' : below}">
-      <pie-chart [view]="view" [legendPosition]="legendPosition"></pie-chart>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title class="ion-padding-start">Vertical Bar Chart</ion-card-title>
-    <ion-card-content class="ion-margin-top" [ngClass]="{'cardContent' : below}">
-      <vertical-bar-chart [view]="view" [legendPosition]="legendPosition"></vertical-bar-chart>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title class="ion-padding-start">Line Chart</ion-card-title>
-    <ion-card-content class="ion-margin-top" [ngClass]="{'cardContent' : below}">
-      <line-chart [view]="view" [legendPosition]="legendPosition"></line-chart>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- <ion-list-header>
-    <ion-label>
-      <h2 class="fs-14">Transactions</h2>
-    </ion-label>
-  </ion-list-header> -->
-  <!-- <ion-segment color="primary" value="discover" mode="ios">
-    <ion-segment-button value="discover">
-      <ion-label class="fs-14">Transactions</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="groups">
-      <ion-label class="fs-14">Categories</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="data">
-      <ion-label class="fs-14">Budgets</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-  <ion-card class="no-shadow ion-no-padding animated fadeIn">
-    <ion-list>
-      <transaction-list [transaction]="expense" *ngFor="let expense of expenses"></transaction-list>
-    </ion-list>
-  </ion-card> -->
 </ion-content>

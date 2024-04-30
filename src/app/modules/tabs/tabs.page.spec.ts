@@ -7,10 +7,10 @@ describe('TabsPage', () => {
   let component: TabsPage;
   let fixture: ComponentFixture<TabsPage>;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     TestBed.overrideComponent(TabsPage, {
       add: {
-        imports: [RouterTestingModule]
+        imports: [RouterTestingModule],
       }
     });
   });

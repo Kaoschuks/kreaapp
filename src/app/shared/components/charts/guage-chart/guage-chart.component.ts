@@ -1,42 +1,73 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, NgZone, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
-import { cubicBezier, Gauge } from 'gauge-chart-js';
-
+import { NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import {
+  NgApexchartsModule,
+} from 'ng-apexcharts';
 
 @Component({
-  selector: 'app-guage-chart',
+  selector: 'guage-chart',
   templateUrl: './guage-chart.component.html',
   styleUrls: ['./guage-chart.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule],
+  imports: [ NgApexchartsModule, NgIf ]
 })
 export class GuageChartComponent implements OnChanges {
-
-  @Input() radius!: number;
-  @Input() value!: number;
-  @Input() color: string = '#0f0';
-
-  private ngZone: NgZone = inject(NgZone)
-  private easeIn = cubicBezier(0, 0, 0.2, 1);
-  private gauge: any;
+  @Input() percentage: number = 0
+  @Input() height: number = 200
+  @Input() label!: string
+  
+  public chartOptions: any;
 
   ngOnChanges(changes: SimpleChanges): void {
     this.init()
   }
 
   private init() {
-    const _container: any = document.querySelector('.root')
-    this.gauge = new Gauge({
-      container: _container,
-      color: this.color,
-      easing: this.easeIn,
-      gaugeRadius: this.radius
-    });
-
-    this.gauge.setValue(this.value);
-    this.ngZone.runOutsideAngular(() => {
-      this.gauge.draw();
-    });
+    this.chartOptions = {
+      series: [this.percentage],
+      chart: {
+        height: this.height,
+        type: "radialBar",
+        offsetY: -10
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 135,
+          dataLabels: {
+            name: {
+              fontSize: "14px",
+              color: undefined,
+              offsetY: 120
+            },
+            value: {
+              offsetY: 20,
+              fontSize: "16px",
+              color: undefined,
+              formatter: (val: any) => {
+                return val + "%";
+              }
+            }
+          }
+        }
+      },
+      fill: {
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          shadeIntensity: 0.15,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 65, 91]
+        }
+      },
+      stroke: {
+        dashArray: 4
+      },
+      labels: [this.label]
+    };
   }
 
 }

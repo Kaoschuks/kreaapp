@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
 
 import { MobileFooterComponent } from './mobile-footer.component';
+import { ActivatedRoute, RouterModule, provideRouter } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MobileFooterComponent', () => {
   let component: MobileFooterComponent;
@@ -9,8 +10,8 @@ describe('MobileFooterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MobileFooterComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ MobileFooterComponent ],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MobileFooterComponent);
