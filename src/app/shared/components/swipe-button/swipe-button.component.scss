@@ -1,0 +1,42 @@
+
+
+  :host {
+    ion-col {
+        &.rounded {
+            border-radius: 50px !important;
+        }
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        height: 50px !important;
+      
+        div {
+          position: absolute;
+          width: 100%;
+        } 
+      
+        ion-button {
+            height: 42px !important;
+        } 
+      
+        ion-fab-button {
+          position: relative;
+          transition: transform 0.3s ease;
+          height: 40px !important;
+          width: 40px !important;
+          // transform: translateX(0);
+          ion-icon {
+            position: absolute;
+          }
+          .left {
+              left: 0;
+              transform: translateX(3px);
+          }
+          .right {
+              right: 0;
+              transform: translateX(-3px);
+          }
+        }
+      
+      }
+  }

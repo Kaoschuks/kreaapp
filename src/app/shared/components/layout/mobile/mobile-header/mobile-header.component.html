@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-progress-bar *ngIf="refresh" type="indeterminate"></ion-progress-bar>
+  <ion-toolbar [color]="color">
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button autoHide="true"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-title>
+      {{title || 'not set' | titlecase}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onclick.emit('profilemodal')">
+        <i class="fi fi-rr-circle-user fs-18"></i>
+      </ion-button>
+      <ion-button (click)="onclick.emit('filtermodal')">
+        <i class="fi fi-rr-calendar-lines fs-18"></i>
+      </ion-button>
+    <!-- </ion-buttons>
+    <ion-buttons slot="end"> -->
+      <ion-button (click)="onclick.emit('notificationmodal')" class="hasBadge">
+        <i class="fi fi-rr-envelope-dot fs-18"></i>
+        <ion-badge>2</ion-badge>
+      </ion-button>
+      <!-- <ion-button class="no-shadow" (click)="onclick.emit('feedbackmodal')">
+        <i class="fi fi-rr-interrogation fs-18"></i>
+      </ion-button>
+      <ion-button id="click-trigger" class="no-shadow" (click)="onclick.emit('feedbackmodal')">
+        <i class="fi fi-rr-menu-dots fs-18"></i>
+      </ion-button> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

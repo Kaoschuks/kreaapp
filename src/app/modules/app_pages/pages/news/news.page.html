@@ -1,0 +1,18 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar [color]="globals.pageColor">
+    <chips [hasBorder]="false" [defaultColor]="'bg-transparent text-white'" [activeColor]="'bg-light text-primary'" [collections]="['All', 'Fashion', 'Politics', 'Technology', 'Education', 'Finanace']"></chips>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <news-card></news-card>
+  
+  <ion-list-header>
+    <ion-label>
+      <h2 class="fs-14">Trending</h2>
+    </ion-label>
+    <ion-button momde="ios" class="fs-12">see all</ion-button>
+  </ion-list-header>
+  <news-item *ngFor="let _news of news"></news-item>
+</ion-content>

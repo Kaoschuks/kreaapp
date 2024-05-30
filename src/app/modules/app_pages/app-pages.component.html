@@ -1,0 +1,12 @@
+
+<app-layout></app-layout>
+<notification-modal [isOpen]="globals.modalData?.notificationmodal?.isOpen"></notification-modal>
+<!-- 
+<onboarding-modal [isOpen]="globals.modalData?.walkthroughmodal?.isOpen || false"></onboarding-modal>
+<language-modal [isOpen]="globals.modalData?.languagemodal?.isOpen || false"></language-modal> -->
+<profile-modal [isOpen]="globals.modalData?.profilemodal?.isOpen || false"></profile-modal>
+<filter-modal [type]="''" [isOpen]="globals.modalData?.filtermodal?.isOpen || false"></filter-modal>
+<!-- <full-modal [open]="globals.modalData?.notificationmodal?.isOpen || false" (closeModal)="globals.closeModal('notificationmodal')" [asPage]="true" [headerColor]="'white'" [headerClass]="'bg-white'" [bodyColor]="'light'" [id]="'notification'" [title]="'notifications'">
+  
+</full-modal> -->
+<success-modal [isOpen]="globals.modalData?.successmodal?.isOpen || false" (continue)="onModalClosed($event);globals.closeModal('successmodal')" [data]="globals.modalData || {}" [activeColor]="globals.modalData.color || 'primary'" [class]="'modal-center modal-center-sm modal-w70'"></success-modal> 

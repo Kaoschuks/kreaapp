@@ -1,0 +1,16 @@
+:host {
+    ion-avatar {
+        height: 30px !important;
+        width: 30px !important;
+        --border-radius: 7px !important;
+        margin-left: 0px !important;
+    }
+    .hasBadge {
+        margin-right: -5px !important;
+    }
+    ion-badge {
+        margin-top: -10px !important;
+        margin-left: -5px !important;
+        font-size: 12px;
+    }
+}
