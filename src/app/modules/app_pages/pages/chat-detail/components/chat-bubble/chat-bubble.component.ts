@@ -1,6 +1,7 @@
-import { CommonModule, DatePipe, NgFor, TitleCasePipe } from '@angular/common';
+import { CommonModule, DatePipe, NgFor, NgIf, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { ActionSheetController, IonicModule } from '@ionic/angular';
+import { LongPressDirective } from 'src/app/core';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { ActionSheetController, IonicModule } from '@ionic/angular';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    IonicModule, NgFor, DatePipe, TitleCasePipe
+    LongPressDirective,
+    IonicModule, NgFor, DatePipe, TitleCasePipe, NgIf
   ]
 })
 export class ChatBubbleComponent {
@@ -59,7 +61,6 @@ export class ChatBubbleComponent {
     // this.message.emit(message)
     // this.message.emit(message)
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Actions',
       buttons: this.buttions
     });
 

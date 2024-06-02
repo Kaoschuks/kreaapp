@@ -12,7 +12,7 @@ export class ChatDetailService {
 
   globals: GlobalsServices = inject(GlobalsServices);
   private route: ActivatedRoute = inject(ActivatedRoute);
-  messages: any = messages
+  messages: any = messages.concat(messages)
   private chatid: string = this.route.snapshot.params['chatid'] || ''
 
   constructor() {

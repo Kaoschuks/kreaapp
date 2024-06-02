@@ -1,73 +1,143 @@
 :host {
-    .add-chat {
-        width: 97%;
-        bottom: 10px;
-        max-height: 50%;
-        margin: 0px auto;
-        margin-bottom: 7px;
-        .message-content {
-            position: relative;
-            width: 85%;
-            left: 8.5px;
-            --background: #fff;
-            background: #fff;
-            border-radius: 0px 0px 20px 20px;
-            .icon-controls {
-                i {
-                    &.left {
-                        left: 25px !important;
-                    }
-                    &.right {
-                        right: 65px !important;
-                    }
-                    position: fixed;
-                    bottom: 22px;
-                    font-size: 22px;
-                }
+
+    .footer_div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 6px;
+    }
+
+
+    .message-content {
+        position: relative;
+        width: 85%;
+        bottom: 0px !important;
+        left: 0px;
+        --background:var(--ion-color-white);
+        background: var(--ion-color-white);
+        border-radius: 25px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .round-btn {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+        position: fixed;
+        right: 5px;
+        bottom: 6px;
+        --background: var(--ion-color-primary);
+        background: var(--ion-color-primary);
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+    }
+
+    .icon-controls {
+        // >.left {
+        //     left: 10px !important;
+        // }
+
+        >.right {
+            .first-child {
+                right: 65px !important;
             }
-            ion-textarea {
-                margin-top: 0px;
-                margin-bottom: 5px;
-                padding-left: 10px;
-                padding-right: 5px;
-                min-height: 40px;
-                max-height: 150px;
-                * {
-                    font-size: 10px;
-                    font-weight: 600;
-                }
-            }
-            &.top-border {
-                border-radius: 20px !important;
-                ion-textarea {
-                    margin-top: 0px;
-                    margin-bottom: 0px;
-                }
+            .last-child {
+                right: 98px !important;
             }
         }
-        .attachment {
-            border-radius: 20px 20px 00px 0px;
-        }
-        .round-btn {
+        i {
+            margin-left: 5px !important;
+            margin-right: 5px !important;
             position: fixed;
-            right: 8.5px;
-            bottom: 5px;
-            --background: var(--ion-color-primary);
-            background: var(--ion-color-primary);
-            height: 40px;
-            width: 40px;
-            border-radius: 100%;
+            bottom: 18px;
+            font-size: 17px;
         }
     }
-    ion-fab-button#fileoption {
-        visibility: hidden;
-        margin-right: -1px !important;
-    }
-    ion-fab-list {
-        right: -12px;
-        --background: #fff;
-        background: #fff;
-        border-radius: 50px;
-        padding: 5px 10px;
+
+    ion-textarea {
+        margin-top: 0px;
+        margin-bottom: 2px;
+        padding-left: 10px;
+        padding-right: 5px;
+        min-height: 40px;
+        max-height: 150px;
+
+        * {
+            font-size: 10px;
+            font-weight: 600;
+        }
     }
 }
+
+// :host {
+//     .add-chat {
+//         width: 97%;
+//         bottom: 10px;
+//         max-height: 50%;
+//         margin: 0px auto;
+//         margin-bottom: 7px;
+//         .message-content {
+//             position: relative;
+//             width: 85%;
+//             left: 8.5px;
+//             --background: #fff;
+//             background: #fff;
+//             border-radius: 0px 0px 20px 20px;
+//             .icon-controls {
+//                 i {
+//                     &.left {
+//                         left: 25px !important;
+//                     }
+//                     &.right {
+//                         right: 65px !important;
+//                     }
+//                     position: fixed;
+//                     bottom: 22px;
+//                     font-size: 22px;
+//                 }
+//             }
+//             ion-textarea {
+//                 margin-top: 0px;
+//                 margin-bottom: 5px;
+//                 padding-left: 10px;
+//                 padding-right: 5px;
+//                 min-height: 40px;
+//                 max-height: 150px;
+//                 * {
+//                     font-size: 10px;
+//                     font-weight: 600;
+//                 }
+//             }
+//             &.top-border {
+//                 border-radius: 20px !important;
+//                 ion-textarea {
+//                     margin-top: 0px;
+//                     margin-bottom: 0px;
+//                 }
+//             }
+//         }
+//         .attachment {
+//             border-radius: 20px 20px 00px 0px;
+//         }
+//         .round-btn {
+//             position: fixed;
+//             right: 8.5px;
+//             bottom: 5px;
+//             --background: var(--ion-color-primary);
+//             background: var(--ion-color-primary);
+//             height: 40px;
+//             width: 40px;
+//             border-radius: 100%;
+//         }
+//     }
+//     ion-fab-button#fileoption {
+//         visibility: hidden;
+//         margin-right: -1px !important;
+//     }
+//     ion-fab-list {
+//         right: -12px;
+//         --background: #fff;
+//         background: #fff;
+//         border-radius: 50px;
+//         padding: 5px 10px;
+//     }
+// }

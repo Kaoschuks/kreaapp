@@ -1,6 +1,46 @@
 :host {
+    .header_slider{
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 6px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+        border-top: 1px solid var(--ion-color-medium) !important;
 
-    ion-list-header {
-        margin-bottom: -10px;
+        .test{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+    
+        .active{
+            border-bottom: 3px solid var(--ion-color-primary) !important;
+            color: var(--ion-color-primary) !important;
+        }
+    
+        .active2{
+            color: var(--ion-color-primary) !important;
+        }
+
+        .chips_div{
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+            .chip{                
+                white-space: nowrap;
+                color:  var(--ion-color-medium);
+                font-size: 14px;
+                font-weight: bold;
+            }  
+        }
+        ion-icon{
+            font-size: 20px;
+            color:  var(--ion-color-medium);
+            margin-left: 15px;
+        }
     }
 }

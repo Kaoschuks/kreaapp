@@ -1,6 +1,6 @@
 
 
-<half-modal [open]="isOpen" [initialBreakpoint]="0.3" [endBreakpoint]="0.3"  [id]="type+'filter'" [bodyColor]="'white'" [footerClass]="'bg-white ion-no-border'">
+<half-modal [open]="isOpen || false" (closeModal)="globals.closeModal('filtermodal')" [initialBreakpoint]="0.3" [endBreakpoint]="0.3"  [id]="type+'filter'" [bodyColor]="'white'" [footerClass]="'bg-white ion-no-border'">
   <ion-toolbar slot="fixed" style="margin-top: 10px !important;" color="white">
     <ion-title mode="md">
       <span class="fs-18">Filter</span>

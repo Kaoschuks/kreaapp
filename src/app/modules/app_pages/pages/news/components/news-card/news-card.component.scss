@@ -1,0 +1,26 @@
+:host {
+    ion-card {
+        padding: 0px 10px !important;
+        // margin-top: 5px !important;
+        > h2 {
+            margin-top:10px !important;
+        }
+        > img {
+            height: 200px !important;
+            width: 100% !important;
+            border-radius: 8px !important;
+            --border-radius: 8px !important;
+        }
+        ion-item {
+            margin-top: -5px !important;
+            ion-fab-button{
+                width: 25px !important;
+                height: 25px !important;
+                margin-left: 10px !important;
+            }
+        }
+        ion-card-content {
+            margin-top: -15px !important;
+        }
+    }
+}

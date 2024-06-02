@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { AppLayoutComponent, SuccessModalComponent, FullModalComponent } from 'src/app/shared';
+import { AppLayoutComponent, SuccessModalComponent } from 'src/app/shared';
 import { 
-  // LanguageModalComponent, OnboardingModalComponent, 
-  NotificationModalComponent, 
+  NotificationModalComponent, LanguageModalComponent, OnboardingModalComponent, 
   ProfileModalComponent, FilterModalComponent
 } from 'src/app/modules/app_pages/modals';
 import { ApppageService } from './services/apppage.service';
@@ -16,9 +15,9 @@ import { ApppageService } from './services/apppage.service';
   standalone: true,
   imports: [
     NgIf,
-    NotificationModalComponent, 
+    NotificationModalComponent, LanguageModalComponent, OnboardingModalComponent, 
     ProfileModalComponent, FilterModalComponent,
-    AppLayoutComponent, SuccessModalComponent, FullModalComponent
+    AppLayoutComponent, SuccessModalComponent
   ],
 })
 export class AppPagesComponent extends ApppageService{

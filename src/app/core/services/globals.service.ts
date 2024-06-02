@@ -50,7 +50,7 @@ export class GlobalsServices {
     hide: async () => {
       await this.loadingCtrl.dismiss();
     },
-    show: async (message: string, duration: number = 3000) => {
+    show: async (message: string, duration: number = 0) => {
       await this.showLoader(message, duration)
     },
   }
@@ -61,13 +61,15 @@ export class GlobalsServices {
   }
 
   private async showLoader(message: string, duration: number) {
-    const loading = await this.loadingCtrl.create({
+    let opts: any = {
       message: message,
       backdropDismiss: false,
       keyboardClose: true,
       showBackdrop: true,
       duration: duration,
-    });
+    }
+    if(duration == 0) delete opts.duration
+    const loading = await this.loadingCtrl.create(opts);
     await loading.present();
   }
 
@@ -203,11 +205,11 @@ export class GlobalsServices {
     switch (value) {
       case "dark":
         body?.classList.add('dark'); body?.classList.remove('light');
-        this.changeStatusBarColor('#1e2023', false, false, 1000)
+        this.changeStatusBarColor('#1e2023', false, false, 700)
         break;
       case "light":
         body?.classList.add('light'); body?.classList.remove('dark')
-        this.changeStatusBarColor('#ffffff', true, false, 1000)
+        this.changeStatusBarColor('#ffffff', true, false, 700)
         break;
     }
     // this.changeStatusBarColor('#203db4', false, false, 1000)

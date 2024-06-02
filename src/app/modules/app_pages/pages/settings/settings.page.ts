@@ -15,17 +15,19 @@ import { GlobalsServices } from 'src/app/core';
 })
 export class SettingsPage implements OnInit {
   globals: GlobalsServices = inject(GlobalsServices);
-  theme: string = this.globals.getDeviceThemeMode
+  isDark: boolean = this.globals.getDeviceThemeMode ? true : false
 
   ngOnInit() {
   }
 
-  changeTheme() {
-    this.globals.spinner.text = "changing theme mode"
-    this.globals.spinner.show()
-    this.theme = (this.theme !== 'dark') ? 'dark' : 'light'
-    this.globals.changeTheme(this.theme)
-    this.globals.spinner.hide()
+  async changeTheme() {
+    this.globals.loading.show(`Changing theme to ${(!this.isDark) ? 'dark' : 'light'} mode`);
+    
+    await this.globals.changeTheme( (!this.isDark) ? 'dark' : 'light' )
+    setTimeout(() => {
+      this.isDark = (this.isDark) ? false : true;
+      this.globals.loading.hide();
+    }, 2000)
   }
 
   onDeleteAccount() {

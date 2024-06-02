@@ -10,7 +10,11 @@ export class ChatsService {
   api: RequestService = inject(RequestService);
   chats: Array<any> = []
 
-  async getChats() {
+  constructor(){
+    this.getChats()
+  }
+
+  private async getChats() {
     this.chats = chats
   }
 

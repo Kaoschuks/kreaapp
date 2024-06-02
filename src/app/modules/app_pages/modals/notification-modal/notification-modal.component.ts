@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, inject } from '@angular/core';
+import { IonLabel } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
 import { FullModalComponent } from 'src/app/shared';
 
@@ -8,16 +10,13 @@ import { FullModalComponent } from 'src/app/shared';
   styleUrls: ['./notification-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FullModalComponent]
+  imports: [FullModalComponent, IonLabel, NgFor]
 })
-export class NotificationModalComponent  implements OnChanges {
+export class NotificationModalComponent {
 
   @Input() isOpen!: boolean;
-  globals: GlobalsServices = inject(GlobalsServices);
-  constructor() { }
   
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
+  public readonly globals: GlobalsServices = inject(GlobalsServices);
+  constructor() { }
 
 }

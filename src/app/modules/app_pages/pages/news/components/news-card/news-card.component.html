@@ -1,16 +1,29 @@
 
-<ion-card class="ion-no-padding no-shadow">
-  <ion-card-content>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+<ion-card class="no-shadow ion-no-margin" *ngFor="let _news of news">
+  <h2 class="fs-18 fw-5 text-dark">{{_news?.title }}</h2>
+  <img [src]="_news?.image">
+  <ion-item mode="ios" class="ion-no-padding" lines="full">
     <ion-label>
-      <p class="text-primary fw-500">Politics</p>
-      <h2 class="fs-20 fw-5 text-dark">Angular tricks to become a pro. RxJS operators</h2>
-      <p class="fs-12">When working with observables, you won’t call subscribe() very often</p>
+      News India
+      <p class="text-medium fw-500 fs-12">{{_news?.category | titlecase}} - {{_news?.date | dateAsAgo }}</p>
     </ion-label>
-  </ion-card-content>
+    <!-- <ion-button fill="outline" size="small" slot="end" color="dark">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Follow
+    </ion-button>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      <p>{{_news?.date | dateAsAgo }}</p>
+    </ion-label> -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" size="small">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <span style="margin-left: 5px;" class="bold">{{_news?.comments }}</span>
+      </ion-button>
+      <ion-button fill="clear" size="small">
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
 </ion-card>

@@ -20,8 +20,8 @@ const components: any[] = [
 })
 export class ChatsPage extends ChatsService {
 
-  ionViewWillEnter() {
-    this.getChats()
+  constructor() {
+    super()
   }
 
 }

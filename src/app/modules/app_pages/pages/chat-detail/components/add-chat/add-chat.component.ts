@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { mic, send, share } from 'ionicons/icons';
+import { mic, send } from 'ionicons/icons';
 declare let document: any;
 
 @Component({
@@ -12,7 +13,7 @@ declare let document: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    IonicModule, CommonModule
+    IonicModule, CommonModule, FormsModule
   ]
 })
 export class AddChatComponent {
@@ -24,9 +25,8 @@ export class AddChatComponent {
 
   constructor() {
     addIcons({ 
-      "mic": mic,
       "send": send,
-      "share": share
+      "mic": mic
     });
   }
 
@@ -46,10 +46,6 @@ export class AddChatComponent {
     setTimeout(() => {
       document.getElementById(id).click()
     }, 500)
-  }
-
-  hide_attachment(btn: boolean) {
-    this.btn = btn;
   }
 
   toogleVisibility() {
