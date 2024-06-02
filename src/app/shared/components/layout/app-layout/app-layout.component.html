@@ -1,6 +1,8 @@
 
 
 <!-- <div class="ion-page"> -->
-  <mobile-header (onclick)="onHeaderButtonClicked.emit($event)" [refresh]="refresh" [color]="color" [title]="title"></mobile-header>
+  <!-- <div *ngIf="globals.pageData?.hasHeader"> -->
+    <mobile-header (onclick)="onHeaderButtonClicked($event)" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></mobile-header>
+  <!-- </div> -->
   <mobile-footer></mobile-footer>
 <!-- </div> -->

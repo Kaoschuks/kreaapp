@@ -57,14 +57,17 @@ yarn-error.log
 /.angular
 /.angular/cache
 .sass-cache/
+/.nx
+/.nx/cache
 /connect.lock
 /coverage
 /libpeerconnection.log
 testem.log
 /typings
-/android
-package-lock.json
+
 # System files
 .DS_Store
 Thumbs.db
+/node_modules
 package-lock.json
+/.vscode

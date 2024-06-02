@@ -1,0 +1,24 @@
+
+
+<full-modal [open]="isOpen" [backDropDismiss]="false" [id]="'walkthrough'" [bodyColor]="'white'" [headerClass]="'hidden'" [footerClass]="'bg-white ion-no-border'">
+  
+  <div modal-footer class="ion-padding">
+    <ion-row>
+      <ion-col size="9">
+        <onboarding></onboarding>
+      </ion-col>
+      <ion-col size="3" align="right">
+        <ion-fab-button size="large" color="medium" class="no-shadow"></ion-fab-button>
+        <ion-button mode="ios" (click)="globals.closeModal('walkthroughmodal')" routerLink="/auth/login" routerDirection="forward" size="default" fill="clear" color="dark">
+          <span class="fs-16 text-dark">Skip</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-button (click)="globals.closeModal('walkthroughmodal')" routerLink="/auth/register/country" expand="block" size="large" color="primary" class="no-shadow">
+      <span class="fs-14 bold">Get Started</span>
+    </ion-button>
+    <ion-button mode="ios" (click)="globals.closeModal('walkthroughmodal')" routerLink="/auth/login" routerDirection="forward" expand="block" size="default" fill="clear" color="dark">
+      <span class="fs-16 text-dark">Have an account? <span class="text-primary"> Sign In</span></span>
+    </ion-button> -->
+  </div>
+</full-modal>

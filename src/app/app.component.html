@@ -1,6 +1,7 @@
-<onloading *ngIf="globals.appLoading"></onloading>
+<onloading *ngIf="globals.appLoading" [bgColor]="'bg-'+globals.pageColor"></onloading>
 
 <ion-app>
+  <full-loading [text]="globals.spinner.text"></full-loading>
   <ion-split-pane when="md" contentId="main">
     <ion-menu contentId="main">
     </ion-menu>

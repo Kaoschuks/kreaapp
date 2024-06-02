@@ -1,0 +1,28 @@
+
+<ion-header class="ion-no-border b-b">
+  <ion-toolbar [color]="globals.pageColor" class="header_slider">
+    <div class="chips_div">
+      <div class="test" [class.active]="val == i" *ngFor="let item of chips; let i = index">
+        <ion-label class="chip" [class.active2]="val == i" (click)="val = i">{{item}}</ion-label>
+      </div>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <chips [hasBorder]="false" [defaultColor]="'bg-transparent text-dark'" [activeColor]="'bg-light text-primary'" [collections]="['All', 'Fashion', 'Politics', 'Technology', 'Education', 'Finanace']"></chips> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <news-card [news]="news"></news-card>
+  
+  <ion-list-header>
+    <ion-label>
+      <h2 class="fs-14">Trending</h2>
+    </ion-label>
+    <ion-button momde="ios" class="fs-12">see all</ion-button>
+  </ion-list-header>
+  <news-item *ngFor="let _news of news.concat(news)"></news-item>
+</ion-content>

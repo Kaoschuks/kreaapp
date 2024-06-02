@@ -1,16 +1,15 @@
 import { ErrorHandler, enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { RouteReuseStrategy, provideRouter, withComponentInputBinding } from '@angular/router';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-import { GlobalErrorHandlerService, CachingInterceptor, GlobalsServices, RequestInterceptorService, NetworkInterceptor, InactivityInterceptor, RequestService, StorageService, NetworkProvider, OfflineManagerService } from './app/core';
-import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
+import { RequestService, StorageService, GlobalsServices, OfflineManagerService, NetworkInterceptor, RequestInterceptorService, CachingInterceptor, InactivityInterceptor, GlobalErrorHandlerService, WebWorkersProvider, ImageCacheWorker } from './app/core';
 
 
 if (environment.production) {
@@ -20,24 +19,18 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    StatusBar,
-    RequestService, StorageService, GlobalsServices, NetworkProvider, OfflineManagerService,
+    RequestService, StorageService, GlobalsServices, OfflineManagerService, WebWorkersProvider, ImageCacheWorker,
     { 
       provide: RouteReuseStrategy, 
       useClass: IonicRouteStrategy 
     },
+    provideIonicAngular(),
     importProvidersFrom(BrowserAnimationsModule),
-    provideIonicAngular({
-      animated: true,
-      sanitizerEnabled: true,
-      mode: 'md',
-      swipeBackEnabled: true,
-    }),
     provideRouter(
-      routes, withComponentInputBinding()
+      routes
     ),
     provideHttpClient(
-      withInterceptorsFromDi(),
+      withInterceptorsFromDi()
     ),
     { 
       provide: HTTP_INTERCEPTORS, 

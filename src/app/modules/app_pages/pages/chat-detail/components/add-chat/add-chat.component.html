@@ -1,0 +1,21 @@
+
+<div class="footer_div">
+  <ion-row class="message-content ion-no-padding ion-no-margin">
+    <ion-col size="1" class="icon-controls">
+      <i class="fi fi-rr-smile text-dark left" mode="ios"></i>
+    </ion-col>
+    <ion-col size="9" class="ion-no-padding">
+      <ion-textarea  [(ngModel)]="msg" class="text-dark" rows="1" mode="ios" autoGrow="true" placeholder="Type your comment" type="text"></ion-textarea>
+    </ion-col>
+    <ion-col size="2" class="icon-controls">
+      <div class="right">
+        <i *ngIf="!msg" class="fi fi-rr-camera text-dark fs-18 last-child" (click)="open_file('fileoption')"></i>
+        <i class="fi fi-rr-clip text-dark first-child" (click)="open_file('fileoption')"></i>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-button [disabled]="!msg" size="small" color="primary" class="round-btn" (click)="sendMessage()" shape="round">
+    <ion-icon *ngIf="msg" mode="ios" name="send"></ion-icon>
+    <ion-icon *ngIf="!msg" class="fs-30" mode="ios" name="mic"></ion-icon>
+  </ion-button>
+</div>

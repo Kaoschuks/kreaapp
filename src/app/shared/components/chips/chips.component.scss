@@ -9,9 +9,10 @@
         ion-chip {
             display: inline-block;
             width: auto;
-            border-radius: 5px !important;
+            border-radius: 7px !important;
             span {
-                top: 5px !important;
+                position: relative !important;
+                bottom: -2px !important;
             }
         }
     }

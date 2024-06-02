@@ -1,26 +1,27 @@
 import { Component, inject } from '@angular/core';
 import { IonApp, IonMenu, IonRouterOutlet, IonSplitPane } from '@ionic/angular/standalone';
-import { GlobalsServices } from './shared/services';
 import { register } from 'swiper/element/bundle';
-import { OnloadingComponent } from './shared/components';
+import { FullLoadingComponent, OnloadingComponent } from './shared/components';
 import { NgIf } from '@angular/common';
+import { GlobalsServices } from './core';
+import { SplashScreen } from '@capacitor/splash-screen';
 register();
+
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [IonApp, IonRouterOutlet, OnloadingComponent, IonSplitPane, IonMenu, NgIf],
+  imports: [IonApp, IonRouterOutlet, OnloadingComponent, IonSplitPane, IonMenu, NgIf, FullLoadingComponent],
 })
 export class AppComponent {
   globals: GlobalsServices = inject(GlobalsServices);
 
   constructor() {
-    try {
-      this.globals.initializeApp();
-      // this.globals.openModal('walkthroughmodal');
-    } catch (error) {
-      console.log(error)
-    }
+    this.globals.changeTheme('light')
+    // this.globals.changeTheme(this.globals.getDeviceThemeMode)
+    SplashScreen.hide();
+    this.globals.initializeApp()
   }
+  
 }

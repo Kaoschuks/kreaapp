@@ -1,0 +1,43 @@
+<ion-list #chatRef>
+  <ion-card longPress (longpress)="openMessageActionSheet(message)" class="ion-no-padding no-shadow ion-no-margin" *ngFor="let message of conversation">
+    <ion-item button="true" lines="none" detail="false">
+      <div class="unread-indicator-wrapper ion-padding-end" slot="start">
+        <ion-fab-button class="no-shadow unread-indicator avatar-sm ion-no-border" color="white">
+          <ion-img [src]="'https://robohash.org/'+message.sender+'@aidefinance.io?set=set3&size=200x200&gravatar=,yes'"></ion-img>
+        </ion-fab-button>
+      </div>
+      <ion-label>
+        <ion-text class="fs-14 bold">{{ message.sender | titlecase }}</ion-text><br />
+        <ion-note color="medium" style="margin-top: 10px;" class="ion-text-wrap fs-14" [innerHTML]="message.message"></ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper" slot="end">
+        <ion-note color="medium" class="fs-12">{{ message.date | date}}</ion-note>
+      </div>
+    </ion-item>
+  </ion-card>
+</ion-list>
+
+
+<div class="main_content_div">
+
+  <span *ngFor="let item of conversation" longPress (longpress)="openMessageActionSheet(message)">
+    <div class="left_div" *ngIf="!item.isSender">
+      <div class="inner_div">
+        <div class="msg_div">
+          <ion-label class="fs-14" [innerHTML]="item.message"></ion-label>
+          <div class="tri_left"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right_div" *ngIf="item.isSender">
+      <div class="inner_div">
+        <div class="msg_div">
+          <ion-label class="fs-14" [innerHTML]="item.message"></ion-label>
+          <div class="tri_right"></div>
+        </div>
+      </div>
+    </div>
+  </span>
+
+</div>

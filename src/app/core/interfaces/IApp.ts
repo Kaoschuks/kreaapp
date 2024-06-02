@@ -15,3 +15,10 @@ export interface StoredRequest {
   time: number;
   id: string;
 }
+
+export interface fileModel {
+    name: string,
+    url: string,
+    ext: string,
+    data: any
+}

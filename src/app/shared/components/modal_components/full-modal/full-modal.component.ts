@@ -39,8 +39,4 @@ export class FullModalComponent {
       "chevron-back-outline": chevronBackOutline
     });
   }
-
-  get height() {
-    return window.innerHeight;
-  }
 }

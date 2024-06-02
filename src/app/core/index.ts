@@ -3,4 +3,5 @@ export * from './interceptors';
 export * from './interfaces';
 export * from './pipes';
 export * from './utils';
-export * from '../shared/services';
+export * from './services';
+export * from './directives';

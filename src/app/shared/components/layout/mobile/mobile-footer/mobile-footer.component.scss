@@ -1,7 +1,7 @@
 :host {
-    // ion-tab-button {
-    //     height: 50px !important;
-    // }
+    ion-tab-button {
+        height: 50px !important;
+    }
     ion-toolbar, ion-tab-bar {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         // position: absolute;
@@ -26,7 +26,7 @@
             &.center {
                 i {
                     margin-top: -1px !important;
-                    margin-bottom: -4px !important;
+                    margin-bottom: -6px !important;
                 }
             }
             ion-label {
@@ -34,7 +34,12 @@
             }
             i, img {
                 margin-top: 2px !important;
-                margin-bottom: 2px !important;
+                // margin-bottom: 0px !important;
+                &.bx {
+                    margin-top: -2px !important;
+                    margin-bottom: 2px !important;
+                    font-size: 25px !important;
+                }
             }
             span {
                 font-size: 10px !important;
