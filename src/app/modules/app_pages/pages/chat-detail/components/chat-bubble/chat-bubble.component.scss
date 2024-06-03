@@ -1,108 +1,111 @@
 :host {
+  ion-list {
     ion-fab-button {
-        margin-top: 10px !important;
+      margin-top: 10px !important;
     }
-
-  .unread-indicator {
-    background: var(--ion-color-primary);
-    border-radius: 100%;
-    position: absolute;
-    inset-inline-start: 12px;
-    top: 0px;
-    right: 10px !important;
+  
+    .unread-indicator {
+      background: var(--ion-color-primary);
+      border-radius: 100%;
+      position: absolute;
+      inset-inline-start: 12px;
+      top: 0px;
+      right: 10px !important;
+    }
+  
+    .metadata-end-wrapper {
+      position: absolute;
+      top: 10px;
+      inset-inline-end: 10px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+  
+    ion-label {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 10px !important;
+    }
+  
+    ion-label ion-note {
+      font-size: 0.9rem;
+    }
   }
 
-  .metadata-end-wrapper {
-    position: absolute;
-    top: 10px;
-    inset-inline-end: 10px;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-  }
+  .main_content_div {
+    width: 100%;
+    padding: 15px;
 
-  ion-label {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-left: 10px !important;
-  }
-
-  ion-label ion-note {
-    font-size: 0.9rem;
-  }
-
-.main_content_div{
-  width: 100%;
-  padding: 15px;
-
-  .left_div{
+    .left_div {
       width: 100%;
       display: flex;
       margin-bottom: 10px;
 
-      .inner_div{
+      .inner_div {
         width: 85%;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
       }
 
-      .msg_div{
-          background: var(--ion-color-white) !important;
-          display: flex;
-          align-items: center;
-          padding: 10px 15px;
-          border-radius: 5px;
-          margin-left: 5px;
-          position: relative;
+      .msg_div {
+        background: var(--ion-color-white) !important;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-left: 5px;
+        position: relative;
       }
 
-      .tri_left{
-          width: 0;
-          height: 0;
-          position: absolute;
-          border-top: 10px solid var(--ion-color-white) !important;
-          border-left: 10px solid transparent;
-          top: 0px;
-          left: -7px;
+      .tri_left {
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-top: 10px solid var(--ion-color-white) !important;
+        border-left: 10px solid transparent;
+        top: 0px;
+        left: -7px;
       }
-  }
-  .right_div{
+    }
+
+    .right_div {
       display: flex;
       width: 100%;
       margin-bottom: 10px;
       justify-content: flex-end;
 
 
-      .inner_div{
-          width: 85%;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
+      .inner_div {
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
       }
 
-      .tri_right{
-          width: 0;
-          height: 0;
-          position: absolute;
-          border-top: 10px solid var(--ion-color-primary-tint) !important;
-          border-right: 10px solid transparent;
-          top: 0px;
-          right: -7px;
+      .tri_right {
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-top: 10px solid var(--ion-color-primary-tint) !important;
+        border-right: 10px solid transparent;
+        top: 0px;
+        right: -7px;
       }
 
-      .msg_div{
-        color: var(--ion-color-white) !important;
-        --color: var(--ion-color-white) !important;
-          background: var(--ion-color-primary-tint) !important;
-          display: flex;
-          align-items: center;
-          padding: 10px 15px;
-          border-radius: 5px;
-          margin-right: 5px;
-          position: relative;
+      .msg_div {
+        color: #ffffff !important;
+        --color: #ffffff !important;
+        background: var(--ion-color-primary-tint) !important;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 5px;
+        position: relative;
       }
+    }
   }
-}
 }

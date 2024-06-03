@@ -18,8 +18,8 @@ export class AppComponent {
   globals: GlobalsServices = inject(GlobalsServices);
 
   constructor() {
-    this.globals.changeTheme('light')
-    // this.globals.changeTheme(this.globals.getDeviceThemeMode)
+    // this.globals.changeTheme('light')
+    this.globals.changeTheme(this.globals.getDeviceThemeMode)
     SplashScreen.hide();
     this.globals.initializeApp()
   }

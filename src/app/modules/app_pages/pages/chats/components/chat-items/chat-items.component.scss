@@ -8,7 +8,8 @@
     }
     .metadata-end-wrapper {
         ion-note {
-            margin-top: -5px !important;
+            position: relative !important;
+            top: 0px !important
         }
     }
     ion-avatar {

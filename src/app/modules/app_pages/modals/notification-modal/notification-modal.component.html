@@ -3,7 +3,7 @@
 </ng-container> -->
 
 <full-modal [open]="isOpen || false" (closeModal)="globals.closeModal('notificationmodal')" [asPage]="true" [headerColor]="globals.pageColor" [headerClass]="'bg-'+globals.pageColor" [bodyColor]="'white'" [id]="'notification'" [title]="'notifications'">
-    <div class="address_box" *ngFor="let item of [1,2,3,4,5]; let i = index">         
+    <div class="notification_box" *ngFor="let item of [1,2,3,4,5]; let i = index">         
         <ion-label class="date_lbl">4.40 PM</ion-label>
         <ion-label class="simp_lbl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed labore porro 
