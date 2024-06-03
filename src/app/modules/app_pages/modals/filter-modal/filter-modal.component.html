@@ -7,15 +7,15 @@
     </ion-title>
   </ion-toolbar>
 
-  <ion-content color="white" class="ion-padding">
+  <ion-content color="white">
     <br />
     <br />
     <br />
     <ion-row>
       <ion-col size="8">
-        <ion-item lines="none" class="ion-item-border-radius" color="light">
+        <ion-item mode="ios" lines="none" class="ion-item-border-radius" color="light">
           <ion-label aria-label="month label" position="stacked">Months</ion-label>
-          <ion-select aria-label="month label" [interface]="'action-sheet'">
+          <ion-select aria-label="month label" [interface]="'action-sheet'" mode="md">
             <ion-select-option [value]="i+1" *ngFor="let month of months;let i = index">{{month}}</ion-select-option>
           </ion-select>
         </ion-item>

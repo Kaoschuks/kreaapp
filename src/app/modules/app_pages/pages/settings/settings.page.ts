@@ -21,13 +21,13 @@ export class SettingsPage implements OnInit {
   }
 
   async changeTheme() {
-    this.globals.loading.show(`Changing theme to ${(!this.isDark) ? 'dark' : 'light'} mode`);
+    this.globals.toastAlert(`Changing theme to ${(!this.isDark) ? 'dark' : 'light'} mode`, {
+      position: 'bottom'
+    });
     
     await this.globals.changeTheme( (!this.isDark) ? 'dark' : 'light' )
-    setTimeout(() => {
-      this.isDark = (this.isDark) ? false : true;
-      this.globals.loading.hide();
-    }, 2000)
+    this.isDark = (this.isDark) ? false : true;
+    this.globals.loading.hide();
   }
 
   onDeleteAccount() {
