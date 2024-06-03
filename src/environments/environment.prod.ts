@@ -1798,49 +1798,29 @@ export const messages = [
     {
       date: new Date(),
       sender: 'Kaoschuks',
-      image: 'https://ui-avatars.com/api/?background=f5f6f9&color=000000&bold=false&format=svg&name=Kaoschuks',
+      isSender: true,
+      image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Kaoschuks',
       message: 'explain what you meann by internal link'
     },
     {
       date: new Date(),
       sender: 'John Doe',
-      image: 'https://ui-avatars.com/api/?background=f5f6f9&color=000000&bold=false&format=svg&name=Helen+Doe',
+      isSender: false,
+      image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Helen+Doe',
       message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore '
     },
     {
       date: new Date(),
       sender: 'Atao',
-      image: 'https://ui-avatars.com/api/?background=f5f6f9&color=000000&bold=false&format=svg&name=Atao',
+      isSender: false,
+      image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Atao',
       message: 'not non network ahahahah <br /> favour chulklls testing data'
     },
     {
       date: new Date(),
       sender: 'John Doe',
-      image: 'https://ui-avatars.com/api/?background=random&color=ffffff&bold=false&format=svg',
+      isSender: false,
+      image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg',
       message: 'Sodales neque sodales ut etiam sit amet nisl purus in. Sed vulputate mi sit amet mauris commodo. Suscipit tellus mauris a diam maecenas sed enim ut. Pretium nibh ipsum consequat nisl vel pretium. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.'
-    },
-    {
-      date: new Date(),
-      sender: 'Kaoschuks',
-      image: 'https://ui-avatars.com/api/?background=random&color=ffffff&bold=false&format=svg',
-      message: 'I get you but you dont understand me'
-    },
-    {
-      date: new Date(),
-      sender: 'John Doe',
-      image: 'https://ui-avatars.com/api/?background=random&color=ffffff&bold=false&format=svg',
-      message: 'Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.'
-    },
-    {
-      date: new Date(),
-      sender: 'Atao',
-      image: 'https://ui-avatars.com/api/?background=random&color=ffffff&bold=false&format=svg',
-      message: 'run display network on local network (internat) it would work'
-    },
-    {
-      date: new Date(),
-      sender: 'John Doe',
-      image: 'https://ui-avatars.com/api/?background=random&color=ffffff&bold=false&format=svg',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales neque sodales ut etiam sit amet nisl purus in. Sed vulputate mi sit amet mauris commodo. Suscipit tellus mauris a diam maecenas sed enim ut. Pretium nibh ipsum consequat nisl vel pretium. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.'
     },
   ]
