@@ -2,7 +2,6 @@ import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { addIcons } from 'ionicons';
 import { chevronBackOutline } from 'ionicons/icons';
-import { GlobalsServices } from 'src/app/core';
 import { messages } from 'src/environments/environment';
 
 @Injectable({
@@ -10,19 +9,27 @@ import { messages } from 'src/environments/environment';
 })
 export class ChatDetailService {
 
-  globals: GlobalsServices = inject(GlobalsServices);
-  private route: ActivatedRoute = inject(ActivatedRoute);
-  messages: any = messages.concat(messages)
-  private chatid: string = this.route.snapshot.params['chatid'] || ''
+  private readonly route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor() {
     addIcons({ 
       "chevron-back-outline": chevronBackOutline
     });
     this.scrollToBottom()
-   }
+  }
+  
+  get messages(): any[] {
+    const _messages: any[] = messages.concat(messages);
+    return _messages
+  }
+  
+  private get chatid(): string {
+    return this.route.snapshot.params['chatid'] || ''
+  }
 
-  onEnter(text: string) {}
+  onEnter(text: string) {
+    this.scrollToBottom()
+  }
 
   private scrollToBottom() {
     setTimeout(() => {

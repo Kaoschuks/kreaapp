@@ -137,7 +137,7 @@ export class GlobalsServices {
 
   async toastAlert(
     message: string,
-    { duration = 3000, cssClass = "toast-deafult", position = "bottom" } = {}
+    { duration = 3000, cssClass = "toast-primary", position = "bottom" } = {}
   ) {
     const toastCtrl: ToastController = this.injector.get<ToastController>(ToastController);
     const toast = await toastCtrl.create({

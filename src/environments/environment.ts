@@ -1816,6 +1816,14 @@ export const messages = [
       message: 'explain what you meann by internal link'
     },
     {
+      isSender: false,
+      sender: 'Kaoschuks',
+      image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Kaoschuks',
+      type: 'image',
+      message: 'https://media.giphy.com/media/4BWByhavc3Hr2/giphy.gif',
+      date: 'May 2, 2020 9:52 AM'
+    },
+    {
       date: new Date(),
       sender: 'John Doe',
       isSender: false,

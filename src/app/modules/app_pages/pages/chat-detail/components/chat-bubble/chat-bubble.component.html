@@ -8,7 +8,8 @@
       </div>
       <ion-label>
         <ion-text class="fs-14 bold">{{ message.sender | titlecase }}</ion-text><br />
-        <ion-note color="medium" style="margin-top: 10px;" class="ion-text-wrap fs-14" [innerHTML]="message.message"></ion-note>
+        <img class="ion-margin-top" [src]="message.message" *ngIf="message.type === 'image'">
+        <ion-note *ngIf="message.type !== 'image'" color="medium" style="margin-top: 10px;" class="ion-text-wrap fs-14" [innerHTML]="message.message"></ion-note>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
         <ion-note color="medium" class="fs-12">{{ message.date | date}}</ion-note>
@@ -21,23 +22,47 @@
 <div class="main_content_div">
 
   <span *ngFor="let item of conversation" longPress (longpress)="openMessageActionSheet(message)">
-    <div class="left_div" *ngIf="!item.isSender">
+    <div [ngClass]="!item.isSender ? 'left_div' : 'right_div'">
       <div class="inner_div">
         <div class="msg_div">
-          <ion-label class="fs-14" [innerHTML]="item.message"></ion-label>
-          <div class="tri_left"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="right_div" *ngIf="item.isSender">
-      <div class="inner_div">
-        <div class="msg_div">
-          <ion-label class="fs-14" [innerHTML]="item.message"></ion-label>
-          <div class="tri_right"></div>
+          <img [src]="item.message" *ngIf="item.type === 'image'">
+          <ion-label class="fs-14" *ngIf="item.type !== 'image'" [innerHTML]="item.message"></ion-label>
+          <div [ngClass]="!item.isSender ? 'tri_left' : 'tri_right'"></div>
         </div>
       </div>
     </div>
   </span>
 
+</div>
+
+
+
+
+<div class="chat-list">
+  <div class="chat-item" longPress (longpress)="openMessageActionSheet(item)" *ngFor="let item of conversation" [ngClass]="{'chat-item-sender': item.isSender}">
+    <div class="chat-timestamp fs-10 bold">
+      {{item.date | dateAsAgo}}
+    </div>
+
+    <div class="chat-item-content">
+      <div class="chat-avatar" *ngIf="!item.isSender">
+        <ion-avatar class="avatar">
+          <img [src]="'https://robohash.org/'+item.sender+'@aidefinance.io?set=set3&size=200x200&gravatar=,yes'">
+        </ion-avatar>
+      </div>
+
+      <div class="chat-item-bubble">
+        <div class="chat-body fs-14" *ngIf="item.type !== 'image'" [innerHtml]="item.message"></div>
+        <img [src]="item.message" *ngIf="item.type === 'image'">
+      </div>
+
+      <div class="chat-item-reaction" *ngIf="!item.isSender && item.type === 'image'">
+        <ion-icon name="share-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="chat-item-status fs-12" *ngIf="item.isSender">
+      Seen 
+    </div>
+  </div>
 </div>

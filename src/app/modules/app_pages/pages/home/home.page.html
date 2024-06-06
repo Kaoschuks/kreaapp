@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<!-- <ion-header class="ion-no-border">
   <ion-toolbar [color]="globals.pageColor">
       <ion-item [color]="globals.pageColor" lines="none">
           <ion-label>
@@ -43,11 +43,11 @@
           </ion-col>
       </ion-row>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content color="light">
-
-  <ion-list-header class="mt-2">
+<ion-content>
+  <loading [text]="'Processing data'" [color]="'primary'"></loading>
+  <!-- <ion-list-header class="mt-2">
     <ion-label>
       <h2 class="fs-14">Accounts</h2>
     </ion-label>
@@ -115,5 +115,5 @@
     <guage-chart [percentage]="90" [label]="'test gauge'"></guage-chart>
     <bar-chart [chartType]="'bar'"></bar-chart>
     <donut-chart [chartType]="'donut'"></donut-chart>
-  </ion-card>
+  </ion-card> -->
 </ion-content>
