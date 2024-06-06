@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
@@ -17,6 +17,8 @@ declare let document: any;
   ]
 })
 export class AddChatComponent {
+  @Input() bgColor: string = 'bg-light'
+  @Input() action: string = 'sent' || 'typing' || 'failed' || 'uploading'
 
   isFocus: boolean = false
   fab: boolean = false

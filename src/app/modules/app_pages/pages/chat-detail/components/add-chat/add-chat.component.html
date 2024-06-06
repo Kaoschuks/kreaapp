@@ -1,5 +1,5 @@
 
-<div class="footer_div">
+<!-- <div class="footer_div">
   <ion-row class="message-content ion-no-padding ion-no-margin">
     <ion-col size="1" class="icon-controls">
       <i class="fi fi-rr-smile text-dark left" mode="ios"></i>
@@ -18,4 +18,26 @@
     <ion-icon *ngIf="msg" mode="ios" name="send"></ion-icon>
     <ion-icon *ngIf="!msg" class="fs-30" mode="ios" name="mic"></ion-icon>
   </ion-button>
-</div>
+</div> -->
+
+<ion-toolbar [ngClass]="bgColor">
+  <ion-buttons slot="start">
+    <ion-button>
+      <i class="fi fi-rr-clip text-dark fs-18"></i>
+    </ion-button>
+    <ng-container *ngIf="!msg">
+      <ion-button>
+        <i class="fi fi-rr-camera text-dark fs-18"></i>
+      </ion-button>
+    </ng-container>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button [disabled]="!msg" size="small" color="primary" class="round-btn" (click)="sendMessage()" shape="round">
+      <ion-icon *ngIf="msg" name="send"></ion-icon>
+      <ion-icon *ngIf="!msg" name="mic"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <div class="message-content">
+    <textarea [(ngModel)]="msg" class="text-dark" placeholder="Type your comment"></textarea>
+  </div>
+</ion-toolbar>

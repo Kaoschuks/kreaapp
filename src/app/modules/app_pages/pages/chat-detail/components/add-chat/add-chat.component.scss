@@ -1,69 +1,51 @@
 :host {
-
-    .footer_div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 6px !important;
-    }
-
-
     .message-content {
-        position: relative;
-        width: 85%;
-        bottom: 0px !important;
-        left: 0px;
-        --background:var(--ion-color-white);
-        background: var(--ion-color-white);
+        // --background:var(--ion-color-white);
+        // background: var(--ion-color-white);
         border-radius: 25px;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+        height: 35px !important;
+        padding-left: 10px;
+        padding-right: 5px;
+        margin-right: 5px;
+        // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+        display: inline-block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        textarea {
+            position: relative;
+            bottom: -8px !important;
+            width: 100%;
+            height: auto;
+            min-height: 35px;
+            max-height: 300px;
+            padding: 5px;
+            border: none;
+            box-sizing: border-box;
+            resize: none; /* Disable manual resizing */
+            overflow: hidden; /* Hide scrollbar */
+            outline: none; /* Remove outline on focus */
+            background-color: transparent;
+            * {
+                font-size: 10px;
+                font-weight: 600;
+            }
+        }
     }
 
     .round-btn {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
-        position: fixed;
-        right: 5px;
-        bottom: 6px;
         --background: var(--ion-color-primary);
         background: var(--ion-color-primary);
         height: 40px;
         width: 40px;
         border-radius: 100%;
-    }
-
-    .icon-controls {
-        // >.left {
-        //     left: 10px !important;
-        // }
-
-        >.right {
-            .first-child {
-                right: 65px !important;
-            }
-            .last-child {
-                right: 98px !important;
-            }
-        }
-        i {
-            margin-left: 5px !important;
-            margin-right: 5px !important;
-            position: fixed;
-            bottom: 18px;
-            font-size: 17px;
-        }
-    }
-
-    ion-textarea {
-        margin-top: 0px;
-        margin-bottom: 2px;
-        padding-left: 10px;
-        padding-right: 5px;
-        min-height: 40px;
-        max-height: 150px;
-
-        * {
-            font-size: 10px;
-            font-weight: 600;
+        ion-icon {
+            --color: #ffffff !important;
+            color: #ffffff !important;
         }
     }
 }
