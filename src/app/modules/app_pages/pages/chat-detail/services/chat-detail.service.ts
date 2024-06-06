@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { addIcons } from 'ionicons';
 import { chevronBackOutline } from 'ionicons/icons';
+import { GlobalsServices } from 'src/app/core';
 import { messages } from 'src/environments/environment';
 
 @Injectable({
@@ -9,6 +10,7 @@ import { messages } from 'src/environments/environment';
 })
 export class ChatDetailService {
 
+  globals: GlobalsServices = inject(GlobalsServices);
   private readonly route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor() {
