@@ -1,7 +1,7 @@
 import { ErrorHandler, enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
-import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+import { IonicRouteStrategy, mdTransitionAnimation, provideIonicAngular } from '@ionic/angular/standalone';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routes } from './app/app.routes';
@@ -10,6 +10,7 @@ import { environment } from './environments/environment';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { RequestService, StorageService, GlobalsServices, OfflineManagerService, NetworkInterceptor, RequestInterceptorService, CachingInterceptor, InactivityInterceptor, GlobalErrorHandlerService, WebWorkersProvider, ImageCacheWorker } from './app/core';
+import { chevronBackCircleOutline } from 'ionicons/icons';
 
 
 if (environment.production) {
@@ -24,7 +25,12 @@ bootstrapApplication(AppComponent, {
       provide: RouteReuseStrategy, 
       useClass: IonicRouteStrategy 
     },
-    provideIonicAngular(),
+    provideIonicAngular({
+      backButtonText: '',
+      backButtonIcon: chevronBackCircleOutline,
+      swipeBackEnabled: true,
+      // mode: 'm≥d'
+    }),
     importProvidersFrom(BrowserAnimationsModule),
     provideRouter(
       routes

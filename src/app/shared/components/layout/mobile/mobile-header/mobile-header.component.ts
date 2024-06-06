@@ -15,6 +15,7 @@ export class MobileHeaderComponent {
   @Input() title!: string
   @Input() refresh!: boolean
   @Input() color!: string;
+  @Input() isIos!: boolean;
   @Output() onclick = new EventEmitter();
 
   constructor() {

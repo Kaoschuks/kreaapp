@@ -11,8 +11,12 @@ import { NgClass, NgIf } from '@angular/common';
   standalone: true,
   imports: [MobileHeaderComponent, MobileFooterComponent, NgClass, NgIf]
 })
-export class AppLayoutComponent  {
+export class AppLayoutComponent implements OnInit {
   globals: GlobalsServices = inject(GlobalsServices);
+
+  ngOnInit(): void {
+    console.log(this.globals.platform.is('ios'))
+  }
 
   onHeaderButtonClicked(event: any) {
     this.globals.openModal(event)

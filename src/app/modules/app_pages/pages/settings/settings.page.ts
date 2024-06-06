@@ -10,7 +10,7 @@ import { GlobalsServices } from 'src/app/core';
   standalone: true,
   imports: [
     TitleCasePipe,
-    IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonAvatar, IonFabButton, IonToggle, IonIcon, IonImg, IonItem,
+    IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonAvatar, IonFabButton, IonToggle, IonIcon, IonImg, IonItem, IonHeader, IonToolbar
   ]
 })
 export class SettingsPage implements OnInit {

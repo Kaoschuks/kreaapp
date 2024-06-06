@@ -8,9 +8,6 @@
       <ion-segment-button value="accounts">
         <ion-label>Accounts</ion-label>
       </ion-segment-button>
-      <!-- <ion-segment-button value="groups">
-        <ion-label>Groups</ion-label>
-      </ion-segment-button> -->
     </ion-segment>
   </ion-toolbar>
 </ion-header>
@@ -20,11 +17,11 @@
   <recent-chats [matches]="chats"></recent-chats> -->
 
   <ion-list >
-    <ion-list-header color="white">
+    <ion-list-header mode="md" color="white">
       <ion-label>
         <h2>Recent Messages</h2>
       </ion-label>
-      <ion-button color="dark">
+      <ion-button mode="md" color="dark">
         <span class="fs-12">See All</span>
       </ion-button>
     </ion-list-header>

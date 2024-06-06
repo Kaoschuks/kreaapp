@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EnvironmentInjector, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EnvironmentInjector, Input, inject } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/angular/standalone';
 
 @Component({
@@ -11,6 +11,7 @@ import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@
 })
 export class MobileFooterComponent {
 
+  @Input() color!: string;
   constructor() {
   }
 
