@@ -3,7 +3,7 @@
     ion-fab-button {
       margin-top: 10px !important;
     }
-  
+
     .unread-indicator {
       background: var(--ion-color-primary);
       border-radius: 100%;
@@ -12,7 +12,7 @@
       top: 0px;
       right: 10px !important;
     }
-  
+
     .metadata-end-wrapper {
       position: absolute;
       top: 10px;
@@ -21,14 +21,14 @@
       display: flex;
       align-items: center;
     }
-  
+
     ion-label {
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       margin-left: 10px !important;
     }
-  
+
     ion-label ion-note {
       font-size: 0.9rem;
     }
@@ -106,6 +106,98 @@
         margin-right: 5px;
         position: relative;
       }
+    }
+  }
+
+  .chat-list {
+    padding: 8px;
+
+    .chat-item {
+      margin-bottom: 8px;
+
+      &.chat-item-sender {
+        text-align: right;
+
+        .chat-item-content {
+          justify-content: flex-end;
+        }
+
+        .chat-body {
+          color: #ffffff;
+          padding: 7px 8px;
+          background: var(--ion-color-primary);
+          border-radius: 5px;
+          border-color: transparent;
+        }
+      }
+    }
+
+    .chat-timestamp {
+      text-align: center;
+      padding: 8px;
+      color: var(--ion-color-medium);
+      text-transform: uppercase;
+    }
+
+    .chat-item-status {
+      color: var(--ion-color-medium);
+      margin-right: 8px;
+    }
+
+    .chat-item-content {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 4px;
+
+      .chat-avatar {
+        margin-right: 5px;
+        align-self: flex-end;
+
+        .avatar {
+          height: 35px !important;
+          width: 35px !important;
+          margin-bottom: 5px !important;
+        }
+
+        img {
+          display: inline-block;
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .chat-item-bubble {
+      position: relative;
+      max-width: 75%;
+
+      .chat-body {
+        display: inline-block;
+        background: var(--ion-color-white);
+        border-radius: 5px;
+        padding: 7px 8px;
+        white-space: normal;
+        max-width: 100%;
+        text-align: left;
+      }
+
+      &.bubble-image {
+        font-size: 0;
+
+        img {
+          width: 100%;
+          max-width: 480px;
+          border-radius: 16px;
+        }
+      }
+    }
+
+    .chat-item-reaction {
+      text-align: left;
+      margin-left: 8px;
+      font-size: 18px;
+      align-self: center;
+      flex-grow: 99;
     }
   }
 }

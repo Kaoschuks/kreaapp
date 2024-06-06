@@ -1796,14 +1796,22 @@ export const chats = [
 
 export const messages = [
     {
-      date: new Date(),
+      date: 'May 2, 2020 9:48 AM',
       sender: 'Kaoschuks',
       isSender: true,
       image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Kaoschuks',
       message: 'explain what you meann by internal link'
     },
     {
-      date: new Date(),
+      isSender: false,
+      sender: 'Kaoschuks',
+      image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Kaoschuks',
+      type: 'image',
+      message: 'https://media.giphy.com/media/4BWByhavc3Hr2/giphy.gif',
+      date: 'May 2, 2020 9:52 AM'
+    },
+    {
+      date: 'May 2, 2020 9:52 AM',
       sender: 'John Doe',
       isSender: false,
       image: 'https://ui-avatars.com/api/?background=92949c&color=ffffff&bold=false&format=svg&name=Helen+Doe',

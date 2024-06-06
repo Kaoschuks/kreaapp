@@ -52,7 +52,7 @@ export const approutes: Routes = [
   {
     path: 'chats/:chatid',
     data: {
-      title: 'Chats Details',
+      title: 'Chats',
       hasHeader: false,
     },
     loadComponent: () =>

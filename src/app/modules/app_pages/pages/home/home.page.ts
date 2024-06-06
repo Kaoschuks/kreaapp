@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, Platform } from '@ionic/angular';
 import { GlobalsServices } from 'src/app/core';
 import { OtpInputComponent } from 'src/app/shared/components/otp-input/otp-input.component';
-import { BarChartComponent, CircleProgressModule, DonutChartComponent, GuageChartComponent, SwipeButtonComponent } from 'src/app/shared/components';
+import { BarChartComponent, CircleProgressModule, DonutChartComponent, GuageChartComponent, LoadingComponent, SwipeButtonComponent } from 'src/app/shared/components';
 import { CircleProgressComponent } from 'src/app/shared/components/charts/circle-progress/circle-progress.component';
 
 @Component({
@@ -14,6 +14,7 @@ import { CircleProgressComponent } from 'src/app/shared/components/charts/circle
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
+    LoadingComponent,
     IonicModule, CommonModule, FormsModule, OtpInputComponent, SwipeButtonComponent, 
     GuageChartComponent, BarChartComponent, CircleProgressModule, CircleProgressComponent, DonutChartComponent
   ]

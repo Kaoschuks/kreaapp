@@ -1,7 +1,9 @@
-import { CommonModule, DatePipe, NgFor, NgIf, TitleCasePipe } from '@angular/common';
+import { CommonModule, DatePipe, NgClass, NgFor, NgIf, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { ActionSheetController, IonicModule } from '@ionic/angular';
-import { LongPressDirective } from 'src/app/core';
+import { addIcons } from 'ionicons';
+import { shareOutline } from 'ionicons/icons';
+import { DateAsAgoPipe, LongPressDirective } from 'src/app/core';
 
 
 @Component({
@@ -11,8 +13,8 @@ import { LongPressDirective } from 'src/app/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    LongPressDirective,
-    IonicModule, NgFor, DatePipe, TitleCasePipe, NgIf
+    LongPressDirective, DateAsAgoPipe,
+    IonicModule, NgFor, DatePipe, TitleCasePipe, NgIf, NgClass
   ]
 })
 export class ChatBubbleComponent {
@@ -56,6 +58,12 @@ export class ChatBubbleComponent {
       },
     }
   ]
+
+  constructor() {
+    addIcons({
+      'share-outline': shareOutline
+    })
+  }
 
   async openMessageActionSheet(message: any) {
     // this.message.emit(message)
