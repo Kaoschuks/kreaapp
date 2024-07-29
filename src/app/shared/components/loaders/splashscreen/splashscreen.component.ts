@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { IonFabButton, IonSpinner } from '@ionic/angular/standalone';
+import { IonFabButton, IonSpinner, Platform } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-splashscreen',
@@ -12,10 +12,12 @@ import { IonFabButton, IonSpinner } from '@ionic/angular/standalone';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SplashscreenComponent  implements OnInit {
-
+  
   @Input() useImage: boolean = true
   @Input() bgColor: string = 'bg-white'
-  constructor() { }
+  constructor(
+    public plt: Platform
+  ) { }
 
   ngOnInit() {}
 }
