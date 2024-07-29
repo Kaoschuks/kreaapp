@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @Component({
@@ -11,21 +11,24 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     NgCircleProgressModule
   ]
 })
-export class CircleProgressComponent {
+export class CircleProgressComponent implements OnChanges {
 
   @Input() percent: number = 0;
   @Input() radius: number = 20;
   @Input() stroke: number = 3;
 
-  get spaceStroke() {
-    return parseInt(`-${this.stroke}`)
-  }
+  getColor!: string
+  spaceStroke!: number
 
-  get getColor()  {
-    if(this.percent <= 40) return '#eb445a'
-    if(this.percent <= 70 && this.percent > 40) return '#ffc409'
-    if(this.percent <= 100 && this.percent > 70) return '#1D70A2'
-    return '#eb445a'
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.percent) {
+      if(this.percent <= 40) this.getColor = '#c5000f'
+      if(this.percent <= 70 && this.percent > 40) this.getColor = '#e0ac08'
+      if(this.percent <= 100 && this.percent > 70) this.getColor = '#0054e9'
+    }
+    if(this.stroke) {
+      this.spaceStroke = parseInt(`-${this.stroke}`)
+    }
   }
 
 }

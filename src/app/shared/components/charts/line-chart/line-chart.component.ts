@@ -17,15 +17,20 @@ export class LineChartComponent implements OnInit {
   @Input() hasTooltip: boolean = false;
   @Input() chartTitle: string = '';
   @Input() chartType: string = 'line';
-  @Input() chartColors: string[] = ['#f7c1c1', '#9cd9fe'];
+  @Input() chartColors: string[] = ['#0054e9', '#c5000f'];
   @Input() chartLabels: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   @Input() chartSeries: Array<any> = [{
-    name: 'Debit',
+    name: 'Credit',
     data: [30, 40, 35, 50, 49, 60, 70, 91, 25, 100, 0, 12]
-  }];
+  }, 
+  // {
+  //   name: 'Debit',
+  //   data: [80, 50, 30, 40, 100, 20, 44, 76, 78, 13, 43, 10]
+  // }
+];
 
-  @Input() showXaxisLabels: boolean = false; // Toggle xaxis label - Default is TRUE
-  @Input() showYaxisLabels: boolean = false; // Toggle yaxis label - Default is TRUE
+  @Input() showXaxisLabels: boolean = true; // Toggle xaxis label - Default is TRUE
+  @Input() showYaxisLabels: boolean = true; // Toggle yaxis label - Default is TRUE
   @Input() showDataLabels: boolean = false; // Toggle dataLabel show/hide - Default is TRUE
 
   @ViewChild('chart') chart: ChartComponent | any;
@@ -82,17 +87,11 @@ export class LineChartComponent implements OnInit {
         },
         labels: {
           show: this.showYaxisLabels,
-          style: {
-            colors: '#78909c',
-          },
         },
       },
       xaxis: {
         labels: {
           show: this.showXaxisLabels,
-          style: {
-            colors: '#78909c',
-          },
         },
         axisBorder: {
           show: false,
@@ -111,20 +110,13 @@ export class LineChartComponent implements OnInit {
           y: 100,
           marker: {
             size: 4,
-            fillColor: this.chartColors[0],
-            strokeColor: this.chartColors[0],
             strokeWidth: 2,
             shape: 'circle',
             radius: 2
           },
           label: {
-            borderColor: this.chartColors,
             offsetY: 0,
-            style: {
-              color: '#000000',
-              background: this.chartColors[0]
-            },
-            text: 'Budget Surpassed'
+            text: 'Budget'
           }
         }
       ]

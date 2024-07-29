@@ -1,6 +1,6 @@
 
 <!-- <ion-button class="hidden" [id]="id+'-modal'"></ion-button> -->
-<ion-modal [isOpen]="open" [showBackdrop]="true" [keepContentsMounted]="true" (didDismiss)="closeModal.emit(true)" [ngClass]="modalClass" [backdropDismiss]="backDropDismiss">
+<ion-modal [isOpen]="open" [showBackdrop]="true" [keepContentsMounted]="true" (didDismiss)="closeModal.emit(true)" [ngClass]="modalClass" [backdropDismiss]="backDropDismiss" [presentingElement]="presentingElement">
   <ng-template>
     <ion-header *ngIf="hasHeader" class="ion-no-border" [ngClass]="headerClass" slot="fixed">
       <ion-toolbar [color]="headerColor">

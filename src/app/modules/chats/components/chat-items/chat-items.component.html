@@ -1,0 +1,59 @@
+
+
+
+<!-- <ion-list color="white" lines="none"> -->
+  <ion-list-header *ngIf="title" color="white">
+    <ion-label>
+      <h2>{{title | titlecase}}</h2>
+    </ion-label>
+    <ion-button *ngIf="hasMore" color="dark">
+      <span>See All</span>
+    </ion-button>
+  </ion-list-header>
+  
+  <ng-container *ngIf="isLoading">
+    <ion-item color="white" lines="none" *ngFor="let chat of loaderELements">
+      <ion-avatar slot="start" class="avatar-md">
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <ion-text>
+          <ion-skeleton-text style="width: 50%;height: 14px;"></ion-skeleton-text>
+        </ion-text>
+        <ion-note color="medium" class="fs-12">
+          <ion-skeleton-text style="width: 70%;margin-top: 10px;"></ion-skeleton-text>
+        </ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper" slot="end" [align]="'right'">
+        <ion-note color="medium" class="fs-12"><ion-skeleton-text style="width: 70px;height: 14px;"></ion-skeleton-text></ion-note>
+        <ion-note color="medium" class="fs-12"><ion-skeleton-text style="width: 30px;height: 12px;margin-top:10px"></ion-skeleton-text></ion-note>
+      </div>
+    </ion-item>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading">
+    <ion-item-sliding *ngFor="let chat of chats">
+      <ion-item-options side="start">
+        <ion-item-option (click)="onClick('archive', chat)" color="success">Archive</ion-item-option>
+      </ion-item-options>
+      <ion-item color="white" lines="none" (click)="onClick('chat-details', chat)" button="true" detail="false">
+        <ion-avatar slot="start" class="avatar-md">
+          <ion-img [src]="'https://ui-avatars.com/api/?background=random&bold=false&format=svg&name='+chat.fullname || chat?.username"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <ion-text>{{ chat?.fullname || 'not set' | titlecase }}</ion-text><br />
+          <ion-note color="medium" class="fs-12">{{ chat?.current_country | titlecase }}</ion-note>
+        </ion-label>
+        <div class="metadata-end-wrapper" slot="end" [align]="'right'">
+          <ion-note color="medium" class="fs-12">{{ chat?.date_updated | dateAsAgo }}</ion-note><br />
+          <ion-badge color="primary" mode="ios" class="fs-10">2</ion-badge>
+        </div>
+      </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option (click)="onClick('favourite', chat)" color="primary" class="fs-14 text-white">Favorite</ion-item-option>
+        <ion-item-option (click)="onClick('delete', chat)" color="danger" class="fs-14 text-white">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ng-container>
+<!-- </ion-list> -->

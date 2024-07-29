@@ -1,0 +1,15 @@
+:host {
+    ion-badge {
+        margin-top: 5px !important;
+    }
+    ion-text {
+        font-weight: 500 !important;
+    }
+    .metadata-end-wrapper {
+        margin-top: -5px !important;
+        ion-note {
+            position: relative !important;
+            top: 0px !important
+        }
+    }
+}

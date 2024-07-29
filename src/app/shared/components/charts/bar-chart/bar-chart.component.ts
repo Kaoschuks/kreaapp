@@ -17,7 +17,7 @@ export class BarChartComponent implements OnChanges {
   @Input() isStacked: boolean = true;
   @Input() isSparkline: boolean = false;
   @Input() columnWidth: string = '40%';
-  @Input() chartColors: string[] = ['#1D70A2', '#eb445a'];
+  @Input() chartColors: string[] = ['#0054e9', '#c5000f'];
   @Input() xaxisLabelColor: string = '#78909c';
   @Input() chartSeries: Array<any> = [{
     name: 'Credit',
@@ -26,8 +26,9 @@ export class BarChartComponent implements OnChanges {
     name: 'Debit',
     data: [-30, -40, -45, -50, -49, -60, -70, -91, -120, -25, -25, -80]
   }];
+  @Input() showLegend: boolean = false;
   @Input() chartLabels: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  @Input() showXaxisLabels: boolean = false; // Toggle xaxis label - Default is TRUE
+  @Input() showXaxisLabels: boolean = true; // Toggle xaxis label - Default is TRUE
   @Input() showYaxisLabels: boolean = true; // Toggle yaxis label - Default is FALSE
   @Input() distributed: boolean = false; // A distributed column chart means all the columns in the chart will have different colors.
 
@@ -90,7 +91,7 @@ export class BarChartComponent implements OnChanges {
         enabled: false,
       },
       legend: {
-        show: false // This hides the legend
+        show: this.showLegend
       }
     };
   }

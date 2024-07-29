@@ -12,11 +12,12 @@ import {
 
 import { ActivationStart, Router } from "@angular/router";
 import { LocalNotifications } from "@capacitor/local-notifications";
+import { NavigationBar } from '@hugotomazi/capacitor-navigation-bar';
 import { StorageService } from "./storage";
 import { configModel, startupTime } from "src/app/core";
-import { App } from "@capacitor/app";
 import { ModalController } from "@ionic/angular/standalone";
 import { NgxSpinnerService } from "ngx-spinner";
+import { SplashScreen } from "@capacitor/splash-screen";
 
 const LOGTAG = '[GlobalErrorHandlerService]';
 
@@ -25,7 +26,8 @@ const LOGTAG = '[GlobalErrorHandlerService]';
 })
 
 export class GlobalsServices {
-
+  
+  private navigatorBar: any = NavigationBar
   private injector: Injector = inject(Injector)
   public platform: Platform = inject(Platform)
   public loadingCtrl: LoadingController = inject(LoadingController)
@@ -54,11 +56,7 @@ export class GlobalsServices {
       await this.showLoader(message, duration)
     },
   }
-
-  get getDeviceThemeMode() {
-    const isDark: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    return isDark ? 'dark' : 'light'
-  }
+  getDeviceThemeMode!: string
 
   private async showLoader(message: string, duration: number) {
     let opts: any = {
@@ -80,19 +78,21 @@ export class GlobalsServices {
     });
   }
 
-  initializeApp() {
+  async initializeApp() {
     try {
-      this.platform.ready().then(async (res: any) => {
-        await this.menuCtrl.enable(false)
-        this.setUrlTitle();
-        this.requestPermission();
-        this.exitApp()
-        setTimeout(() => {
-          this.appLoading = false;
-        }, startupTime);
-      }).catch((error) => {
-        throw new Error(error)
-      })
+      this.setTheme()
+      await this.platform.ready();
+      await Promise.all([
+        await SplashScreen.hide(),
+        await this.menuCtrl.enable(false),
+        await this.requestPermission(),
+      ])
+      this.setUrlTitle()
+      this.exitApp()
+      
+      setTimeout(() => {
+        this.appLoading = false;
+      }, startupTime);
     } catch (err: any) {
       this.appLoading = false; 
       console.log(err);
@@ -200,18 +200,39 @@ export class GlobalsServices {
     }
   }
 
-  async changeTheme(value: string) {
-    const body: any = document.getElementById('body');
+  async setTheme() {
+    const storage = this.injector.get<StorageService>(StorageService)
+    const theme: string = await storage.getItem('theme')
+    const isDark: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    this.getDeviceThemeMode = (theme) ? theme : isDark ? 'dark' : 'light';
+
+    if(theme === 'light')  await this.changeTheme(this.getDeviceThemeMode, false)
+    if(this.getDeviceThemeMode === 'dark') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      await this.changeTheme(this.getDeviceThemeMode, prefersDark.matches);
+      prefersDark.addEventListener('change', async (mediaQuery) => await this.changeTheme(this.getDeviceThemeMode, mediaQuery.matches));
+    }
+  }
+
+  async changeTheme(value: string, shouldAdd: boolean) {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
     switch (value) {
       case "dark":
-        body?.classList.add('dark'); body?.classList.remove('light');
         this.changeStatusBarColor('#1e2023', false, false, 700)
+        if(this.platform.is('android')) await this.navigatorBar.setColor({
+          color: '#1e2023'
+        })
         break;
       case "light":
-        body?.classList.add('light'); body?.classList.remove('dark')
         this.changeStatusBarColor('#ffffff', true, false, 700)
+        if(this.platform.is('android')) await this.navigatorBar.setColor({
+          color: '#000000'
+        })
         break;
     }
+    let storage = this.injector.get<StorageService>(StorageService)
+    storage.saveItem('theme', value)
+    this.getDeviceThemeMode = value;
     // this.changeStatusBarColor('#203db4', false, false, 1000)
   }
 

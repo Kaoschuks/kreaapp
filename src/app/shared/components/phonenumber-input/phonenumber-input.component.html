@@ -1,4 +1,3 @@
-
-<input aria-label="phone" (keyup)="onInputChange()" [id]="id+'phone'" type="tel" maxlength="15">
-<span *ngIf="iti && iti.isValidNumber() == false && phone != ''" class="text-danger fs-12">{{getError(iti?.getValidationError()) || "Phone Number isn't valid" | titlecase }}</span>
-    
+<form  [formGroup]="form">
+    <ngx-material-intl-tel-input (currentValue)="onInputChange($event)" placeholder="''" [numberValidation]="true" [fieldControl]="form.get('phone')" [enableSearch]="canSearch" [enablePlaceholder]="true" [hidePhoneIcon]="true" [iconMakeCall]="false" [required]="isRequired" [disabled]="isDisabled" [includeDialCode]="true" [autoIpLookup]="true"> </ngx-material-intl-tel-input>
+</form>

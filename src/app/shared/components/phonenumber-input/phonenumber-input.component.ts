@@ -1,7 +1,7 @@
 import { NgIf, TitleCasePipe } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import * as intlTelInput from 'intl-tel-input';
-declare let window: any;
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControlName, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaterialIntlTelInputComponent } from 'ngx-material-intl-tel-input'
 
 @Component({
   selector: 'phonenumber-input',
@@ -10,46 +10,27 @@ declare let window: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    NgIf, TitleCasePipe
+    NgxMaterialIntlTelInputComponent,
+    FormsModule, ReactiveFormsModule
   ]
 })
 
-export class PhonenumberInputComponent implements  AfterViewInit, OnDestroy {
-	@Input() phone: string = '';
-	@Input() id: string = '';
-	@Output() oninput = new EventEmitter();
-	public iti: any;
-	private input: any;
+export class PhonenumberInputComponent {
+	@Input() controlName!: AbstractControl<string>;
+	@Input() isRequired: boolean = false;
+	@Input() isDisabled: boolean = true;
+	@Input() canSearch: boolean = true;
+	@Output() onInput = new EventEmitter();
 
-  constructor() {}
+  form = this.fb.group({
+    phone: [''],
+  });
 
-	ngAfterViewInit() {
-		this.input = document.querySelector("#"+this.id+"phone");
-		if(this.input) {
-			this.iti = window.intlTelInput(this.input, {
-				separateDialCode: true,
-			});
-			if(this.phone != '' && this.phone != null) this.iti.setNumber(this.phone)
-		}
-	}
+  constructor(
+    private fb: FormBuilder
+  ){}
 
-	ngOnDestroy() {
-		this.iti.destroy();
-	}
-
-  getError(errorNumber: number): string {
-    if (errorNumber == 1) return 'invalid country code';
-    if (errorNumber == 2) return 'phone number is too short';
-    if (errorNumber == 3) return 'phone number is too long';
-    if (errorNumber == 5) return 'phone number lenght is invalid';
-    return 'Phone number is invalid';
-  }
-
-  onInputChange() {
-    if (this.iti.isValidNumber() == true)
-      this.oninput.emit({
-        dialCode: this.iti.getSelectedCountryData().dialCode,
-        phoneNumber: this.iti.getNumber(),
-      });
+  onInputChange(value: string) {
+    this.onInput.emit(value)
   }
 }

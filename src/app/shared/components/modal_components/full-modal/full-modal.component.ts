@@ -16,7 +16,7 @@ import { chevronDownOutline, chevronBackOutline } from 'ionicons/icons';
     NgIf, NgClass, LoadingComponent, TitleCasePipe
   ]
 })
-export class FullModalComponent {
+export class FullModalComponent implements OnInit {
   @Input() isLoading: boolean = false;
   @Input() loadingText!: string
   @Input() id: string | undefined;
@@ -33,10 +33,16 @@ export class FullModalComponent {
   @Input() modalClass: string = 'modal-full';
   @Output() closeModal = new EventEmitter();
 
+  presentingElement: any;
+
   constructor() {
     addIcons({ 
       "chevron-down-outline": chevronDownOutline,
       "chevron-back-outline": chevronBackOutline
     });
+  }
+
+  ngOnInit(): void {
+    this.presentingElement = document.querySelector('.ion-page');
   }
 }

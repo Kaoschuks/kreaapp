@@ -1,0 +1,19 @@
+:host {
+    --background: var(--ion-color-white) !important;
+    background: var(--ion-color-white) !important;
+    .scroll-item {
+        &.matched {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            top: 0px !important;
+        }
+        margin-right:15px !important;
+        // width: 50px !important;
+        ion-label {
+            h2 {
+                margin-top: 5px !important;
+                overflow-wrap: break-word !important;
+                word-wrap: break-word !important;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { url } from 'src/app/core';
+import { lastValueFrom } from "rxjs";
 
 @Injectable()
 export class RequestService {
@@ -10,12 +11,7 @@ export class RequestService {
 
   async get(routes: string, custom_url: boolean = false) {
     const url = custom_url ? routes : this.url + routes;
-    return await new Promise((resolve, reject) => {
-      this.http.get(url).subscribe(
-        (response) => resolve(response),
-        (error) => reject(error)
-      );
-    });
+    return await lastValueFrom(this.http.get(url));
   }
 
   async post(routes: string, data: any, custom_url: boolean = false) {

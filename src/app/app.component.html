@@ -1,10 +1,19 @@
-<onloading *ngIf="globals.appLoading" [bgColor]="'bg-'+globals.pageColor"></onloading>
+<app-splashscreen *ngIf="globals.appLoading" [bgColor]="'bg-'+globals.pageColor"></app-splashscreen>
 
-<ion-app>
-  <full-loading [text]="globals.spinner.text"></full-loading>
-  <ion-split-pane when="md" contentId="main">
-    <ion-menu contentId="main">
-    </ion-menu>
-    <ion-router-outlet id="main"></ion-router-outlet>
-  </ion-split-pane>
-</ion-app>
+  <ion-app>
+    <full-loading [text]="globals.spinner?.text"></full-loading>
+    <ion-split-pane when="md" contentId="main">
+      <ion-menu contentId="main">
+      </ion-menu>
+        <ion-router-outlet id="main"></ion-router-outlet>
+
+        <ng-container>
+          <notification-modal [isOpen]="globals.modalData?.notificationmodal?.isOpen"></notification-modal>
+          <onboarding-modal [isOpen]="globals.modalData?.walkthroughmodal?.isOpen || false"></onboarding-modal>
+          <language-modal [isOpen]="globals.modalData?.languagemodal?.isOpen || false"></language-modal>
+          <profile-modal [isOpen]="globals.modalData?.profilemodal?.isOpen || false"></profile-modal>
+          <filter-modal [type]="''" [isOpen]="globals.modalData?.filtermodal?.isOpen || false"></filter-modal>
+          <success-modal [isOpen]="globals.modalData?.successmodal?.isOpen || false" (continue)="onModalClosed($event);globals.closeModal('successmodal')" [data]="globals.modalData || {}" [activeColor]="globals.modalData.color || 'primary'" [class]="'modal-center modal-center-sm modal-w70'"></success-modal> 
+        </ng-container>
+    </ion-split-pane>
+  </ion-app>

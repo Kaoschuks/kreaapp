@@ -1,0 +1,130 @@
+
+<ion-content class="noHeader" color="light">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ng-container *ngIf="(isLoading | async) == false">
+
+    <ion-card class="animated fadeIn" color="white">
+      <ion-list-header mode="md">
+        <ion-label>
+          <h2>Credit Score</h2>
+        </ion-label>
+        <ion-button color="dark" class="fs-12">This Month</ion-button>
+      </ion-list-header>
+      <div align="center" class="ion-margin">
+        <guage-chart [percentage]="85" label="" [height]="330">
+          <ion-label>
+            <p class="text-medium fs-12">Your Score is</p>
+            <h2 class="text-dark fs-25 bold ion-no-margin">840</h2>
+            <p class="text-medium fs-12">out of 1000</p>
+          </ion-label>
+        </guage-chart>
+        <ion-label>Up with 69 Points</ion-label>
+      </div>
+      <ion-grid align="center" class="ion-margin-bottom">
+        <ion-row>
+          <ion-col size="3">
+            <i class="fi fi-rr-calendar-day fs-20 text-medium"></i>
+            <ion-label>
+              <h2 class="text-dark ion-no-margin fs-12">Overdraft</h2>
+            </ion-label>
+          </ion-col>
+          <ion-col size="3">
+            <i class="fi fi-rr-dashboard fs-20 text-medium"></i>
+            <ion-label>
+              <h2 class="text-dark ion-no-margin fs-12">Score update</h2>
+            </ion-label>
+          </ion-col>
+          <ion-col size="3">
+            <i class="fi fi-rr-file-chart-line fs-20 text-medium"></i>
+            <ion-label>
+              <h2 class="text-dark ion-no-margin fs-12">Predictor</h2>
+            </ion-label>
+          </ion-col>
+          <ion-col size="3">
+            <i class="fi fi-rr-rent fs-20 text-medium"></i>
+            <ion-label>
+              <h2 class="text-dark ion-no-margin fs-12">Mortage</h2>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+    <ion-card class="animated fadeIn" color="white">
+      <ion-item lines="none" color="white" class="ion-no-margin" mode="ios" detail="true">
+        <circleprogress slot="start" [radius]="22" [percent]="80" [stroke]="5"></circleprogress>
+        <ion-label>
+          <h2 class="fs-14 text-medium">You dont appear to be present on<br /> the electoral register at your <br />current level</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  
+    <ion-card class="animated fadeIn" color="white">
+      <ion-row style="margin-bottom: -7px;margin-top: -7px;">
+        <ion-col class="ion-padding-start">
+          <h2 class="fs-16 text-dark bold">AED 5000</h2>
+        </ion-col>
+        <ion-col class="ion-padding-end" align="right">
+          <p class="text-medium">25%</p>
+        </ion-col>
+      </ion-row>
+      <horizontal-bar-chart  [width]="15"></horizontal-bar-chart>
+      <p class="fs-14 text-medium ion-padding-start" style="margin-top: 0px;">Daily Budget was $4000</p>
+    </ion-card>
+  
+    <ion-card class="animated fadeIn" color="white">
+      <ion-list-header mode="md">
+        <ion-label>
+          <h2>Your Spending</h2>
+        </ion-label>
+        <ion-button color="dark" class="fs-12">Filter</ion-button>
+      </ion-list-header>
+      <line-chart [chartType]="'area'" [height]="250" [hasTooltip]="true"></line-chart>
+    </ion-card>
+  
+    <ion-card class="animated fadeIn" color="white">
+      <ion-list-header mode="md">
+        <ion-label>
+          <h2>Expense Trend</h2>
+        </ion-label>
+        <ion-button color="dark" class="fs-12">Filter</ion-button>
+      </ion-list-header>
+      <radar-chart [height]="250"></radar-chart>
+    </ion-card>
+  
+    <ion-card class="animated fadeIn" color="white">
+      <ion-list-header mode="md">
+        <ion-label>
+          <h2>Expense Breakdown</h2>
+        </ion-label>
+        <ion-button color="dark" class="fs-12">Filter</ion-button>
+      </ion-list-header>
+      <donut-chart [chartType]="'donut'" [showLegend]="true" [chartWellNumber]="'60%'"></donut-chart>
+      <br />
+    </ion-card>
+  
+    <ion-card class="bg-white ion-no-padding animated fadeIn">
+      <ion-list-header mode="md">
+        <ion-label>
+          <h2>Your Spending</h2>
+        </ion-label>
+        <ion-button color="dark" class="fs-12">Filter</ion-button>
+      </ion-list-header>
+      <bar-chart [chartType]="'bar'" [columnWidth]="'20%'"></bar-chart>
+    </ion-card>
+  
+    <ion-card class="bg-white ion-no-padding animated fadeIn">
+      <phonenumber-input [isDisabled]="false" [canSearch]="true" [isRequired]="true"></phonenumber-input>
+      <otp-input></otp-input>
+      <swipe-button [isRounded]="true"></swipe-button>
+    </ion-card>
+  </ng-container>
+
+
+  <loading *ngIf="(isLoading | async) == true" [text]="'Processing data'"></loading>
+</ion-content>

@@ -1,0 +1,26 @@
+
+  <ion-header class="ion-no-border" slot="fixed">
+    <ion-toolbar [color]="headerColor">
+      <ion-buttons slot="start" mode="md">
+        <ion-back-button mode="md" color="dark" icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-item color="white" mode="ios" detail="false" lines="none" style="margin-left: -10px">
+        <ion-avatar style="margin-left: -10px;margin-right: 10px;" slot="start" class="no-shadow avatar-sm">
+          <ion-img [src]="'assets/img/avatars/2.jpg'" alt="user"></ion-img>
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+          <h2 class="fs-16">Favour Chukwuemeka</h2>
+          <p class="fs-12">online</p>
+        </ion-label>
+      </ion-item>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <chat-bubble [conversation]="messages"></chat-bubble>
+  <div id="targetDiv"></div>
+</ion-content>
+
+<ion-footer mode="md" slot="bottom" class="ion-no-border bg-light">
+  <add-chat [bgColor]="'bg-light'"></add-chat>
+</ion-footer>

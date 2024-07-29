@@ -1,3 +1,13 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
 
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
@@ -15,33 +25,36 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-@import './theme/ios';
-@import './theme/md';
-@import './theme/syncro';
-@import './theme/theme';
-@import './theme/desktop';
-@import './theme/animate';
-@import './theme/fonts';
-@import './theme/dark';
-
 html {
   --ion-dynamic-font: var(--ion-default-dynamic-font);
 }
+ion-item {
+    --transition: none;
+}
 
-// .chat-body {
-//   flex-grow: 1;
-//   overflow-y: auto;
-//   scroll-behavior: smooth;
-//   padding-top: 50px !important;
 
-//   ::-webkit-scrollbar {
-//     width: 0.5em;
-//   }
-//   ::-webkit-scrollbar-track {
-//     background: #f1f1f1;
-//   }
-//   ::-webkit-scrollbar-thumb {
-//     background: #888;
-//     border-radius: 10px;
-//   }
-// }
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+@import "@ionic/angular/css/palettes/dark.class.css";
+// @import '@ionic/angular/css/palettes/dark.system.css';
+
+.apexcharts-pie .apexcharts-series path {
+  stroke: var(--ion-background-color) !important;
+}
+.apexcharts-radialbar .apexcharts-track path {
+  stroke: var(--ion-color-light) !important;
+}
+circle-progress {
+  circle {
+    stroke: var(--ion-color-light) !important;
+  }
+  text tspan {
+    fill: var(--ion-color-dark) !important;
+  }
+}

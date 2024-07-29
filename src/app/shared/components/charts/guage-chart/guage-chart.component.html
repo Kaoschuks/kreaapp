@@ -1,10 +1,14 @@
-<div id="chart">
+<div id="chart" class="guage">
   <apx-chart *ngIf="chartOptions"
     [series]="chartOptions?.series"
     [chart]="chartOptions?.chart"
+    [colors]="chartOptions?.colors"
     [plotOptions]="chartOptions?.plotOptions"
     [labels]="chartOptions?.labels"
     [fill]="chartOptions?.fill"
     [stroke]="chartOptions?.stroke"
   ></apx-chart>
+  <div>
+    <ng-content></ng-content>
+  </div>
 </div>

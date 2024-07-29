@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MobileHeaderComponent, MobileFooterComponent } from '../mobile';
 import { GlobalsServices } from 'src/app/core';
 import { NgClass, NgIf } from '@angular/common';
@@ -11,11 +11,27 @@ import { NgClass, NgIf } from '@angular/common';
   standalone: true,
   imports: [MobileHeaderComponent, MobileFooterComponent, NgClass, NgIf]
 })
-export class AppLayoutComponent implements OnInit {
-  globals: GlobalsServices = inject(GlobalsServices);
+export class AppLayoutComponent {
 
-  ngOnInit(): void {
-    console.log(this.globals.platform.is('ios'))
+  constructor(
+    private globals: GlobalsServices
+  ) {
+  }
+  
+  get title() {
+    return this.globals?.pageData?.title || 'Home';
+  }
+  
+  get refresh() {
+    return this.globals.pageRefresh;
+  }
+  
+  get headerColor() {
+    return this.globals.pageColor;
+  }
+  
+  get isIos() {
+    return this.globals.platform.is('ios');
   }
 
   onHeaderButtonClicked(event: any) {

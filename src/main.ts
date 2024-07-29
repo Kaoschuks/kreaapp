@@ -1,6 +1,6 @@
 import { ErrorHandler, enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { RouteReuseStrategy, provideRouter } from '@angular/router';
+import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
 import { IonicRouteStrategy, mdTransitionAnimation, provideIonicAngular } from '@ionic/angular/standalone';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -26,14 +26,16 @@ bootstrapApplication(AppComponent, {
       useClass: IonicRouteStrategy 
     },
     provideIonicAngular({
+      // modalEnter: mdTransitionAnimation,
+      // modalLeave: mdTransitionAnimation,
       backButtonText: '',
       backButtonIcon: chevronBackCircleOutline,
       swipeBackEnabled: true,
-      // mode: 'm≥d'
+      // mode: 'md'
     }),
     importProvidersFrom(BrowserAnimationsModule),
     provideRouter(
-      routes
+      routes, withPreloading(PreloadAllModules)
     ),
     provideHttpClient(
       withInterceptorsFromDi()

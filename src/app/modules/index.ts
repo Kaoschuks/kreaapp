@@ -1,4 +1,4 @@
-export * from './app_pages/app-pages.routes';
-export * from './app_pages/modals';
+export * from './routes';
+export * from './modals';
 export * from './auth_pages/auth.routes';
 

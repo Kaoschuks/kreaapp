@@ -17,20 +17,51 @@
         //     0px 3px 6px 0px rgba(0, 0, 0, 0.04), 
         //     0px 1px 3px 0px rgba(0, 0, 0, 0.02);
         // height: 45px;
+        &.md {
+            ion-icon, i {
+                font-size: 20px !important;
+                margin-bottom: 0px !important;
+            }
+            ion-label {
+                letter-spacing: 0.5px;
+                font-size: 11px !important;
+                display: block !important;
+            }
+            ion-badge {
+                margin-top: -7px !important;
+            }
+        }
+        &.ios {
+            ion-badge {
+                margin-top: 0px !important;
+                margin-left: -20px !important;
+                font-size: 10px !important;
+            }
+            ion-icon, i {
+                font-size: 19px !important;
+                margin-bottom: -2px !important;
+            }
+            // ion-label {
+            //     display: none !important;
+            // }
+            ion-label {
+                margin-bottom: -3px !important;
+                letter-spacing: 0.5px;
+                font-size: 10px !important;
+                display: block !important;
+            }
+        }
 
         ion-tab-button {
             --ripple-color: var(--transparent) !important;
             --webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            // border-top: 2px solid var(--ion-color-white);
+            
             &.center {
                 i {
                     margin-top: -1px !important;
                     margin-bottom: -6px !important;
                 }
-            }
-            ion-label {
-              letter-spacing: 0.5px;
             }
             i, img {
                 margin-top: 2px !important;
@@ -40,9 +71,6 @@
                     margin-bottom: 2px !important;
                     font-size: 25px !important;
                 }
-            }
-            span {
-                font-size: 11px !important;
             }
             ion-icon, i, img {
                 transition: all .3s;
@@ -55,7 +83,7 @@
                     --color: var(--ion-color-medium-tint) !important;
                 }
             }
-            span {
+            ion-label {
                 color: var(--ion-color-medium-tint) !important;
                 --color: var(--ion-color-medium-tint) !important
             }
@@ -72,7 +100,7 @@
                         --color: var(--ion-color-primary) !important;
                     }
                 }
-                span {
+                ion-label {
                     color: var(--ion-color-primary) !important;
                     --color: var(--ion-color-primary) !important
                 }

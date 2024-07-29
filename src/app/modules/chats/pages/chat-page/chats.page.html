@@ -1,0 +1,20 @@
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar [color]="headerColor">
+    <ion-segment value="discover" color="dark" mode="ios" class="filter">
+      <ion-segment-button value="discover">
+        <ion-label>Focused</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="accounts">
+        <ion-label>Accounts</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content color="light" class="noHeader">
+  <recent-chats [title]="'Recent Chats'" [matches]="chats" [isLoading]="isLoading | async"></recent-chats>
+  <chat-items (selectedChat)="chatInfo = $event" (chatEvent)="onSelectChat($event)" [loadCount]="2" [isLoading]="isLoading | async" [title]="'Favourites'" [chats]="chats | slice:0:2"></chat-items>
+  <chat-items (selectedChat)="chatInfo = $event" (chatEvent)="onSelectChat($event)" [hasMore]="true" [isLoading]="isLoading | async" [title]="'Messages'" [chats]="chats | slice:4:chats.length - 1"></chat-items>
+
+</ion-content>

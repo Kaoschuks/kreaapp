@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { CircleProgressComponent } from './circle-progress.component';
 
 
 
@@ -22,9 +21,6 @@ import { CircleProgressComponent } from './circle-progress.component';
       lazy: false,
       outerStrokeWidth: 10,
       innerStrokeWidth: 10,
-      outerStrokeColor: '#1D70A2',
-      outerStrokeGradientStopColor: '#1D70A2', 
-      innerStrokeColor: '#f5f6f9a9'
     }),
   ]
 })

@@ -1,1 +1,2 @@
-<ngx-otp-input [status]="'success'" (fill)="onCompleted.emit($event)" [config]="otpInputConfig" #ngxotp></ngx-otp-input>
+
+<code-input [codeLength]="6" [isCodeHidden]="true" (codeCompleted)="onCompleted.emit($event)" #codeInput></code-input>

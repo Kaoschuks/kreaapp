@@ -1,16 +1,14 @@
 
-:root[mode="md"].plt-android, :root {
+:root[mode="md"] {
     // --ion-font-family: 'CerebriSans', Arial, sans-serif !important;
     --ion-font-family: 'Moderat', Arial, sans-serif !important;
     // --ion-font-family: 'Radio Canada Big', Moderat, Arial, sans-serif !important;
-    // -webkit-font-smoothing: antialiased !important;
-    // -moz-osx-font-smoothing: grayscale !important;
-    font-weight: 500 !important;
-    font-display: swap !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
 
     ion-title {
         // font-size: 18px !important;
-        font-weight:570 !important;
+        font-weight:600 !important;
         .modal-title {
             margin-left: -20px !important;
         }

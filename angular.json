@@ -25,7 +25,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": [
-              "crypto-js", "apexcharts", "boxicons"
+              "crypto-js", "apexcharts", "boxicons", "google-libphonenumber"
             ],
             "assets": [
               {
@@ -35,7 +35,6 @@
               }
             ],
             "styles": [
-              "./node_modules/intl-tel-input/build/css/intlTelInput.css",
               "./node_modules/@flaticon/flaticon-uicons/css/regular/rounded.css",
               "./node_modules/@flaticon/flaticon-uicons/css/solid/rounded.css",
               "./node_modules/@flaticon/flaticon-uicons/css/brands/all.css",
@@ -44,8 +43,6 @@
               "src/global.scss"
             ],
             "scripts": [
-              "./node_modules/intl-tel-input/build/js/intlTelInput.js",
-              "./node_modules/intl-tel-input/build/js/utils.js",
               "node_modules/apexcharts/dist/apexcharts.min.js",
               "src/assets/js/syncro.min.js"
             ]
@@ -55,13 +52,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3.5mb",
+                  "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "5kb",
-                  "maximumError": "6kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
               "fileReplacements": [
