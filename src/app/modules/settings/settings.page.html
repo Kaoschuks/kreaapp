@@ -1,5 +1,27 @@
 
-<ion-content color="white" class="noHeader">
+
+<mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></mobile-header>
+<!-- <ion-header class="ion-no-border b-b">
+  <ion-toolbar [color]="globals.pageColor" class="header_slider">
+    <div class="chips_div">
+      <div class="test" [class.active]="val == i" *ngFor="let item of chips; let i = index">
+        <ion-label class="chip" [class.active2]="val == i" (click)="val = i">{{item}}</ion-label>
+      </div>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content color="light">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ globals.pageData?.title || 'Home'  | titlecase }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
     <!-- <ion-list lines="none"> -->
         <ion-list-header color="white">
             <ion-label>

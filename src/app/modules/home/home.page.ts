@@ -3,7 +3,7 @@ import { AsyncPipe, CommonModule, NgIf } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { GlobalsServices } from 'src/app/core';
 import { OtpInputComponent } from 'src/app/shared/components/otp-input/otp-input.component';
-import { BarChartComponent, CircleProgressModule, DonutChartComponent, GuageChartComponent, HorizontalBarChartComponent, LineChartComponent, LoadingComponent, PhonenumberInputComponent, RadarChartComponent, SwipeButtonComponent } from 'src/app/shared/components';
+import { BarChartComponent, CircleProgressModule, DonutChartComponent, GuageChartComponent, HorizontalBarChartComponent, LineChartComponent, LoadingComponent, MobileHeaderComponent, PhonenumberInputComponent, RadarChartComponent, SwipeButtonComponent } from 'src/app/shared/components';
 import { CircleProgressComponent } from 'src/app/shared/components/charts/circle-progress/circle-progress.component';
 import { IonCardContent } from '@ionic/angular/standalone';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
@@ -15,6 +15,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
+    MobileHeaderComponent,
     LoadingComponent, AsyncPipe, NgIf,
     IonicModule, CommonModule, OtpInputComponent, SwipeButtonComponent, 
     IonCardContent,

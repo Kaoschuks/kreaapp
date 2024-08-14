@@ -11,6 +11,7 @@ declare var window: any;
 })
 export class HorizontalBarChartComponent implements OnChanges {
   @Input() width: number = window.innerWidth;
+  @Input() height: number = 5;
   @Input() title!: string;
   @Input() currency!: string;
   @Input() showLabels: boolean = false;
@@ -22,13 +23,8 @@ export class HorizontalBarChartComponent implements OnChanges {
     },
     {
       name: "Income",
-      value: 14,
+      value: 34,
       color: getCSSVariableValue('--ion-color-primary'),
-    },
-    {
-      name: "Savings",
-      value: 30,
-      color: getCSSVariableValue('--ion-color-warning'),
     }
   ]
   chartData: any = {
@@ -44,10 +40,14 @@ export class HorizontalBarChartComponent implements OnChanges {
 
     if(!this.showLabels) this.hideElement('syncro-row');
     if(!this.title) this.hideElement()
+
+    const bar: any = document.getElementsByClassName('syncro-progress-stepped')
+    bar[0].style.height = `${this.height}px`
   }
 
   setActive() {
     const arr: any = document.getElementsByClassName('syncro-progress-stepped-item')
+
     if(arr) {
       arr[0].classList.add("active");
       arr[0].innerHTML = `${this.currency} ${this.data[0].value}`;

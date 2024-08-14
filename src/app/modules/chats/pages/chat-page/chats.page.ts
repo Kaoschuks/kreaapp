@@ -1,17 +1,18 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonHeader, IonToolbar, IonSegment, IonSegmentButton, IonTitle } from "@ionic/angular/standalone";
-import { AsyncPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, SlicePipe, TitleCasePipe } from '@angular/common';
 import { ChatItemsComponent, RecentChatsComponent } from '../../components';
 import { ChatsService } from '../../services/chats.service';
-import { LoadingComponent } from 'src/app/shared';
+import { LoadingComponent, MobileHeaderComponent } from 'src/app/shared';
 import { BehaviorSubject } from 'rxjs';
+import { GlobalsServices } from 'src/app/core/services/globals.service';
 
 const components: any[] = [
-  NgFor, NgIf, AsyncPipe, SlicePipe,
+  NgFor, NgIf, AsyncPipe, SlicePipe, TitleCasePipe,
   IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonTitle,
   IonHeader, IonToolbar, IonSegment, IonSegmentButton,
   RecentChatsComponent, ChatItemsComponent,
-  LoadingComponent
+  LoadingComponent, MobileHeaderComponent
 ]
 
 @Component({
@@ -27,6 +28,7 @@ export class ChatsPage implements OnDestroy {
   chatInfo: any;
 
   constructor(
+    public globals: GlobalsServices,
     private chatService: ChatsService
   ) {
   }

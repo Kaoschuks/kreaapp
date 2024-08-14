@@ -3,6 +3,7 @@ import { TitleCasePipe } from '@angular/common';
 import { IonAvatar, IonButton, IonButtons, IonCard, IonContent, IonFabButton, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonListHeader, IonMenuButton, IonTitle, IonToggle, IonToolbar } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
 import { FormsModule } from '@angular/forms';
+import { MobileHeaderComponent } from 'src/app/shared';
 
 @Component({
   selector: 'app-settings',
@@ -12,12 +13,18 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     TitleCasePipe,
-    IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonAvatar, IonFabButton, IonToggle, IonIcon, IonImg, IonItem, IonHeader, IonToolbar
+    MobileHeaderComponent,
+    IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonAvatar, IonFabButton, IonToggle, IonIcon, IonImg, IonItem, IonHeader, IonToolbar, IonTitle,
   ]
 })
 export class SettingsPage implements OnInit {
-  globals: GlobalsServices = inject(GlobalsServices);
   isDark: boolean = this.globals.getDeviceThemeMode == 'dark' ? true : false;
+
+  constructor(
+    public globals: GlobalsServices
+  ) {
+
+  }
 
   ngOnInit() {
   }

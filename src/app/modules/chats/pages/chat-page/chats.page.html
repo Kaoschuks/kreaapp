@@ -12,7 +12,14 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content color="light" class="noHeader">
+<mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></mobile-header>
+
+<ion-content color="light">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ globals.pageData?.title || 'Home'  | titlecase }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
   <recent-chats [title]="'Recent Chats'" [matches]="chats" [isLoading]="isLoading | async"></recent-chats>
   <chat-items (selectedChat)="chatInfo = $event" (chatEvent)="onSelectChat($event)" [loadCount]="2" [isLoading]="isLoading | async" [title]="'Favourites'" [chats]="chats | slice:0:2"></chat-items>
   <chat-items (selectedChat)="chatInfo = $event" (chatEvent)="onSelectChat($event)" [hasMore]="true" [isLoading]="isLoading | async" [title]="'Messages'" [chats]="chats | slice:4:chats.length - 1"></chat-items>

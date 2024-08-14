@@ -91,11 +91,12 @@
 	--ion-item-background: transparent;
 }
 
-@import './dark';
-@import './ios';
 @import './md';
 @import './syncro';
 @import './theme';
 @import './desktop';
 @import './animate';
 @import './fonts';
+
+@import './dark';
+@import './ios';

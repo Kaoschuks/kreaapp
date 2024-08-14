@@ -1,10 +1,12 @@
 
-<ion-content class="noHeader" color="light">
-  <!-- <ion-header collapse="condense">
+<mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></mobile-header>
+
+<ion-content color="light">
+  <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
+      <ion-title size="large">{{ globals.pageData?.title || 'Home'  | titlecase }}</ion-title>
     </ion-toolbar>
-  </ion-header> -->
+  </ion-header>
 
   <ng-container *ngIf="(isLoading | async) == false">
 
@@ -67,14 +69,14 @@
     <ion-card class="animated fadeIn" color="white">
       <ion-row style="margin-bottom: -7px;margin-top: -7px;">
         <ion-col class="ion-padding-start">
-          <h2 class="fs-16 text-dark bold">AED 5000</h2>
+          <h2 class="fs-16 text-dark">AED 5000</h2>
         </ion-col>
         <ion-col class="ion-padding-end" align="right">
-          <p class="text-medium">25%</p>
+          <p class="text-medium fs-12">25%</p>
         </ion-col>
       </ion-row>
-      <horizontal-bar-chart  [width]="15"></horizontal-bar-chart>
-      <p class="fs-14 text-medium ion-padding-start" style="margin-top: 0px;">Daily Budget was $4000</p>
+      <horizontal-bar-chart [showLabels]="false" [height]="5" [width]="8"></horizontal-bar-chart>
+      <p class="fs-12 text-medium ion-padding-start" style="margin-top: 0px;">Daily Budget was $4000 dont appear to be present</p>
     </ion-card>
   
     <ion-card class="animated fadeIn" color="white">
