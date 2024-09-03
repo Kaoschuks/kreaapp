@@ -1,9 +1,8 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { IonButton, IonCol, IonContent, IonItem, IonLabel, IonModal, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
-import { HalfModalComponent } from 'src/app/shared';
+import { HalfModalComponent } from 'src/app/shared/components/modal_components';
 
 @Component({
   selector: 'app-filter-modal',
@@ -13,7 +12,6 @@ import { HalfModalComponent } from 'src/app/shared';
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
-    NgIf, NgClass, NgFor,
     HalfModalComponent, IonRow, IonToolbar, IonContent, IonTitle, IonRow, IonCol, IonItem, IonSelect, IonLabel, IonSelectOption, IonButton, IonModal
   ]
 })

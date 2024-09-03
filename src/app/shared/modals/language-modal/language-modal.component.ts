@@ -2,7 +2,7 @@ import { NgIf, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { IonSearchbar, IonToolbar } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
-import { FullModalComponent } from 'src/app/shared/components';
+import { FullModalComponent } from 'src/app/shared/components/modal_components';
 
 @Component({
   selector: 'app-language-modal',

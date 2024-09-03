@@ -1,9 +1,7 @@
-import { NgFor, SlicePipe, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonLabel, IonListHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { ChipsComponent, MobileHeaderComponent } from 'src/app/shared/components';
 import { NewsCardComponent, NewsItemComponent } from './components';
-import { NewsService } from './services';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
+import { GlobalsServices } from 'src/app/core';
 
 @Component({
   selector: 'app-news',
@@ -12,15 +10,15 @@ import { NewsService } from './services';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    NewsCardComponent, NewsItemComponent, MobileHeaderComponent,
-    IonContent, IonListHeader, IonLabel, IonButton, IonButtons, ChipsComponent, IonHeader, IonToolbar, IonIcon, IonTitle,
-    NgFor, SlicePipe, TitleCasePipe
+    NewsCardComponent, NewsItemComponent, 
+    ComponentsModule,
   ]
 })
-export class NewsPage extends NewsService {
+export class NewsPage {
 
-  constructor() {
-    super()
+  constructor(
+    public readonly globals: GlobalsServices
+  ) {
   }
 
 }

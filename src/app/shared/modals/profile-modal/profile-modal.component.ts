@@ -2,7 +2,7 @@ import { NgIf, NgClass, TitleCasePipe } from '@angular/common';
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { IonToolbar, IonSearchbar, IonButton, IonRow, IonCol, IonFabButton, IonRouterLink, IonCard, IonAvatar, IonLabel, IonImg, IonItem } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
-import { FullModalComponent, OnboardingComponent } from 'src/app/shared/components';
+import { FullModalComponent } from 'src/app/shared/components/modal_components';
 
 @Component({
   selector: 'app-profile-modal',
@@ -11,7 +11,7 @@ import { FullModalComponent, OnboardingComponent } from 'src/app/shared/componen
   standalone: true,
   imports: [
     NgIf, NgClass, TitleCasePipe,
-    FullModalComponent, OnboardingComponent,
+    FullModalComponent,
     IonToolbar, IonSearchbar, IonButton, IonRouterLink, IonRow, IonCol, IonFabButton, IonCard, IonAvatar, IonLabel, IonImg, IonItem,
 
   ]

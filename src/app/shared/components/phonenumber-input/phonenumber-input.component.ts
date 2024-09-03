@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractControl, FormBuilder,  FormGroup,  FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxMaterialIntlTelInputComponent } from 'ngx-material-intl-tel-input'
 
 @Component({
   selector: 'app-phonenumber-input',
@@ -9,7 +8,6 @@ import { NgxMaterialIntlTelInputComponent } from 'ngx-material-intl-tel-input'
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    NgxMaterialIntlTelInputComponent,
     FormsModule, ReactiveFormsModule
   ]
 })

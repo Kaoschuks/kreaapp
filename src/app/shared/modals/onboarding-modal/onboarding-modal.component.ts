@@ -1,10 +1,8 @@
-import { NgIf, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { IonToolbar, IonSearchbar, IonButton, IonRouterLink, IonRow, IonCol, IonFabButton } from '@ionic/angular/standalone';
 import { GlobalsServices } from 'src/app/core';
-import { 
-  FullModalComponent, OnboardingComponent 
-} from 'src/app/shared';
+import { FullModalComponent } from 'src/app/shared/components/modal_components';
+import { OnboardingComponent } from 'src/app/shared/components/onboarding/onboarding.component';
 
 @Component({
   selector: 'app-onboarding-modal',

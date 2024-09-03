@@ -25,7 +25,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": [
-              "crypto-js", "apexcharts", "boxicons", "google-libphonenumber"
+              "crypto-js", "apexcharts", "google-libphonenumber"
             ],
             "assets": [
               {
@@ -38,7 +38,6 @@
               "./node_modules/@flaticon/flaticon-uicons/css/regular/rounded.css",
               "./node_modules/@flaticon/flaticon-uicons/css/solid/rounded.css",
               "./node_modules/@flaticon/flaticon-uicons/css/brands/all.css",
-              "node_modules/boxicons/css/boxicons.min.css",
               "src/theme/variables.scss", 
               "src/global.scss"
             ],

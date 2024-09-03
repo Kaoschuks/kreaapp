@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MobileHeaderComponent, MobileFooterComponent } from '../mobile';
 import { GlobalsServices } from 'src/app/core';
-import { NotificationModalComponent, LanguageModalComponent, OnboardingModalComponent, ProfileModalComponent, FilterModalComponent } from 'src/app/modules';
+import { NotificationModalComponent, LanguageModalComponent, OnboardingModalComponent, ProfileModalComponent, FilterModalComponent } from 'src/app/shared/modals';
 import { SuccessModalComponent } from '../../modal_components';
 
 const modals = [

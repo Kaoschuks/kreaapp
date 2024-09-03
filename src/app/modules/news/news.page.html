@@ -1,6 +1,6 @@
 
 
-<mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></mobile-header>
+<app-mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></app-mobile-header>
 <!-- <ion-header class="ion-no-border b-b">
   <ion-toolbar [color]="globals.pageColor" class="header_slider">
     <div class="chips_div">
@@ -19,16 +19,16 @@
 <ion-content color="light">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{ globals.pageData?.title || 'Home'  | titlecase }}</ion-title>
+      <ion-title size="large">News</ion-title>
     </ion-toolbar>
   </ion-header>
-  <app-news-card [news]="news"></app-news-card>
+  <!-- <app-news-card [news]="news"></app-news-card> -->
   
-  <ion-list-header>
+  <!-- <ion-list-header>
     <ion-label>
       <h2 class="fs-14">Trending</h2>
     </ion-label>
     <ion-button momde="ios" class="fs-12">see all</ion-button>
   </ion-list-header>
-  <app-news-item *ngFor="let _news of news.concat(news)"></app-news-item>
+  <app-news-item *ngFor="let _news of news.concat(news)"></app-news-item> -->
 </ion-content>

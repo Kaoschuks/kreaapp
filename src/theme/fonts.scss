@@ -3,6 +3,19 @@
     font-family: 'Moderat';
     src: url('../assets/fonts/Moderat-Regular.a2f5d8f.ttf') format('truetype');
 }
+
+@font-face{
+    font-family: "Cerebri Sans Regular";
+    src: url("https://db.onlinewebfonts.com/t/bb018e64d01355748d8ddc53553850b9.eot");
+    src: url("https://db.onlinewebfonts.com/t/bb018e64d01355748d8ddc53553850b9.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/bb018e64d01355748d8ddc53553850b9.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/bb018e64d01355748d8ddc53553850b9.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/bb018e64d01355748d8ddc53553850b9.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/bb018e64d01355748d8ddc53553850b9.svg#Cerebri Sans Regular")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
 // @font-face {
 //     font-family: 'NotoSans';
 //     src: url('../assets/fonts/NotoSans-Regular.ttf') format('truetype');
