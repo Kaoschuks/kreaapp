@@ -1,10 +1,9 @@
-import { NgIf, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControlName, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormBuilder,  FormGroup,  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialIntlTelInputComponent } from 'ngx-material-intl-tel-input'
 
 @Component({
-  selector: 'phonenumber-input',
+  selector: 'app-phonenumber-input',
   templateUrl: './phonenumber-input.component.html',
   styleUrls: ['./phonenumber-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,17 +19,19 @@ export class PhonenumberInputComponent {
 	@Input() isRequired: boolean = false;
 	@Input() isDisabled: boolean = true;
 	@Input() canSearch: boolean = true;
-	@Output() onInput = new EventEmitter();
+	@Output() inputdata = new EventEmitter();
 
-  form = this.fb.group({
-    phone: [''],
-  });
+  form!: FormGroup
 
   constructor(
     private fb: FormBuilder
-  ){}
+  ){
+    this.form = this.fb.group({
+      phone: [''],
+    });
+  }
 
   onInputChange(value: string) {
-    this.onInput.emit(value)
+    this.inputdata.emit(value)
   }
 }

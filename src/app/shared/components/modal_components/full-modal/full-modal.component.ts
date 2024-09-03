@@ -6,7 +6,7 @@ import { addIcons } from 'ionicons';
 import { chevronDownOutline, chevronBackOutline } from 'ionicons/icons';
 
 @Component({
-  selector: 'full-modal',
+  selector: 'app-full-modal',
   templateUrl: './full-modal.component.html',
   styleUrls: ['./full-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

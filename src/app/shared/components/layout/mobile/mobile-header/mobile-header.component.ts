@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { IonProgressBar, IonHeader, IonToolbar, IonTitle, IonButton, IonButtons, IonIcon, IonBadge } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'mobile-header',
+  selector: 'app-mobile-header',
   templateUrl: './mobile-header.component.html',
   styleUrls: ['./mobile-header.component.scss'],  
   changeDetection: ChangeDetectionStrategy.OnPush,

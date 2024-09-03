@@ -3,7 +3,7 @@ import { getCSSVariableValue } from "src/app/core/utils/helpers";
 declare var window: any;
 
 @Component({
-  selector: "horizontal-bar-chart",
+  selector: "app-horizontal-bar-chart",
   templateUrl: "./horizontal-bar-chart.component.html",
   styleUrls: ["./horizontal-bar-chart.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,

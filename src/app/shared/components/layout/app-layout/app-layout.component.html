@@ -1,10 +1,12 @@
-
-
-<!-- <div class="ion-page"> -->
-  <!-- <div *ngIf="globals.pageData?.hasHeader"> -->
-  <!-- </div> -->
-<!-- </div> -->
-<!-- <div class="ion-page"> -->
-  <!-- <mobile-header (onclick)="onHeaderButtonClicked($event)" [isIos]="isIos" [refresh]="refresh" [color]="headerColor" [title]="title"></mobile-header> -->
-  <mobile-footer [color]="headerColor"></mobile-footer>
-<!-- </div> -->
+<div class="ion-page">
+  <app-mobile-footer [color]="headerColor"></app-mobile-footer>
+  
+  <ng-container>
+    <app-notification-modal [isOpen]="modalData?.notificationmodal?.isOpen"></app-notification-modal>
+    <app-onboarding-modal [isOpen]="modalData?.walkthroughmodal?.isOpen || false"></app-onboarding-modal>
+    <app-language-modal [isOpen]="modalData?.languagemodal?.isOpen || false"></app-language-modal>
+    <app-profile-modal [isOpen]="modalData?.profilemodal?.isOpen || false"></app-profile-modal>
+    <app-filter-modal [type]="''" [isOpen]="modalData?.filtermodal?.isOpen || false"></app-filter-modal>
+    <app-success-modal [isOpen]="modalData?.successmodal?.isOpen || false" (continue)="onModalClosed($event);closeModal('successmodal')" [data]="modalData || {}" [activeColor]="modalData.color || 'primary'" [class]="'modal-center modal-center-sm modal-w70'"></app-success-modal> 
+  </ng-container>
+</div>

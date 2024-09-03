@@ -1,7 +1,7 @@
 import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[CardMask]',
+  selector: '[appCardMask]',
   standalone: true
 })
 export class CardMaskDirective {

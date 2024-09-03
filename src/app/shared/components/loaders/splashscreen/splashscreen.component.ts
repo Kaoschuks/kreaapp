@@ -5,19 +5,18 @@ import { IonFabButton, IonSpinner, Platform } from '@ionic/angular/standalone';
   selector: 'app-splashscreen',
   templateUrl: './splashscreen.component.html',
   styleUrls: ['./splashscreen.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
     IonFabButton, IonSpinner
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SplashscreenComponent  implements OnInit {
+export class SplashscreenComponent {
   
   @Input() useImage: boolean = true
   @Input() bgColor: string = 'bg-white'
+
   constructor(
     public plt: Platform
   ) { }
-
-  ngOnInit() {}
 }

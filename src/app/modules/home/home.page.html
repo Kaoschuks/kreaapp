@@ -1,5 +1,5 @@
 
-<mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></mobile-header>
+<app-mobile-header (onclick)="globals.openModal($event)" [isIos]="globals.platform.is('ios')" [refresh]="globals.pageRefresh" [color]="globals.pageColor" [title]="globals.pageData?.title || 'Home'"></app-mobile-header>
 
 <ion-content color="light">
   <ion-header collapse="condense">
@@ -8,7 +8,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ng-container *ngIf="(isLoading | async) == false">
+  <ng-container *ngIf="(isLoading | async) === false">
 
     <ion-card class="animated fadeIn" color="white">
       <ion-list-header mode="md">
@@ -18,13 +18,13 @@
         <ion-button color="dark" class="fs-12">This Month</ion-button>
       </ion-list-header>
       <div align="center" class="ion-margin">
-        <guage-chart [percentage]="85" label="" [height]="330">
+        <app-guage-chart [percentage]="85" label="" [height]="330">
           <ion-label>
             <p class="text-medium fs-12">Your Score is</p>
             <h2 class="text-dark fs-25 bold ion-no-margin">840</h2>
             <p class="text-medium fs-12">out of 1000</p>
           </ion-label>
-        </guage-chart>
+        </app-guage-chart>
         <ion-label>Up with 69 Points</ion-label>
       </div>
       <ion-grid align="center" class="ion-margin-bottom">
@@ -59,7 +59,7 @@
   
     <ion-card class="animated fadeIn" color="white">
       <ion-item lines="none" color="white" class="ion-no-margin" mode="ios" detail="true">
-        <circleprogress slot="start" [radius]="22" [percent]="80" [stroke]="5"></circleprogress>
+        <app-circleprogress slot="start" [radius]="22" [percent]="80" [stroke]="5"></app-circleprogress>
         <ion-label>
           <h2 class="fs-14 text-medium">You dont appear to be present on<br /> the electoral register at your <br />current level</h2>
         </ion-label>
@@ -75,7 +75,7 @@
           <p class="text-medium fs-12">25%</p>
         </ion-col>
       </ion-row>
-      <horizontal-bar-chart [showLabels]="false" [height]="5" [width]="8"></horizontal-bar-chart>
+      <app-horizontal-bar-chart [showLabels]="false" [height]="5" [width]="8"></app-horizontal-bar-chart>
       <p class="fs-12 text-medium ion-padding-start" style="margin-top: 0px;">Daily Budget was $4000 dont appear to be present</p>
     </ion-card>
   
@@ -86,7 +86,7 @@
         </ion-label>
         <ion-button color="dark" class="fs-12">Filter</ion-button>
       </ion-list-header>
-      <line-chart [chartType]="'area'" [height]="250" [hasTooltip]="true"></line-chart>
+      <app-line-chart [chartType]="'area'" [height]="250" [hasTooltip]="true"></app-line-chart>
     </ion-card>
   
     <ion-card class="animated fadeIn" color="white">
@@ -96,7 +96,7 @@
         </ion-label>
         <ion-button color="dark" class="fs-12">Filter</ion-button>
       </ion-list-header>
-      <radar-chart [height]="250"></radar-chart>
+      <app-radar-chart [height]="250"></app-radar-chart>
     </ion-card>
   
     <ion-card class="animated fadeIn" color="white">
@@ -106,7 +106,7 @@
         </ion-label>
         <ion-button color="dark" class="fs-12">Filter</ion-button>
       </ion-list-header>
-      <donut-chart [chartType]="'donut'" [showLegend]="true" [chartWellNumber]="'60%'"></donut-chart>
+      <app-donut-chart [chartType]="'donut'" [showLegend]="true" [chartWellNumber]="'60%'"></app-donut-chart>
       <br />
     </ion-card>
   
@@ -117,16 +117,16 @@
         </ion-label>
         <ion-button color="dark" class="fs-12">Filter</ion-button>
       </ion-list-header>
-      <bar-chart [chartType]="'bar'" [columnWidth]="'20%'"></bar-chart>
+      <app-bar-chart [chartType]="'bar'" [columnWidth]="'20%'"></app-bar-chart>
     </ion-card>
   
     <ion-card class="bg-white ion-no-padding animated fadeIn">
-      <phonenumber-input [isDisabled]="false" [canSearch]="true" [isRequired]="true"></phonenumber-input>
-      <otp-input></otp-input>
-      <swipe-button [isRounded]="true"></swipe-button>
+      <app-phonenumber-input [isDisabled]="false" [canSearch]="true" [isRequired]="true"></app-phonenumber-input>
+      <app-otp-input></app-otp-input>
+      <app-swipe-button [isRounded]="true"></app-swipe-button>
     </ion-card>
   </ng-container>
 
 
-  <loading *ngIf="(isLoading | async) == true" [text]="'Processing data'"></loading>
+  <app-loading *ngIf="(isLoading | async) === true" [text]="'Processing data'"></app-loading>
 </ion-content>

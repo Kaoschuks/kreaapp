@@ -1,21 +1,22 @@
 import { NgFor, TitleCasePipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { IonButton, IonButtons, IonCard, IonCardContent, IonFabButton, IonIcon, IonImg, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { add, bookmark, bookmarkOutline, chatbubble, chatbubbleOutline } from 'ionicons/icons';
+import { add, bookmarkOutline, chatbubbleOutline } from 'ionicons/icons';
 import { DateAsAgoPipe } from 'src/app/core';
 
 @Component({
-  selector: 'news-card',
+  selector: 'app-news-card',
   templateUrl: './news-card.component.html',
   styleUrls: ['./news-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    NgFor, TitleCasePipe, DateAsAgoPipe,
+    TitleCasePipe, DateAsAgoPipe,
     IonCard, IonCardContent, IonLabel, IonButton, IonIcon, IonItem, IonFabButton, IonButtons, IonImg
   ]
 })
-export class NewsCardComponent  implements OnInit {
+export class NewsCardComponent {
   @Input() news: any = []
   constructor() { 
     addIcons({
@@ -24,7 +25,5 @@ export class NewsCardComponent  implements OnInit {
       "bookmark": bookmarkOutline,
     })
   }
-
-  ngOnInit() {}
 
 }

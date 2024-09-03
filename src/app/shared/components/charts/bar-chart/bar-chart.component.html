@@ -1,14 +1,16 @@
 <div id="chart">
-  <apx-chart *ngIf="chartOptions"
-    [series]="chartOptions?.series"
-    [chart]="chartOptions?.chart"
-    [dataLabels]="chartOptions?.dataLabels"
-    [plotOptions]="chartOptions?.plotOptions"
-    [colors]="chartOptions?.colors"
-    [yaxis]="chartOptions?.yaxis"
-    [grid]="chartOptions?.grid"
-    [xaxis]="chartOptions?.xaxis"
-    [legend]="chartOptions?.legend"
-  ></apx-chart>
+  @if(chartOptions) {
+    <apx-chart
+      [series]="chartOptions?.series"
+      [chart]="chartOptions?.chart"
+      [dataLabels]="chartOptions?.dataLabels"
+      [plotOptions]="chartOptions?.plotOptions"
+      [colors]="chartOptions?.colors"
+      [yaxis]="chartOptions?.yaxis"
+      [grid]="chartOptions?.grid"
+      [xaxis]="chartOptions?.xaxis"
+      [legend]="chartOptions?.legend"
+    ></apx-chart>
+  }
 </div>
 

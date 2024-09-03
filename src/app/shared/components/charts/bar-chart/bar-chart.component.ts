@@ -1,14 +1,13 @@
-import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 @Component({
-  selector: 'bar-chart',
+  selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ NgApexchartsModule, NgIf ]
+  imports: [ NgApexchartsModule ]
 })
 export class BarChartComponent implements OnChanges {
   @Input() height: number = 250;

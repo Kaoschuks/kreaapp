@@ -1,9 +1,8 @@
-import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, OnInit, ViewChild, inject } from '@angular/core';
-// import { ModalController } from '@ionic/angular';
+import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import { IonButton, IonLabel, IonModal } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'onboarding',
+  selector: 'app-onboarding',
   templateUrl: './onboarding.component.html',
   styleUrls: ['./onboarding.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -13,6 +12,5 @@ import { IonButton, IonLabel, IonModal } from '@ionic/angular/standalone';
 })
 export class OnboardingComponent {
   @ViewChild(IonModal) modal: any;
-  // public readonly modalCtrl: ModalController = inject(ModalController)
 
 }

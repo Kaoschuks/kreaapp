@@ -1,11 +1,11 @@
 
 
-<full-modal [open]="isOpen" [backDropDismiss]="false" [id]="'walkthrough'" [bodyColor]="'white'" [headerClass]="'hidden'" [footerClass]="'bg-white ion-no-border'">
+<app-full-modal [open]="isOpen" [backDropDismiss]="false" [id]="'walkthrough'" [bodyColor]="'white'" [headerClass]="'hidden'" [footerClass]="'bg-white ion-no-border'">
   
   <div modal-footer class="ion-padding">
     <ion-row>
       <ion-col size="9">
-        <onboarding></onboarding>
+        <app-onboarding></app-onboarding>
       </ion-col>
       <ion-col size="3" align="right">
         <ion-fab-button size="large" color="medium" class="no-shadow"></ion-fab-button>
@@ -21,4 +21,4 @@
       <span class="fs-16 text-dark">Have an account? <span class="text-primary"> Sign In</span></span>
     </ion-button> -->
   </div>
-</full-modal>
+</app-full-modal>

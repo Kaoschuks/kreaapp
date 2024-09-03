@@ -5,7 +5,7 @@ import { GlobalsServices } from 'src/app/core';
 import { FullModalComponent } from 'src/app/shared';
 
 @Component({
-  selector: 'notification-modal',
+  selector: 'app-notification-modal',
   templateUrl: './notification-modal.component.html',
   styleUrls: ['./notification-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -6,7 +6,7 @@ import {
 import { getCSSVariableValue } from 'src/app/core/utils/helpers';
 
 @Component({
-  selector: 'donut-chart',
+  selector: 'app-donut-chart',
   templateUrl: './donut-chart.component.html',
   styleUrls: ['./donut-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

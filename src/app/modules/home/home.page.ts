@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AsyncPipe, CommonModule, NgIf } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { GlobalsServices } from 'src/app/core';
@@ -23,7 +23,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
     PhonenumberInputComponent,
   ]
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
   isLoading = new BehaviorSubject<boolean>(true);
   constructor(
@@ -36,9 +36,6 @@ export class HomePage implements OnInit {
     setTimeout(() => {
       this.isLoading.next(false)
     }, 3000);
-  }
-  
-  ngOnInit() {
   }
 
 }

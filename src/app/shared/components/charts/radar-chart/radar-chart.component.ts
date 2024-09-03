@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/c
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 @Component({
-  selector: 'radar-chart',
+  selector: 'app-radar-chart',
   templateUrl: './radar-chart.component.html',
   styleUrls: ['./radar-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

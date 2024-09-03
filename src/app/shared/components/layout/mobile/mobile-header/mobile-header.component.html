@@ -1,12 +1,11 @@
 <ion-header class="ion-no-border" [translucent]="true">
   <ion-progress-bar *ngIf="refresh" type="indeterminate"></ion-progress-bar>
   <ion-toolbar [color]="color">
-    <ion-title *ngIf="isIos" mode="ios">
-      {{title || 'not set' | titlecase}}
-    </ion-title>
-    <ion-title *ngIf="!isIos" mode="md">
-      {{title || 'not set' | titlecase}}
-    </ion-title>
+    @if(isIos) {
+      <ion-title mode="ios"> {{title || 'not set' | titlecase}} </ion-title>
+    } @else {
+      <ion-title mode="md"> {{title || 'not set' | titlecase}} </ion-title>
+    }
 
     <ion-buttons slot="start">
       <!-- <ion-menu-button autoHide="true"></ion-menu-button> -->

@@ -1,8 +1,8 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @Component({
-  selector: 'circleprogress',
+  selector: 'app-circleprogress',
   templateUrl: './circle-progress.component.html',
   styleUrls: ['./circle-progress.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

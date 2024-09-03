@@ -1,14 +1,17 @@
 <div class="splash" color="white" align="center">
   <div align="center">
-    <ion-fab-button size="large" color="white" class="no-shadow ion-border">
-      <img class="logo" loading="lazy" src="assets/icon/favicon.png" />
-    </ion-fab-button><br />
+    <img class="logo" loading="lazy" src="assets/img/white-logo.jpeg" /><br />
     <ion-spinner color="dark"></ion-spinner>
   </div>
   <br />
   <h3 class="bottom fs-12 text-medium">In Partnership with <br /> <span class="fs-18 text-dark">Kreador Technologies </span></h3>
   <br />
   <br />
-  <br [class]="(plt.is('ios')) ? '' : 'ion-hide'" />
-  <br [class]="(plt.is('ios')) ? '' : 'ion-hide'" />
+  @if(plt.is('ios')) {
+    <ng-container>
+      <br />
+      <br />
+      <br />
+    </ng-container>
+  }
 </div>

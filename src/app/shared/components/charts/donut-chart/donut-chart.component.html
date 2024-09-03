@@ -1,13 +1,15 @@
 <div id="chart">
-  <apx-chart
-    [series]="chartOptions?.series"
-    [chart]="chartOptions?.chart"
-    [labels]="chartOptions?.labels"
-    [title]="chartOptions?.title"
-    [theme]="chartOptions?.theme"
-    [colors]="chartOptions?.colors"
-    [legend]="chartOptions?.legend"
-    [dataLabels]="chartOptions?.dataLabels"
-    [stroke]="chartOptions.stroke" [plotOptions]="chartOptions.plotOptions"
-  ></apx-chart>
+  @if(chartOptions) {
+    <apx-chart
+      [series]="chartOptions?.series"
+      [chart]="chartOptions?.chart"
+      [labels]="chartOptions?.labels"
+      [title]="chartOptions?.title"
+      [theme]="chartOptions?.theme"
+      [colors]="chartOptions?.colors"
+      [legend]="chartOptions?.legend"
+      [dataLabels]="chartOptions?.dataLabels"
+      [stroke]="chartOptions.stroke" [plotOptions]="chartOptions.plotOptions"
+    ></apx-chart>
+  }
 </div>

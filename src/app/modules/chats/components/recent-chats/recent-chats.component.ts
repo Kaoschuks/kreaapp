@@ -1,11 +1,12 @@
 import { NgFor, NgIf, TitleCasePipe } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { IonAvatar, IonImg, IonLabel, IonListHeader, IonSkeletonText } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'recent-chats',
+  selector: 'app-recent-chats',
   templateUrl: './recent-chats.component.html',
   styleUrls: ['./recent-chats.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [IonAvatar, IonLabel, IonImg, IonListHeader, IonSkeletonText, TitleCasePipe, NgFor, NgIf]
 })

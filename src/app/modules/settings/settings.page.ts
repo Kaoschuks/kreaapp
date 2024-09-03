@@ -17,16 +17,13 @@ import { MobileHeaderComponent } from 'src/app/shared';
     IonContent, IonButton, IonListHeader, IonLabel, IonList, IonCard, IonAvatar, IonFabButton, IonToggle, IonIcon, IonImg, IonItem, IonHeader, IonToolbar, IonTitle,
   ]
 })
-export class SettingsPage implements OnInit {
+export class SettingsPage {
   isDark: boolean = this.globals.getDeviceThemeMode == 'dark' ? true : false;
 
   constructor(
     public globals: GlobalsServices
   ) {
 
-  }
-
-  ngOnInit() {
   }
 
   onDeleteAccount() {

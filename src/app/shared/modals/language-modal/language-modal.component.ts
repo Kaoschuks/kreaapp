@@ -5,7 +5,7 @@ import { GlobalsServices } from 'src/app/core';
 import { FullModalComponent } from 'src/app/shared/components';
 
 @Component({
-  selector: 'language-modal',
+  selector: 'app-language-modal',
   templateUrl: './language-modal.component.html',
   styleUrls: ['./language-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

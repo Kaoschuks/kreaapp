@@ -1,13 +1,14 @@
 import { NgClass } from '@angular/common';
-import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { IonButton, IonButtons, IonCol, IonFabButton, IonIcon, IonRow, IonText } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronForwardOutline } from 'ionicons/icons';
 
 @Component({
-  selector: 'swipe-button',
+  selector: 'app-swipe-button',
   templateUrl: './swipe-button.component.html',
   styleUrls: ['./swipe-button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [IonFabButton, IonCol, IonRow, IonButton, IonText, IonIcon, NgClass, IonButtons],
 })
@@ -18,7 +19,7 @@ export class SwipeButtonComponent {
   @Input() isRounded: boolean = false;
   @Input() text = 'Slide to Proceed';
 
-  swipeInProgress = false;
+  swipeInProgress: boolean = false;
   colWidth!: number;
   translateX!: number;
 

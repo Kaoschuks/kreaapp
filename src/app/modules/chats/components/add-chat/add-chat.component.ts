@@ -7,7 +7,7 @@ import { mic, send } from 'ionicons/icons';
 declare let document: any;
 
 @Component({
-  selector: 'add-chat',
+  selector: 'app-add-chat',
   templateUrl: './add-chat.component.html',
   styleUrls: ['./add-chat.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

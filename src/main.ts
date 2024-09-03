@@ -31,7 +31,7 @@ bootstrapApplication(AppComponent, {
       backButtonText: '',
       backButtonIcon: chevronBackCircleOutline,
       swipeBackEnabled: true,
-      // mode: 'md'
+      mode: 'md'
     }),
     importProvidersFrom(BrowserAnimationsModule),
     provideRouter(

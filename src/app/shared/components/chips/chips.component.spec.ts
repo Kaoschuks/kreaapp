@@ -9,7 +9,8 @@ describe('ChipsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ ChipsComponent ]
+      declarations: [ ChipsComponent ],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChipsComponent);

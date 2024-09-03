@@ -6,7 +6,7 @@ import { GlobalsServices } from 'src/app/core';
 import { HalfModalComponent } from 'src/app/shared';
 
 @Component({
-  selector: 'filter-modal',
+  selector: 'app-filter-modal',
   templateUrl: './filter-modal.component.html',
   styleUrls: ['./filter-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,12 +25,12 @@ export class FilterModalComponent {
   @Input() years: Array<any> = [];
   @Input() type!: string;
   @Input() isOpen: boolean = false;
-  @Output() onApply = new EventEmitter<any>();
+  @Output() apply = new EventEmitter<any>();
 
   public readonly globals: GlobalsServices = inject(GlobalsServices);
 
   applyFilter() {
-    this.onApply.emit({
+    this.apply.emit({
       month: this.month,
       year: this.year
     })

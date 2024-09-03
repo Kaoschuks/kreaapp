@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartComponent, NgApexchartsModule } from 'ng-apexcharts';
 declare var window: any;
 
 @Component({
-  selector: 'line-chart',
+  selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -11,7 +11,7 @@ declare var window: any;
   imports: [ NgApexchartsModule ]
 })
 
-export class LineChartComponent implements OnInit {
+export class LineChartComponent implements OnChanges {
   @Input() width: number = window.innerWidth;
   @Input() height: number = 300;
   @Input() hasTooltip: boolean = false;
@@ -38,8 +38,7 @@ export class LineChartComponent implements OnInit {
   reducedWindowWidth: any;
   chartOptions: any
   
-
-  ngOnInit() {
+ngOnChanges(changes: SimpleChanges): void {
     this.chartOptions = {
       chart: {
         toolbar: {

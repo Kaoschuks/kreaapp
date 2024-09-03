@@ -8,7 +8,7 @@ import { LongPressDirective } from 'src/app/shared';
 
 
 @Component({
-  selector: 'chat-bubble',
+  selector: 'app-chat-bubble',
   templateUrl: './chat-bubble.component.html',
   styleUrls: ['./chat-bubble.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,7 +21,7 @@ import { LongPressDirective } from 'src/app/shared';
 export class ChatBubbleComponent {
   @Input() conversation: Array<any> = [];
   @Input() loader: boolean = false;
-  @Output() message = new EventEmitter();
+  @Output() messagedata = new EventEmitter();
   @Output() action = new EventEmitter();
 
   private actionSheetCtrl: any = inject(ActionSheetController);
@@ -67,8 +67,8 @@ export class ChatBubbleComponent {
   }
 
   async openMessageActionSheet(message: any) {
-    // this.message.emit(message)
-    // this.message.emit(message)
+    // this.messagedata.emit(messagedata)
+    // this.messagedata.emit(messagedata)
     const actionSheet = await this.actionSheetCtrl.create({
       buttons: this.buttions
     });

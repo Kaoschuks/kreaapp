@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input,
 import { CodeInputComponent, CodeInputModule } from "angular-code-input";
 
 @Component({
-  selector: 'otp-input',
+  selector: 'app-otp-input',
   templateUrl: './otp-input.component.html',
   styleUrls: ['./otp-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -13,7 +13,7 @@ import { CodeInputComponent, CodeInputModule } from "angular-code-input";
 })
 export class OtpInputComponent implements AfterViewInit {
   @Input() clearInput!: boolean
-  @Output() onCompleted = new EventEmitter<any>();
+  @Output() completed = new EventEmitter<any>();
 
   @ViewChild('codeInput') codeInput !: CodeInputComponent;
 

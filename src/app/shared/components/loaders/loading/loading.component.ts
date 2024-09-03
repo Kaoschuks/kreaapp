@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IonLabel, IonSpinner } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'loading',
+  selector: 'app-loading',
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

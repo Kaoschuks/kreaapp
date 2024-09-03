@@ -1,4 +1,4 @@
-<full-modal [open]="isOpen" (closeModal)="globals.closeModal('profilemodal')" [asPage]="true"
+<app-full-modal [open]="isOpen" (closeModal)="globals.closeModal('profilemodal')" [asPage]="true"
     [headerColor]="globals.pageColor" [headerClass]="'bg-'+globals.pageColor" [bodyColor]="'white'" [id]="'profile'"
     [title]="'profile'">
     <ion-card class="no-shadow ion-no-padding animated fadeIn bg-transparent" align="center">
@@ -14,4 +14,4 @@
             </ion-label>
         </ion-item>
     </ion-card>
-</full-modal>
+</app-full-modal>

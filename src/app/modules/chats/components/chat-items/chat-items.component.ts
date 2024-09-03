@@ -5,7 +5,7 @@ import { IonAvatar, IonLabel, IonImg, IonItem, IonListHeader, IonItemSliding, Io
 import { DateAsAgoPipe } from 'src/app/core';
 
 @Component({
-  selector: 'chat-items',
+  selector: 'app-chat-items',
   templateUrl: './chat-items.component.html',
   styleUrls: ['./chat-items.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

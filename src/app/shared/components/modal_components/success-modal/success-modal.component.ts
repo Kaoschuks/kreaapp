@@ -5,7 +5,7 @@ import { addIcons } from 'ionicons';
 import { alertCircleOutline } from 'ionicons/icons';
 
 @Component({
-  selector: 'success-modal',
+  selector: 'app-success-modal',
   templateUrl: './success-modal.component.html',
   styleUrls: ['./success-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

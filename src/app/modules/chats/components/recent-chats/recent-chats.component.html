@@ -1,31 +1,35 @@
 
-<ion-list-header color="white" *ngIf="title">
-    <ion-label>
-      <h2>{{ title | titlecase }}</h2>
-    </ion-label>
-</ion-list-header>
+@if(title) {
+    <ion-list-header color="white">
+        <ion-label>
+          <h2>{{ title | titlecase }}</h2>
+        </ion-label>
+    </ion-list-header>
+}
 <div class="scroll-horizontal ion-padding-start bg-white">
-    <ng-container *ngIf="!isLoading">
-        <div class="scroll-item ion-text-center" *ngFor="let match of matches;let i = index">
-            <ion-avatar class="avatar-md">
-                <ion-img [src]="'https://ui-avatars.com/api/?font-size=0.33&background=random&bold=false&format=svg&name='+match.username || match.fullname || match.email"></ion-img>
-            </ion-avatar>
-            <ion-label>
-                <h2 class="fs-14 text-medium">{{ match.username || 'not set' | titlecase }}</h2>
-            </ion-label>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="isLoading">
-        <div class="scroll-item no-shadow ion-no-padding" *ngFor="let match of loaderELements;let i = index">
-            <ion-avatar class="avatar-md">
-                <ion-skeleton-text style="height: 100%;width: 100%;"></ion-skeleton-text>
-            </ion-avatar>
-            <ion-label>
-                <h2 class="fs-12">
+    @if(!isLoading) {
+        @for(match of matches; track match.id) {
+            <div class="scroll-item ion-text-center">
+                <ion-avatar class="avatar-md">
+                    <ion-img [src]="'https://ui-avatars.com/api/?font-size=0.33&background=random&bold=false&format=svg&name='+match.username || match.fullname || match.email"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                    <h2 class="fs-14 text-medium">{{ match.username || 'not set' | titlecase }}</h2>
+                </ion-label>
+            </div>
+        }
+    } @else {
+        @for(match of loaderELements; track match.id) {
+            <div class="scroll-item no-shadow ion-no-padding">
+                <ion-avatar class="avatar-md">
                     <ion-skeleton-text style="height: 100%;width: 100%;"></ion-skeleton-text>
-                </h2>
-            </ion-label>
-        </div>
-    </ng-container>
+                </ion-avatar>
+                <ion-label>
+                    <h2 class="fs-12">
+                        <ion-skeleton-text style="height: 100%;width: 100%;"></ion-skeleton-text>
+                    </h2>
+                </ion-label>
+            </div>
+        }
+    }
 </div>

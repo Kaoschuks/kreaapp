@@ -7,13 +7,12 @@ import {
 } from 'src/app/shared';
 
 @Component({
-  selector: 'onboarding-modal',
+  selector: 'app-onboarding-modal',
   templateUrl: './onboarding-modal.component.html',
   styleUrls: ['./onboarding-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    NgIf, NgClass,
     FullModalComponent, OnboardingComponent,
     IonToolbar, IonSearchbar, IonButton, IonRouterLink, IonRow, IonCol, IonFabButton
   ]

@@ -1,5 +1,5 @@
 <ion-list #chatRef>
-  <ion-card longPress (longpress)="openMessageActionSheet(message)" class="ion-no-padding no-shadow ion-no-margin" *ngFor="let message of conversation">
+  <ion-card appLongPress (longpress)="openMessageActionSheet(message)" class="ion-no-padding no-shadow ion-no-margin" *ngFor="let message of conversation">
     <ion-item button="true" lines="none" detail="false">
       <div class="unread-indicator-wrapper ion-padding-end" slot="start">
         <ion-fab-button class="no-shadow unread-indicator avatar-sm ion-no-border" color="white">
@@ -21,7 +21,7 @@
 
 <div class="main_content_div">
 
-  <span *ngFor="let item of conversation" longPress (longpress)="openMessageActionSheet(message)">
+  <span *ngFor="let item of conversation" appLongPress (longpress)="openMessageActionSheet(item)">
     <div [ngClass]="!item.isSender ? 'left_div' : 'right_div'">
       <div class="inner_div">
         <div class="msg_div">
@@ -39,7 +39,7 @@
 
 
 <div class="chat-list">
-  <div class="chat-item" longPress (longpress)="openMessageActionSheet(item)" *ngFor="let item of conversation" [ngClass]="{'chat-item-sender': item.isSender}">
+  <div class="chat-item" appLongPress (longpress)="openMessageActionSheet(item)" *ngFor="let item of conversation" [ngClass]="{'chat-item-sender': item.isSender}">
     <div class="chat-timestamp fs-10 bold">
       {{item.date | dateAsAgo}}
     </div>

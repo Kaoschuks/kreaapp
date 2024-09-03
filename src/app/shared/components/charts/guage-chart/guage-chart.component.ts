@@ -6,12 +6,12 @@ import {
 import { getCSSVariableValue } from 'src/app/core/utils/helpers';
 
 @Component({
-  selector: 'guage-chart',
+  selector: 'app-guage-chart',
   templateUrl: './guage-chart.component.html',
   styleUrls: ['./guage-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ NgApexchartsModule, NgIf ]
+  imports: [ NgApexchartsModule ]
 })
 export class GuageChartComponent implements OnChanges {
   @Input() percentage: number = 0

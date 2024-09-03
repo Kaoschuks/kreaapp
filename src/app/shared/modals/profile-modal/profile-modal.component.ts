@@ -5,7 +5,7 @@ import { GlobalsServices } from 'src/app/core';
 import { FullModalComponent, OnboardingComponent } from 'src/app/shared/components';
 
 @Component({
-  selector: 'profile-modal',
+  selector: 'app-profile-modal',
   templateUrl: './profile-modal.component.html',
   styleUrls: ['./profile-modal.component.scss'],
   standalone: true,
@@ -16,12 +16,10 @@ import { FullModalComponent, OnboardingComponent } from 'src/app/shared/componen
 
   ]
 })
-export class ProfileModalComponent  implements OnInit {
+export class ProfileModalComponent {
 
   @Input() isOpen: boolean = false
   globals: GlobalsServices = inject(GlobalsServices);
   constructor() { }
-
-  ngOnInit() {}
 
 }

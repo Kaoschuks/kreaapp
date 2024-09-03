@@ -4,7 +4,7 @@ import { IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonIcon, IonMo
 import { LoadingComponent } from '../../loaders/loading/loading.component';
 
 @Component({
-  selector: 'half-modal',
+  selector: 'app-half-modal',
   templateUrl: './half-modal.component.html',
   styleUrls: ['./half-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,7 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MobileHeaderComponent, MobileFooterComponent } from '../mobile';
 import { GlobalsServices } from 'src/app/core';
-import { NgClass, NgIf } from '@angular/common';
+import { NotificationModalComponent, LanguageModalComponent, OnboardingModalComponent, ProfileModalComponent, FilterModalComponent } from 'src/app/modules';
+import { SuccessModalComponent } from '../../modal_components';
+
+const modals = [
+  NotificationModalComponent, LanguageModalComponent, OnboardingModalComponent, 
+  ProfileModalComponent, FilterModalComponent, SuccessModalComponent
+]
 
 @Component({
   selector: 'app-layout',
@@ -9,7 +15,10 @@ import { NgClass, NgIf } from '@angular/common';
   styleUrls: ['./app-layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [MobileHeaderComponent, MobileFooterComponent, NgClass, NgIf]
+  imports: [
+    ...modals,
+    MobileHeaderComponent, MobileFooterComponent
+  ]
 })
 export class AppLayoutComponent {
 
@@ -34,7 +43,22 @@ export class AppLayoutComponent {
     return this.globals.platform.is('ios');
   }
 
-  onHeaderButtonClicked(event: any) {
+  get modalData() {
+    return this.globals.modalData;
+  }
+
+  onModalClosed(event: any) {
+  }
+
+  openModal(event: any) {
     this.globals.openModal(event)
+  }
+
+  closeModal(event: any) {
+    this.globals.closeModal(event);
+  }
+
+  onClick(event: any) {
+
   }
 }
